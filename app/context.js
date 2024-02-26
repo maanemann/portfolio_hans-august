@@ -11,9 +11,9 @@ export function ThemeWrapper({ children }) {
 
   const [theme, setTheme] = useState(
     {
-      bgTheme: 'bg-aqua-400'
-      // isGreen: true,
-      // color: {text: '#33ee33', bg: '#22aa50'}
+      bgATheme: 'bg-ockerdust-900',
+      bgBTheme: '',
+      fgATheme: ''
     }
   );
 

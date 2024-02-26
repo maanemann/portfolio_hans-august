@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: theme('colors.ockerdust.900');
+  /* background-color: theme('colors.ockerdust.900'); */
   background-image: url(../public/bg-pat.svg);
   /* Gammel idé : */
     /* background-image: radial-gradient(transparent, theme('colors.ockerdust.900') 125%), url(../public/bg-pat.svg); */
@@ -17,7 +17,6 @@ body {
   background-size: 6px;
   background-blend-mode: multiply;
   scrollbar-width: thin;
-  
 }
 
 .coolCorners {

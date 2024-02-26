@@ -1,4 +1,4 @@
-import { ThemeWrapper } from "./context/page";
+import { ThemeWrapper } from "./context";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";

@@ -1,7 +1,7 @@
 
 'use client'
 
-import { useAppContext } from "@/app/context/page";
+import { useAppContext } from "@/app/context";
 
 export default function Lauphex() {
   // dekonstruktion af useAppContext :

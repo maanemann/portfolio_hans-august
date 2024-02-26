@@ -2,7 +2,7 @@
 'use client'
 
 // import { useThemeContext } from '@/app/context/page'
-import { useThemeContext } from "./context/page";
+import { useThemeContext } from "./context";
 // import Lauphex from "@/components/Lauphex"
 import ProjectItem from "@/components/ProjectItem";
 

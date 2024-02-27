@@ -5,17 +5,18 @@ import { useThemeContext } from "@/app/context";
 import Link from "next/link";
 
 const MainNav = () => {
-  const borderR = () => {
+  // const borderR = () => {
     const { theme } = useThemeContext();
-    return(
-      "border-r-" + theme.onlyValueTest
-    )
-  }
+  //   return(
+  //     "border-r-" + theme.onlyValueTest
+  //   )
+  // }
+  // Tw class: ${ borderR() }
 
   return (
     <nav className={`
       w-64 border-r-3
-      ${ borderR() }
+      border-r-${theme.onlyValueTest}
       px-20
     `}>
       <Link

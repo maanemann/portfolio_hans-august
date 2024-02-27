@@ -14,7 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ThemeWrapper>
-        <Body nextFont={ inter.className } children={ children } />
+        <Body nextFont={ inter.className }>
+        { children }
+        </Body>
       </ThemeWrapper>
     </html>
   );

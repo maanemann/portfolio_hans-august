@@ -5,39 +5,14 @@ import { useThemeContext } from '@/app/context'
 import ProjectItem from "@/components/ProjectItem";
 
 export default function Home() {
-  const { theme, setTheme } = useThemeContext();
-  
-  const handleThemeChange = () => {
-    const newColor = "bg-ockerdust-700/60";
-
-    // "When using useState with an object, you can use the "functional update form". This form takes a function as an argument and provides the previous state as an argument to that function" (read more > *) :
-    setTheme(prevTheme => ({
-      // Spread operatoren (`...`) samler alle resterende key-value pairs og overfører dem til den nye state :
-      ...prevTheme,
-      bgTheme: newColor
-    }));
-  };
-
-  // const handleBgTheme = () => {
-  //   return(theme.bgTheme)
-  // }
-
-  // const changeTheme = () => {
-  //   setTheme("bg-ockerdust-700/60")
-  // }
-
-  // Original bg farve : bg-ockerdust-700/60
+  const { theme } = useThemeContext();
 
   return (
     <main className={`
       w-full grid gap-[3px] py-[3px] pr-[3px]
       overflow-y-scroll
-      bg-blend-darken ${theme.bgATheme}
+      bg-blend-darken ${theme.bgBTheme}
     `}>
-      <div
-        onClick={handleThemeChange}
-        className="w-8 aspect-square bg-ocker-400 rounded-full"
-      />
       {/* { theme } */}
       {/* <Lauphex /> */}
       <ProjectItem />

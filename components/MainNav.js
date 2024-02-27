@@ -1,13 +1,23 @@
 
+'use client'
+
+import { useThemeContext } from "@/app/context";
 import Link from "next/link";
 
 const MainNav = () => {
+  const borderR = () => {
+    const { theme } = useThemeContext();
+    return(
+      "border-r-" + theme.onlyValueTest
+    )
+  }
+
   return (
-    <nav className="
+    <nav className={`
       w-64 border-r-3
-      border-r-ockerdust-700
+      ${ borderR() }
       px-20
-    ">
+    `}>
       <Link
         href="#"
         className="

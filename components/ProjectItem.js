@@ -1,7 +1,7 @@
 const ProjectItem = () => {
   return ( <figure className="
     w-full h-[32rem]
-    bg-aqua-950
+    bg-ockerdust-600/35
     coolCorners
     pfff
   "></figure> );

@@ -7,14 +7,23 @@ import MainNav from "./MainNav";
 const Body = ({ nextFont, children }) => {
   const { theme, setTheme } = useThemeContext();
 
-  const handleThemeChange = () => {
-    const newColor = "bg-aqua-700";
-
+  const applyOckerdust = () => {
     // "When using useState with an object, you can use the "functional update form". This form takes a function as an argument and provides the previous state as an argument to that function" (read more > *) :
     setTheme(prevTheme => ({
       // Spread operatoren (`...`) samler alle resterende key-value pairs og overfører dem til den nye state :
       ...prevTheme,
-      bgATheme: newColor
+      bgATheme: "bg-ockerdust-900",
+      bgBTheme: "bg-ockerdust-950",
+      onlyValueTest: "ockerdust-700"
+    }));
+  };
+
+  const applyAqua = () => {
+    setTheme(prevTheme => ({
+      ...prevTheme,
+      bgATheme: "bg-aqua-900",
+      bgBTheme: "bg-aqua-950",
+      onlyValueTest: "aqua-700"
     }));
   };
 
@@ -24,11 +33,24 @@ const Body = ({ nextFont, children }) => {
       flex h-screen overflow-hidden
       ${theme.bgATheme}
     `}>
-      <div
-        onClick={handleThemeChange}
-        className="w-8 aspect-square bg-ocker-400 rounded-full"
-      />
       <MainNav />
+      <div className="
+        absolute bottom-6 left-6
+        flex gap-4
+      ">
+        <div
+          onClick={applyOckerdust}
+          className="
+            w-6 aspect-square cursor-pointer
+            bg-ockerdust-800 rounded-full
+        "/>
+        <div
+          onClick={applyAqua}
+          className="
+            w-6 aspect-square cursor-pointer
+            bg-aqua-800 rounded-full
+        "/>
+      </div>
       { children }
     </body>
   );

@@ -12,7 +12,9 @@ export function ThemeWrapper({ children }) {
   const [theme, setTheme] = useState(
     {
       bgATheme: 'bg-ockerdust-900',
-      bgBTheme: '',
+      bgBTheme: 'bg-ockerdust-950',
+      // Spørg gpt om hjælp til at opdatere en del af en tw class..
+      onlyValueTest: 'ockerdust-700',
       fgATheme: ''
     }
   );

@@ -19,6 +19,11 @@ body {
   scrollbar-width: thin;
 }
 
+/* Brug tailwind i CSS! : */
+/* .red-bg {
+  @apply bacground-red-300;
+} */
+
 .coolCorners {
   clip-path: polygon(
     0 1rem, 1rem 0,

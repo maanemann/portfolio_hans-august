@@ -75,4 +75,10 @@ module.exports = {
     }
   },
   plugins: [],
+  // purge: {
+  //   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  //   options: {
+  //     safelist: [/^border-r-/], // Ensure dynamic classes are not purged
+  //   },
+  // },
 };

@@ -2,23 +2,31 @@
 'use client'
 
 import { useThemeContext } from "@/app/context";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import classNames from "classnames";
 
 const MainNav = () => {
-  // const borderR = () => {
-    const { theme } = useThemeContext();
-  //   return(
-  //     "border-r-" + theme.onlyValueTest
-  //   )
-  // }
-  // Tw class: ${ borderR() }
+  const { theme } = useThemeContext();
+  const themeValue = theme.onlyValueTest;
+  const [borderColor, setBorderColor] = useState(themeValue);
+
+  useEffect(() => {
+  //   const dynamicColor = classNames('border-r-3', `border-${theme.onlyValueTest}`);
+    setBorderColor(themeValue);
+  }, [theme]);
+
+  // const { theme } = useThemeContext();
+  // const dynamicColor = classNames(`border-${theme.onlyValueTest}`);
 
   return (
-    <nav className={`
-      w-64 border-r-3
-      border-r-${theme.onlyValueTest}
-      px-20
-    `}>
+    <nav
+      className={`
+        w-64
+        border-r-3 border-${borderColor}
+        px-20
+      `}
+    >
       <Link
         href="#"
         className="

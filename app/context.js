@@ -14,9 +14,8 @@ export function ThemeWrapper({ children }) {
       bgATheme: 'bg-ockerdust-900',
       bgBTheme: 'bg-ockerdust-950',
       // Spørg gpt om hjælp til at opdatere en del af en tw class..
-      onlyValueTest: 'ockerdust-700',
-      onlyValueTestDot: 'colors.ockerdust.700',
-      fgATheme: ''
+      borderATheme: 'border-ockerdust-700',
+      textATheme: 'text-ockerdust-700'
     }
   );
 

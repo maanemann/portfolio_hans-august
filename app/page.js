@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <main className={`
-      w-full grid gap-[3px] py-[3px] pr-[3px]
+      w-full grid gap-[3px] p-[3px]
       overflow-y-scroll
       bg-blend-darken ${theme.bgBTheme}
     `}>

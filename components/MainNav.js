@@ -1,29 +1,23 @@
 
 'use client'
 
+import { useEffect } from "react";
 import { useThemeContext } from "@/app/context";
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import classNames from "classnames";
+// import classNames from "classnames";
 
 const MainNav = () => {
   const { theme } = useThemeContext();
-  const themeValue = theme.onlyValueTest;
-  const [borderColor, setBorderColor] = useState(themeValue);
 
+  // Denne useEffect logger bare, når der er ændringer i theme konteksten :
   useEffect(() => {
-  //   const dynamicColor = classNames('border-r-3', `border-${theme.onlyValueTest}`);
-    setBorderColor(themeValue);
+    console.log("Theme updated:", theme);
   }, [theme]);
-
-  // const { theme } = useThemeContext();
-  // const dynamicColor = classNames(`border-${theme.onlyValueTest}`);
 
   return (
     <nav
       className={`
         w-64
-        border-r-3 border-${borderColor}
         px-20
       `}
     >
@@ -33,23 +27,23 @@ const MainNav = () => {
           block mb-16
         "
       >
-        <div className="
+        <div className={`
           w-full
           aspect-square
           border-x-3 border-t-3
-          border-ockerdust-700
+          ${theme.borderATheme}
           mx-auto mt-16
-        "/>
-        <div className="
+        `} />
+        <div className={`
           w-[calc(100%+3rem)] -ml-6
           border-t-3
-          border-ockerdust-700
+          ${theme.borderATheme}
           mx-auto -mt-6
-        " />
+        `} />
       </Link>
-      <ul className="
-        text-ockerdust-700
-      ">
+      <ul className={`
+        ${theme.textATheme}
+      `}>
         <li><Link href="#">
           hans august
         </Link></li>

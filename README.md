@@ -6,13 +6,15 @@
 
 [ ] søgefunktion
 
-[ ] gem context i local storage
+[ ] Vercel giver "ReferenceError: localStorage is not defined" og vil ikke hoste commits med local storage - fix det på en bedre måde end sidste forsøg..
 
 [ ] og det ville være smart at flytte context states ind i context.js i stedet for der hvor de kaldes (ind til videre kun Body.js), så der kun er en fil der skal redigeres.
 
     [ ] hvis du når helt her ned vil det være smart at kigge netninjas tut færdig, måske han gør noget med hvordan objekter kan skrives og sendes, så dette kan opnås osv.
 
 ---
+
+[x] gem context i local storage
 
 [///] få delvis class ændring til at virke (gpt allerede prompted)
 

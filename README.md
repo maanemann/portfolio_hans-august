@@ -7,7 +7,12 @@
 [ ] søgefunktion
 
 [ ] Vercel giver "ReferenceError: localStorage is not defined" og vil ikke hoste commits med local storage - fix det på en bedre måde end sidste forsøg..
-    [ ] Troels tror (i en anden sammenhæng): `?` (ternary operator(?)) kræver at target eksisterer, mens `&&` (logical and) ikke gør -- VIL DET FIXE DET AT BRUGE `&&` ???
+
+    [ ] && virkede heller ikke copilot foreslog en try-catch block, hvor error's 'fanges', hvilket kunne hostes, men nu er states helt broken igen (prøv selv), så måske hør copilot, om der kunne være en anden metode, måske det kunne gemmes på en 'server-venlig' måde? Kig i copilot historik efter "Hi. Is this valid code that does the following (...)"
+
+    ---
+
+    [x] Troels tror (i en anden sammenhæng): `?` (ternary operator(?)) kræver at target eksisterer, mens `&&` (logical AND) ikke gør -- VIL DET FIXE DET AT BRUGE `&&` ???
 
 [ ] og det ville være smart at flytte context states ind i context.js i stedet for der hvor de kaldes (ind til videre kun Body.js), så der kun er en fil der skal redigeres.
 

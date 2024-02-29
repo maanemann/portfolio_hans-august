@@ -9,21 +9,23 @@ const themeContext = createContext();
 
 export function ThemeWrapper({ children }) {
 
-  const [theme, setTheme] = useState(() => {
-    // For at undgå fejlmeddelelse, returneres null, når det læses på serveren, som ikke har 'window' (fejl opstår enten fordi localStorage ikke findes, eller fordi state er noget andet på klienten end serveren) :
-    let savedTheme;
-    try {
-      savedTheme = typeof window !== 'undefined' && localStorage.getItem('theme');
-    } catch (error) {
-      savedTheme = null;
-    }
-    // Hent state fra local storage, hvis det findes, ellers brug default state :
-    return savedTheme ? JSON.parse(savedTheme) : {
+  const [theme, setTheme] = useState(
+    // () =>
+    {
+    // // For at undgå fejlmeddelelse, returneres null, når det læses på serveren, som ikke har 'window' (fejl opstår enten fordi localStorage ikke findes, eller fordi state er noget andet på klienten end serveren) :
+    // let savedTheme;
+    // try {
+    //   savedTheme = typeof window !== 'undefined' && localStorage.getItem('theme');
+    // } catch (error) {
+    //   savedTheme = null;
+    // }
+    // // Hent state fra local storage, hvis det findes, ellers brug default state :
+    // return savedTheme ? JSON.parse(savedTheme) : {
       bgATheme: 'bg-ockerdust-900',
       bgBTheme: 'bg-ockerdust-950',
       borderATheme: 'border-ockerdust-700',
       textATheme: 'text-ockerdust-700'
-    };
+  //   };
   });
 
   useEffect(() => {

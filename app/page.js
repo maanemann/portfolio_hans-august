@@ -1,8 +1,10 @@
 
 'use client'
+import FetchTest from "./fetchtest/page";
 
 import { useThemeContext } from '@/app/context'
 import ProjectItem from "@/components/ProjectItem";
+import Link from 'next/link';
 
 export default function Home() {
   const { theme } = useThemeContext();
@@ -13,8 +15,8 @@ export default function Home() {
       overflow-y-scroll
       bg-blend-darken ${theme.bgBTheme}
     `}>
-      {/* { theme } */}
-      {/* <Lauphex /> */}
+      <FetchTest />
+      <Link href="/dynamictest/1">Dynamic link ✨</Link>
       <ProjectItem />
       <ProjectItem />
     </main>

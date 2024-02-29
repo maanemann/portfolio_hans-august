@@ -1,7 +1,7 @@
 import { ThemeWrapper } from "./context";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Body from "@/components/Body";
+import Body from "@/components/Body"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <ThemeWrapper>
         <Body nextFont={ inter.className }>
-        { children }
+          { children }
         </Body>
       </ThemeWrapper>
     </html>

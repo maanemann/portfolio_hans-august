@@ -8,6 +8,10 @@
   }
 }
 
+:root {
+  background: black
+}
+
 body {
   /* background-color: theme('colors.ockerdust.900'); */
   background-image: url(../public/bg-pat.svg);

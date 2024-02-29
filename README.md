@@ -1,11 +1,12 @@
 
 ## todo
 
-[ ] gem context i local storage (gpt)
 
 [ ] fetch en api med billeder til projekter, som også ændres med context (bare for at lære det) (gpt)
 
 [ ] søgefunktion
+
+[ ] gem context i local storage
 
 [ ] og det ville være smart at flytte context states ind i context.js i stedet for der hvor de kaldes (ind til videre kun Body.js), så der kun er en fil der skal redigeres.
 

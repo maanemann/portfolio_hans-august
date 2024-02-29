@@ -7,6 +7,7 @@
 [ ] søgefunktion
 
 [ ] Vercel giver "ReferenceError: localStorage is not defined" og vil ikke hoste commits med local storage - fix det på en bedre måde end sidste forsøg..
+    [ ] Troels tror (i en anden sammenhæng): `?` (ternary operator(?)) kræver at target eksisterer, mens `&&` (logical and) ikke gør -- VIL DET FIXE DET AT BRUGE `&&` ???
 
 [ ] og det ville være smart at flytte context states ind i context.js i stedet for der hvor de kaldes (ind til videre kun Body.js), så der kun er en fil der skal redigeres.
 

@@ -14,7 +14,7 @@ export function ThemeWrapper({ children }) {
       // const savedTheme = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
 
     // Hent state fra local storage, hvis det findes, ellers brug default state :
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage && localStorage.getItem('theme');
     return savedTheme ? JSON.parse(savedTheme) : {
       bgATheme: 'bg-ockerdust-900',
       bgBTheme: 'bg-ockerdust-950',

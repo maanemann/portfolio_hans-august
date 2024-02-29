@@ -10,11 +10,14 @@ const themeContext = createContext();
 export function ThemeWrapper({ children }) {
 
   const [theme, setTheme] = useState(() => {
-    // For at undgå fejlmeddelelse, returneres null, når det læses på serveren, som ikke har 'window', men det spawnede forvirring over at server og klient returnerede forskellige værdier og ødelagde state'n, derfor udkommenteret (se den forsimplede version nedenunder) :
-      // const savedTheme = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
-
+    // For at undgå fejlmeddelelse, returneres null, når det læses på serveren, som ikke har 'window' (fejl opstår enten fordi localStorage ikke findes, eller fordi state er noget andet på klienten end serveren) :
+    let savedTheme;
+    try {
+      savedTheme = typeof window !== 'undefined' && localStorage.getItem('theme');
+    } catch (error) {
+      savedTheme = null;
+    }
     // Hent state fra local storage, hvis det findes, ellers brug default state :
-    const savedTheme = localStorage && localStorage.getItem('theme');
     return savedTheme ? JSON.parse(savedTheme) : {
       bgATheme: 'bg-ockerdust-900',
       bgBTheme: 'bg-ockerdust-950',

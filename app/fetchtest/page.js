@@ -1,21 +1,46 @@
 
-// import Image from "next/image";
+import Image from "next/image";
 
 
 // // #region tmdb-api
 
 // In nextjs app router all data is 'static' (cached) by default (read more > *1*)
-export default async function FetchTest() {
+// export default async function FetchTest() {
   // NEXT_PUBLIC_ is not needed here, since this is a server component, and it's only necessary in client context, but i'll do it anyway as an example:
-  const apiUri = `http://api.themoviedb.org/3/movie/02?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
-  const res = await fetch(apiUri);
+  const apiUrl = `http://api.themoviedb.org/3/movie/02?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
+  const res = await fetch(apiUrl);
   const data = await res.json();
-  console.log(data);
+  try {
+    console.log(data);
+  }
+  catch (error) {
+    console.error(error);
+  }
 
-  return ( <>
-  <h1 className="text-2xl text-ocker-300">{ data.title }</h1>
-  <img className="w-96 object-contain" src={`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`} />
-  </> );
+  // return ( <>
+    {/* <CarImage carSrc={carSrc} /> */}
+    {/* <h1 className="text-2xl text-ocker-300">{ data.title }</h1> */}
+    {/* <Image
+      width={300} height={0}
+      className="w-96 object-contain"
+      src={ src }
+      alt="movie poster"
+    /> */}
+  {/* </> ); */}
+// }
+
+export async function CarImage() {
+  // console.log('carSrc: ', carSrc);
+  const carSrc = data && `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`;
+
+  return (
+    <Image
+      width={300} height={0}
+      className="w-96 object-contain"
+      src={ carSrc }
+      alt="movie poster"
+    />
+  );
 }
 
 // // #endregion tmdb-api

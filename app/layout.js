@@ -1,4 +1,4 @@
-import { ThemeWrapper } from "./context";
+import { ImageWrapper, ThemeWrapper } from "./context";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Body from "@/components/Body"
@@ -14,9 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ThemeWrapper>
+      <ImageWrapper>
         <Body nextFont={ inter.className }>
           { children }
         </Body>
+      </ImageWrapper>
       </ThemeWrapper>
     </html>
   );

@@ -1,13 +1,15 @@
 
 'use client'
-import FetchTest from "./fetchtest/page";
+// import { CarImage } from "./fetchtest/page";
 
-import { useThemeContext } from '@/app/context'
+import { useThemeContext, useImageContext } from '@/app/context'
 import ProjectItem from "@/components/ProjectItem";
 import Link from 'next/link';
+import Image from "next/image";
 
 export default function Home() {
   const { theme } = useThemeContext();
+  const { image } = useImageContext();
 
   return (
     <main className={`
@@ -15,7 +17,14 @@ export default function Home() {
       overflow-y-scroll
       bg-blend-darken ${theme.bgBTheme}
     `}>
-      <FetchTest />
+      {/* <FetchTest src={`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`} /> */}
+      {/* <CarImage /> */}
+      <Image
+        src={image}
+        alt="movie poster"
+        width={300}
+        height={0}
+      />
       <Link href="/dynamictest/1">Dynamic link ✨</Link>
       <ProjectItem />
       <ProjectItem />

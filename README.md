@@ -3,6 +3,8 @@
 
 - [ ] fetch en api med billeder til projekter, som også ændres med context (bare for at lære det) (gpt)
 
+- [ ] Før dynamisk data (img url) videre fra forsiden til en underside ("dynamictest" route't?)
+
 - [ ] [søgefunktion](https://nextjs.org/docs/app/api-reference/functions/use-search-params)
 
 - [ ] Vercel giver "ReferenceError: localStorage is not defined" og vil ikke hoste commits med local storage - fix det på en bedre måde end sidste forsøg..

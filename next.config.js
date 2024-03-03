@@ -4,7 +4,10 @@ module.exports = {
       {
         protocol: 'https',
         hostname: 'api.unsplash.com',
-        port: ''
+      },
+      {
+        protocol: 'https',
+        hostname: 'image.tmdb.org',
       },
     ],
   },

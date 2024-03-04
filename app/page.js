@@ -24,6 +24,10 @@ export default function Home() {
         alt="movie poster"
         width={300}
         height={0}
+        className='
+          w-96 object-contain
+          m-4 coolCorners
+        '
       />
       <Link href="/dynamictest/1">Dynamic link ✨</Link>
       <ProjectItem />

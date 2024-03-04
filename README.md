@@ -1,9 +1,13 @@
 
 ## todo
 
-- [ ] fetch en api med billeder til projekter, som også ændres med context (bare for at lære det) (gpt)
+- [ ] fetching, context og dynamiske routes :
 
-- [ ] Før dynamisk data (img url) videre fra forsiden til en underside ("dynamictest" route't?)
+    - [ ] Lav et loop som indsætter billeder (3?) med paths i stedet for at indsætte en hardcoded path til et eksisterende Image component
+
+    - [ ] Før dynamisk data (img url) videre fra forsiden til en underside ("dynamictest" route't?)
+
+    - [ ] En knap der ændre billedernes sti med context
 
 - [ ] [søgefunktion](https://nextjs.org/docs/app/api-reference/functions/use-search-params)
 

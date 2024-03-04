@@ -2,6 +2,8 @@ import { ImageWrapper, ThemeWrapper } from "./context";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Body from "@/components/Body"
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,11 +16,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ThemeWrapper>
-      <ImageWrapper>
-        <Body nextFont={ inter.className }>
-          { children }
-        </Body>
-      </ImageWrapper>
+        <ImageWrapper>
+          {/* Den her loading kræver vist noget mere setup.. */}
+          <Suspense fallback={<Loading />}>
+            <Body nextFont={ inter.className }>
+              { children }
+            </Body>
+          </Suspense>
+        </ImageWrapper>
       </ThemeWrapper>
     </html>
   );

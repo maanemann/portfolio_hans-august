@@ -4,6 +4,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
+import Image from "next/image";
 
 
 // // #region themeContext
@@ -54,35 +55,95 @@ export function useThemeContext() {
 // // #endregion themeContext
 
 
-// // #region imageContext
+// // #region imageLoopContext
 
-const imageContext = createContext();
+const imageLoopContext = createContext();
 
-export function ImageWrapper({ children }) {
-  const [image, setImage] = useState(false)
-  // const [image2, setImage2] = useState(false)
+export function ImageLoopWrapper({ children }) {
+  const [images, setImages] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
-      const apiUrl = `http://api.themoviedb.org/3/movie/02?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
-      const res = await fetch(apiUrl);
-      const data = await res.json();
-      setImage(`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`);
+      const ids = ['02', '03', '05'];
+      const fetchedImages = [];
+
+      // `for...of` venter på at forrige proces sættes i gang, og `await` venter på at processen er færdig (resolved/rejected) (?) :
+      for (let id of ids) {
+        const apiUrl = `http://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        // med push metoden tilføjes det nyt element til fetchedImages aray'et, (som var tomt til at begynde med) :
+        fetchedImages.push(`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`);
+      }
+
+      setImages(fetchedImages);
     };
 
     fetchData();
-  }, [image]);
+    // i dependencies array'et kunne man indsætte 'images', hvis 'setImages' blev brugt senere, fx som følge af en brugerinteraktion (?) :
+  }, []);
 
   return(
-    <imageContext.Provider value={{ image }}>
+    <imageLoopContext.Provider value={{ images }}>
       { children }
-    </imageContext.Provider>
+    </imageLoopContext.Provider>
   )
 };
 
-export function useImageContext() {
-  return useContext(imageContext);
+export function ImageLoopComponent() {
+  const { images } = useImageLoopContext();
+
+  return (
+    <>
+      {/* Her er brugt `map`, fordi den returnerer et nyt array (i modsætning til fx `for...of` (og `forEach?)), og den er ikke sekventiel (asynkron(?)), hvilket er fint her, hvor elementerne ikke behøver vente på hinanden (modsat promises i fetch requests) (mere om `index` mm. > read-more > *1*) : */}
+      {images.map((image, index) => (
+        <Image
+          key={index} src={image}
+          width={300} height={300}
+          alt={`Movie poster ${index}`}
+          className="w-96 object-contain m-4 coolCorners"
+        />
+      ))}
+    </>
+  );
 }
+
+export function useImageLoopContext() {
+  return useContext(imageLoopContext);
+}
+
+// // #endregion imageLoopContext
+
+
+// // #region imageContext
+
+// const imageContext = createContext();
+
+// export function ImageWrapper({ children }) {
+//   const [image, setImage] = useState(false)
+//   // const [image2, setImage2] = useState(false)
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       const apiUrl = `http://api.themoviedb.org/3/movie/02?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
+//       const res = await fetch(apiUrl);
+//       const data = await res.json();
+//       setImage(`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`);
+//     };
+
+//     fetchData();
+//   }, [image]);
+
+//   return(
+//     <imageContext.Provider value={{ image }}>
+//       { children }
+//     </imageContext.Provider>
+//   )
+// };
+
+// export function useImageContext() {
+//   return useContext(imageContext);
+// }
 
 // // #endregion imageContext
 
@@ -117,3 +178,10 @@ export function useImageContext() {
 // }
 
 // // #endregion tutorialShit
+
+
+// // #region read-more
+
+// *1* : ´map´ tager en callback funktion som argument, og denne funktion kan tage tre argumenter: det aktuelle element, index og det oprindelige array. Her er brugt de første to argumenter. Index er en nul-baseret værdi, som repræsenterer det aktuelle element i array'et, hvilket react bruger til at opdatere DOM korrekt.
+
+// // #endregion read-more

@@ -3,11 +3,15 @@
 
 - [ ] fetching, context og dynamiske routes :
 
-    - [ ] Lav et loop som indsætter billeder (3?) med paths i stedet for at indsætte en hardcoded path til et eksisterende Image component
-
     - [ ] Før dynamisk data (img url) videre fra forsiden til en underside ("dynamictest" route't?)
 
     - [ ] En knap der ændre billedernes sti med context
+    
+        - [ ] Måske themeContext kan definere stien ved hjælp af en condition i imageLoopContext (ImageLoopWrapper > useEffect > fetchData) ala `if(theme.bgATheme === bg-ockerdust-900){...}; else(...)`
+
+    ---
+
+    - [x] Lav et loop som indsætter billeder (3?) med paths i stedet for at indsætte en hardcoded path til et eksisterende Image component
 
 - [ ] [søgefunktion](https://nextjs.org/docs/app/api-reference/functions/use-search-params)
 

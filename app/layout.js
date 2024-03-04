@@ -1,4 +1,4 @@
-import { ImageWrapper, ThemeWrapper } from "./context";
+import { ImageLoopWrapper, ThemeWrapper } from "./context";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Body from "@/components/Body"
@@ -16,14 +16,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ThemeWrapper>
-        <ImageWrapper>
+        <ImageLoopWrapper>
+        {/* <ImageWrapper> */}
           {/* Den her loading kræver vist noget mere setup.. */}
           <Suspense fallback={<Loading />}>
             <Body nextFont={ inter.className }>
               { children }
             </Body>
           </Suspense>
-        </ImageWrapper>
+        </ImageLoopWrapper>
+        {/* </ImageWrapper> */}
       </ThemeWrapper>
     </html>
   );

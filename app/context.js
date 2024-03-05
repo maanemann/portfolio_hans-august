@@ -5,6 +5,7 @@
 
 import { createContext, useContext, useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 
 // // #region themeContext
@@ -60,49 +61,58 @@ export function useThemeContext() {
 const imageLoopContext = createContext();
 
 export function ImageLoopWrapper({ children }) {
-  const [images, setImages] = useState([])
+  const [films, setFilms] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
       const ids = ['02', '03', '05'];
-      const fetchedImages = [];
+      const fetchedFilms = [];
 
       // `for...of` venter på at forrige proces sættes i gang, og `await` venter på at processen er færdig (resolved/rejected) (?) :
       for (let id of ids) {
         const apiUrl = `http://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
         const res = await fetch(apiUrl);
         const data = await res.json();
-        // med push metoden tilføjes det nyt element til fetchedImages aray'et, (som var tomt til at begynde med) :
-        fetchedImages.push(`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`);
+        // med push metoden tilføjes det nyt element til fetchedFilms aray'et, (som var tomt til at begynde med) :
+        fetchedFilms.push({
+          id,
+          image: `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`
+        });
       }
 
-      setImages(fetchedImages);
+      setFilms(fetchedFilms);
     };
 
     fetchData();
-    // i dependencies array'et kunne man indsætte 'images', hvis 'setImages' blev brugt senere, fx som følge af en brugerinteraktion (?) :
+    // i dependencies array'et kunne man indsætte 'films', hvis 'setFilms' blev brugt senere, fx som følge af en brugerinteraktion (?) :
   }, []);
 
   return(
-    <imageLoopContext.Provider value={{ images }}>
+    <imageLoopContext.Provider value={{ films }}>
       { children }
     </imageLoopContext.Provider>
   )
 };
 
 export function ImageLoopComponent() {
-  const { images } = useImageLoopContext();
+  const { films } = useImageLoopContext();
 
   return (
     <>
       {/* Her er brugt `map`, fordi den returnerer et nyt array (i modsætning til fx `for...of` (og `forEach?)), og den er ikke sekventiel (asynkron(?)), hvilket er fint her, hvor elementerne ikke behøver vente på hinanden (modsat promises i fetch requests) (mere om `index` mm. > read-more > *1*) : */}
-      {images.map((image, index) => (
-        <Image
-          key={index} src={image}
-          width={300} height={300}
-          alt={`Movie poster ${index}`}
-          className="w-96 object-contain m-4 coolCorners"
-        />
+      {films.map((film, index) => (
+        <Link
+          href={`/dynamictest/${film.id}`}
+          key={index}
+          className="w-fit h-fit m-4"
+        >
+          <Image
+            src={film.image}
+            width={300} height={300}
+            alt={`Movie poster ${index}`}
+            className="w-96 object-cover coolCorners"
+          />
+        </Link>
       ))}
     </>
   );

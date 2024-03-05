@@ -4,6 +4,10 @@
 - [ ] fetching, context og dynamiske routes :
 
     - [ ] Før dynamisk data (img url) videre fra forsiden til en underside ("dynamictest" route't?)
+    
+        - [ ] 👈 Se vejledningen ude til venstre ...
+    
+    - [ ] Find ud af hvorfor vercel ikke vil hoste projektet atm, og fix det..
 
     - [ ] En knap der ændre billedernes sti med context
     

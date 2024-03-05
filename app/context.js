@@ -73,10 +73,14 @@ export function ImageLoopWrapper({ children }) {
         const apiUrl = `http://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
         const res = await fetch(apiUrl);
         const data = await res.json();
+
+        // console.log(data);
         // med push metoden tilføjes det nyt element til fetchedFilms aray'et, (som var tomt til at begynde med) :
         fetchedFilms.push({
           id,
-          image: `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`
+          image: `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`,
+          title: data.original_title,
+          overview: data.overview,
         });
       }
 
@@ -93,6 +97,10 @@ export function ImageLoopWrapper({ children }) {
     </imageLoopContext.Provider>
   )
 };
+
+export function useImageLoopContext() {
+  return useContext(imageLoopContext);
+}
 
 export function ImageLoopComponent() {
   const { films } = useImageLoopContext();
@@ -116,10 +124,6 @@ export function ImageLoopComponent() {
       ))}
     </>
   );
-}
-
-export function useImageLoopContext() {
-  return useContext(imageLoopContext);
 }
 
 // // #endregion imageLoopContext

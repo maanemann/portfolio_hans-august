@@ -61,6 +61,7 @@ export function useThemeContext() {
 
 const imageLoopContext = createContext();
 
+export const dynamic = 'force-dynamic';
 export function ImageLoopWrapper({ children }) {
   const [films, setFilms] = useState([])
 

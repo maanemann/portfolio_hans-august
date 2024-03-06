@@ -12,6 +12,7 @@ const Body = ({ nextFont, children }) => {
     setTheme(prevTheme => ({
       // Spread operatoren (`...`) samler alle resterende key-value pairs og overfører dem til den nye state :
       ...prevTheme,
+      themeTitle: "ockerdust",
       bgATheme: "bg-ockerdust-900",
       bgBTheme: "bg-ockerdust-950",
       borderATheme: "border-ockerdust-700",
@@ -23,6 +24,7 @@ const Body = ({ nextFont, children }) => {
   const applyAqua = () => {
     setTheme(prevTheme => ({
       ...prevTheme,
+      themeTitle: "aqua",
       bgATheme: "bg-aqua-900",
       bgBTheme: "bg-aqua-950",
       borderATheme: "border-aqua-700",

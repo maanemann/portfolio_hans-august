@@ -1,18 +1,18 @@
 
 ## todo
 
-- [ ] fetching, context og dynamiske routes :
-
-      - [ ] Find ud af hvorfor vercel ikke vil hoste projektet atm, og fix det..
-
-      - [ ] En knap der ændre billedernes sti med context
-
-          - [ ] Måske themeContext kan definere stien ved hjælp af en condition i imageLoopContext (ImageLoopWrapper > useEffect > fetchData) ala `if(theme.bgATheme === bg-ockerdust-900){...}; else(...)`
-
 - [ ] [søgefunktion](https://nextjs.org/docs/app/api-reference/functions/use-search-params)
 
 
 ### done
+
+- [x] Måske themeContext kan definere stien ved hjælp af en condition i imageLoopContext (ImageLoopWrapper > useEffect > fetchData) ala `if(theme.bgATheme === bg-ockerdust-900){...}; else(...)`
+
+- [x] En knap der ændre billedernes sti med context
+
+- [x] fetching, context og dynamiske routes :
+
+- [x] Find ud af hvorfor vercel ikke vil hoste projektet atm, og fix det..
 
 - [x] Før dynamisk data (img url) videre fra forsiden til en underside ("dynamictest" route't?)
 

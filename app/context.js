@@ -1,6 +1,4 @@
 
-// Se tutorial link i readme. Jeg har prøvet at konvertere fra ts til js
-
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
@@ -26,6 +24,7 @@ export function ThemeWrapper({ children }) {
     // }
     // // Hent state fra local storage, hvis det findes, ellers brug default state :
     // return savedTheme ? JSON.parse(savedTheme) : {
+      themeTitle: 'ockerdust',
       bgATheme: 'bg-ockerdust-900',
       bgBTheme: 'bg-ockerdust-950',
       borderATheme: 'border-ockerdust-700',
@@ -63,11 +62,19 @@ const imageLoopContext = createContext();
 
 // export const dynamic = 'force-dynamic';
 export function ImageLoopWrapper({ children }) {
+  // Så film kan skiftes ud baseret på theme state :
+  const { theme } = useThemeContext();
   const [films, setFilms] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
-      const ids = ['02', '03', '05'];
+      let ids;
+      if (theme.themeTitle === 'ockerdust') {
+        ids = ['02', '03', '05'];
+      } else {
+        ids = ['06', '11', '12'];
+      }
+
       const fetchedFilms = [];
 
       // `for...of` venter på at forrige proces sættes i gang, og `await` venter på at processen er færdig (resolved/rejected) (?) :
@@ -90,8 +97,8 @@ export function ImageLoopWrapper({ children }) {
     };
 
     fetchData();
-    // i dependencies array'et kunne man indsætte 'films', hvis 'setFilms' blev brugt senere, fx som følge af en brugerinteraktion (?) :
-  }, []);
+    // Hold øje med theme state, så film kan opdateres, når theme state ændres :
+  }, [theme]);
 
   return(
     <imageLoopContext.Provider value={{ films }}>

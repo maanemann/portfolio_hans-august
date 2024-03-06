@@ -72,7 +72,7 @@ export function ImageLoopWrapper({ children }) {
 
       // `for...of` venter på at forrige proces sættes i gang, og `await` venter på at processen er færdig (resolved/rejected) (?) :
       for (let id of ids) {
-        const apiUrl = `http://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
+        const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
         const res = await fetch(apiUrl);
         const data = await res.json();
 

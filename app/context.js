@@ -30,6 +30,7 @@ export function ThemeWrapper({ children }) {
       bgBTheme: 'bg-ockerdust-950',
       borderATheme: 'border-ockerdust-700',
       textATheme: 'text-ockerdust-700',
+      textBrightTheme: 'text-ockerdust-200',
 
       // fetch test :
       // imgPath: `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`
@@ -102,7 +103,7 @@ export function useImageLoopContext() {
   return useContext(imageLoopContext);
 }
 
-export function ImageLoopComponent() {
+export function ImageLoopComponent({ linkClass, imageClass }) {
   const { films } = useImageLoopContext();
 
   return (
@@ -112,13 +113,13 @@ export function ImageLoopComponent() {
         <Link
           href={`/dynamictest/${film.id}`}
           key={index}
-          className="w-fit h-fit m-4"
+          className={ linkClass }
         >
           <Image
             src={film.image}
             width={300} height={300}
             alt={`Movie poster ${index}`}
-            className="w-96 object-cover coolCorners"
+            className={ imageClass }
           />
         </Link>
       ))}

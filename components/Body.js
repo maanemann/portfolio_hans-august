@@ -15,7 +15,8 @@ const Body = ({ nextFont, children }) => {
       bgATheme: "bg-ockerdust-900",
       bgBTheme: "bg-ockerdust-950",
       borderATheme: "border-ockerdust-700",
-      textATheme: 'text-ockerdust-700'
+      textATheme: 'text-ockerdust-700',
+      textBrightTheme: 'text-ockerdust-200',
     }));
   };
 
@@ -25,7 +26,8 @@ const Body = ({ nextFont, children }) => {
       bgATheme: "bg-aqua-900",
       bgBTheme: "bg-aqua-950",
       borderATheme: "border-aqua-700",
-      textATheme: 'text-aqua-700'
+      textATheme: 'text-aqua-700',
+      textBrightTheme: 'text-aqua-200',
     }));
   };
 

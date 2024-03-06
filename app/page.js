@@ -5,11 +5,9 @@
 import { useThemeContext, ImageLoopComponent } from '@/app/context'
 import ProjectItem from "@/components/ProjectItem";
 import Link from 'next/link';
-// import Image from "next/image";
 
 export default function Home() {
   const { theme } = useThemeContext();
-  // const { image } = useImageContext();
 
   return (
     <main className={`
@@ -17,18 +15,21 @@ export default function Home() {
       overflow-y-scroll
       bg-blend-darken ${theme.bgBTheme}
     `}>
-      <ImageLoopComponent />
-      {/* <Image
-        src={image}
-        alt="movie poster"
-        width={300}
-        height={0}
-        className='
-          w-96 object-contain
-          m-4 coolCorners
-        '
-      /> */}
-      <Link href="/dynamictest/1">Dynamic link ✨</Link>
+      <section className='
+        grid gap-[3px] py-[3px]
+        grid-cols-2 grid-flow-row
+      '>
+        <ImageLoopComponent
+          linkClass="
+            w-full h-fit
+          "
+          imageClass="
+            w-full
+            object-cover
+            coolCorners
+          "
+        />
+      </section>
       <ProjectItem />
       <ProjectItem />
     </main>

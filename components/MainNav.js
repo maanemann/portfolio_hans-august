@@ -22,7 +22,7 @@ const MainNav = () => {
       `}
     >
       <Link
-        href="#"
+        href="/#"
         className="
           block mb-16
         "

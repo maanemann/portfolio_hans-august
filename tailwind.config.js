@@ -16,6 +16,7 @@ module.exports = {
     },
     // https://www.tints.dev/?brick=FAF5F0&ocker=F2DCA7&ockerdust=F1D7A6&aqua=F5FFF7
     "colors": {
+      "white": "#fff",
       // ba:50 h:-4 s:0 lima:100 limi:-1 :
       "ocker": {
         50: "#F2DCA7",

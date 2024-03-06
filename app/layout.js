@@ -16,16 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ThemeWrapper>
-        <ImageLoopWrapper>
-        {/* <ImageWrapper> */}
-          {/* Den her loading kræver vist noget mere setup.. */}
-          <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loading />}>
+          <ImageLoopWrapper>
             <Body nextFont={ inter.className }>
               { children }
             </Body>
-          </Suspense>
-        </ImageLoopWrapper>
-        {/* </ImageWrapper> */}
+          </ImageLoopWrapper>
+        </Suspense>
       </ThemeWrapper>
     </html>
   );

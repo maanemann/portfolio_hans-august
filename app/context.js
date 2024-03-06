@@ -37,10 +37,10 @@ export function ThemeWrapper({ children }) {
   //   };
   });
 
-  useEffect(() => {
-    // Save the theme to local storage whenever it changes
-    localStorage.setItem('theme', JSON.stringify(theme));
-  }, [theme]);
+  // useEffect(() => {
+  //   // Save the theme to local storage whenever it changes
+  //   localStorage.setItem('theme', JSON.stringify(theme));
+  // }, [theme]);
 
   return(
     // <themeContext.Provider value={{...this.theme}}>

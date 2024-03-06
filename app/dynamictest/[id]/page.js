@@ -12,7 +12,13 @@ const DynamicIdTest = ({ params }) => {
   const film = films.find(film => film.id === params.id)
 
   if (!film) {
-    return "There was a problem finding the data on the database. Or maybe your internet is really slow..?";
+    return <h1
+    className={`
+      text-xl mx-4 my-12
+      ${theme.textBrightTheme}
+    `}>
+      Still loading...
+    </h1>
   }
 
   return (

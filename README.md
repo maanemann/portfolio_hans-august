@@ -1,20 +1,22 @@
 
 ## todo
 
-- [ ] [søgefunktion](https://nextjs.org/docs/app/api-reference/functions/use-search-params)
-
 - [ ] Undersøg fejl og advarsler i konsollen (og fix dem hvis muligt)
-
-    - [ ] Resultater skal ikke vises, hvis input er tomt
-
-    - [ ] Den skal ikke være case sensitive
 
 - [ ] Vis loading mens der loades (delvist done) og error når indholdet ikke vises (i stedet for stadig at vise loader)
 
 - [ ] Gør så filmene bliver fundet på en smartere måde end fra et hardcoded array (måske id'er konverteret til tal filtreret med større/mindre-end)
 
+- [ ] Få copilot til at hjælpe med Image properties (detail cover må godt være højere res, hvis tilgængelig)
+
 
 ### done
+
+- [x] [søgefunktion](https://nextjs.org/docs/app/api-reference/functions/use-search-params)
+
+- [x] Den skal ikke være case sensitive
+
+- [x] Resultater skal ikke vises, hvis input er tomt (opnået, men spørg lige om det giver mening at gøre det sådan)
 
 - [x] Måske themeContext kan definere stien ved hjælp af en condition i imageLoopContext (ImageLoopWrapper > useEffect > fetchData) ala `if(theme.bgATheme === bg-ockerdust-900){...}; else(...)`
 

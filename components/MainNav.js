@@ -11,12 +11,13 @@ const MainNav = () => {
   const { theme } = useThemeContext();
   const { films } = useImageLoopContext();
 
-  const filteredFilms = films.filter(
-    film =>
-      film.title.includes(searchTerm)
-    ||
-      film.overview.includes(searchTerm)
-  );
+  const filteredFilms = searchTerm !== ""
+    ? films.filter(film =>
+        // filteret gøres case-insensitive ved at konvertere alle strings til lowercase :
+        film.title.toLowerCase().includes(searchTerm.toLowerCase())
+        || film.overview.toLowerCase().includes(searchTerm.toLowerCase()))
+    // Hvis søgefeltet er tomt vises ingenting (tom array) :
+    : [];
 
   // Denne useEffect logger bare, når der er ændringer i theme konteksten :
   // useEffect(() => {
@@ -48,8 +49,10 @@ const MainNav = () => {
       {/* searchTerm (state ↑) sættes som default value(?), og når value ændres, reflekteres det i searchTerm */}
       <input
         type="text"
+        // searchTerm som value gør dette til et "controlled component" (form element in react hvis value kontrolleres af state), og sikrer at input er 'i sync' med searchTerm (men det virker også uden) :
         value={searchTerm}
         placeholder="Seach !? <3"
+        // dette "controlled component" er i sync med searchTerm med `onChange` :
         onChange={
           (e) => setSearchTerm(e.target.value)
         }
@@ -58,17 +61,19 @@ const MainNav = () => {
           ${theme.textReverseTheme}
           block -ml-6 w-[calc(100%+3rem)]
           px-4 py-1 rounded-full mb-3
+          focus:outline-none
         `}
       />
 
-      {/* Søgeresultater.. : */}
+      {/* Søgeresultater.. (index er nødvendig for at react har en id at gå efter til hver item) : */}
       {filteredFilms.map((film, index) => (
         <Link
           href={`/dynamictest/${film.id}`}
           key={index}
           className={`
             ${theme.textBrightTheme}
-            leading-8
+            block overflow-x-hidden
+            w-max leading-8
           `}
         >
           {film.title}

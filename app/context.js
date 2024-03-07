@@ -131,6 +131,8 @@ export function ImageLoopComponent({ linkClass, imageClass }) {
             width={300} height={300}
             alt={`Movie poster ${index}`}
             className={ imageClass }
+            // `priority` gør billedet til et "eager" image, som hentes med det samme, og ikke først når det er i view = lazily loaded (default) :
+            priority
           />
         </Link>
       ))}

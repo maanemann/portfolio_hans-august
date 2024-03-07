@@ -32,6 +32,7 @@ const DynamicIdTest = ({ params }) => {
           object-cover object-top
           coolCorners
         "
+        priority
       />
       <h1 className={`
         text-5xl mx-4 my-12

@@ -1,6 +1,5 @@
 
 'use client'
-// import { CarImage } from "./fetchtest/page";
 
 import { useThemeContext, ImageLoopComponent } from '@/app/context'
 import ProjectItem from "@/components/ProjectItem";

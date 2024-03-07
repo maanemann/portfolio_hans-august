@@ -1,7 +1,6 @@
 
 'use client'
 
-// import { useEffect } from "react";
 import { useThemeContext, useImageLoopContext } from "@/app/context";
 import { useState } from "react";
 import Link from "next/link";
@@ -18,11 +17,6 @@ const MainNav = () => {
         || film.overview.toLowerCase().includes(searchTerm.toLowerCase()))
     // Hvis søgefeltet er tomt vises ingenting (tom array) :
     : [];
-
-  // Denne useEffect logger bare, når der er ændringer i theme konteksten :
-  // useEffect(() => {
-  //   console.log("Theme updated:", theme);
-  // }, [theme]);
 
   return (
     <nav
@@ -46,7 +40,7 @@ const MainNav = () => {
         `} />
       </Link>
 
-      {/* searchTerm (state ↑) sættes som default value(?), og når value ændres, reflekteres det i searchTerm */}
+      {/* når value ændres, reflekteres det i searchTerm (state ↑) : */}
       <input
         type="text"
         // searchTerm som value gør dette til et "controlled component" (form element in react hvis value kontrolleres af state), og sikrer at input er 'i sync' med searchTerm (men det virker også uden) :

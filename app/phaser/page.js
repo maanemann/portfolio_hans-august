@@ -1,11 +1,13 @@
 
 'use client'
 
-import React from 'react';
+import { useEffect, useRef } from 'react';
 import Phaser from 'phaser';
 
-class PhaserGame extends React.Component {
-  componentDidMount() {
+const PhaserGame = () => {
+  const gameRef = useRef(null);
+
+  useEffect(() => {
     const config = {
       type: Phaser.AUTO,
       width: 800,
@@ -17,39 +19,41 @@ class PhaserGame extends React.Component {
         }
       },
       scene: {
-        preload: this.preload,
-        create: this.create,
-        update: this.update
+        preload: preload,
+        create: create,
+        update: update
       }
     };
 
-    this.game = new Phaser.Game(config);
-  }
+    gameRef.current = new Phaser.Game(config);
 
-  componentWillUnmount() {
-    this.game.destroy(true);
-  }
+    return () => {
+      if (gameRef.current) {
+        gameRef.current.destroy(true);
+      }
+    };
+  }, []);
 
-  preload() {
+  function preload() {
     // Load any game assets here
     // For example, you might load an image to use as your player character:
     this.load.image('player', 'assets/player.png');
   }
-
-  create() {
+  
+  function create() {
     // Create game objects here
     // For example, you might create a player character like this:
     this.player = this.physics.add.sprite(100, 100, 'player');
-
+  
     // And you could create a platform like this:
     this.platforms = this.physics.add.staticGroup();
     this.platforms.create(400, 568, 'platform').setScale(2).refreshBody();
-
+  
      // Add this line to create the cursors object
      this.cursors = this.input.keyboard.createCursorKeys();
   }
-
-  update() {
+  
+  function update() {
     // Update game objects here
     // For example, you might move the player character when the arrow keys are pressed:
     if (this.cursors.left.isDown) { this.player.setVelocityX(-160); }
@@ -58,64 +62,7 @@ class PhaserGame extends React.Component {
     if (this.cursors.up.isDown && this.player.body.touching.down) { this.player.setVelocityY(-330); }
   }
 
-  render() {
-    return <div id="phaser-game" />;
-  }
-}
+  return <div id="phaser-game" />;
+};
 
 export default PhaserGame;
-
-// -----------------------------------
-
-// import Phaser from 'phaser';
-
-// class MyGame extends Phaser.Scene
-// {
-//     constructor ()
-//     {
-//         super();
-//     }
-
-//     preload ()
-//     {
-//         // Load any game assets here
-//         // For example, you might load an image to use as your player character:
-//         this.load.image('player', 'assets/player.png');
-//     }
-
-//     create ()
-//     {
-//         // Create your game objects here
-//         // For example, you might create a player character like this:
-//         this.player = this.physics.add.sprite(100, 100, 'player');
-
-//         // And you could create a platform like this:
-//         this.platforms = this.physics.add.staticGroup();
-//         this.platforms.create(400, 568, 'platform').setScale(2).refreshBody();
-//     }
-
-//     update ()
-//     {
-//         // Update your game objects here
-//         // For example, you might move the player character when the arrow keys are pressed:
-//         if (this.cursors.left.isDown) { this.player.setVelocityX(-160); }
-//         else if (this.cursors.right.isDown) { this.player.setVelocityX(160); }
-//         else { this.player.setVelocityX(0); }
-//         if (this.cursors.up.isDown && this.player.body.touching.down) { this.player.setVelocityY(-330); }
-//     }
-// }
-
-// const config = {
-//     type: Phaser.AUTO,
-//     width: 800,
-//     height: 600,
-//     physics: {
-//         default: 'arcade',
-//         arcade: {
-//             gravity: { y: 200 }
-//         }
-//     },
-//     scene: MyGame
-// };
-
-// const game = new Phaser.Game(config);

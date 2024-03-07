@@ -40,6 +40,13 @@ const MainNav = () => {
         `} />
       </Link>
 
+      <Link
+        href="/phaser"
+        className="text-4xl"
+      >
+        🕹
+      </Link>
+
       {/* når value ændres, reflekteres det i searchTerm (state ↑) : */}
       <input
         type="text"

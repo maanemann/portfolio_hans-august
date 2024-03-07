@@ -29,7 +29,7 @@ const DynamicIdTest = ({ params }) => {
         alt="Movie poster"
         className="
           w-full h-96
-          object-cover
+          object-cover object-top
           coolCorners
         "
       />

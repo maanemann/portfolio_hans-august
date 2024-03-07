@@ -18,6 +18,8 @@ const Body = ({ nextFont, children }) => {
       borderATheme: "border-ockerdust-700",
       textATheme: 'text-ockerdust-700',
       textBrightTheme: 'text-ockerdust-200',
+      bgReverseTheme: 'bg-ockerdust-700',
+      textReverseTheme: 'text-ockerdust-950',
     }));
   };
 
@@ -30,6 +32,8 @@ const Body = ({ nextFont, children }) => {
       borderATheme: "border-aqua-700",
       textATheme: 'text-aqua-700',
       textBrightTheme: 'text-aqua-200',
+      bgReverseTheme: 'bg-aqua-700',
+      textReverseTheme: 'text-aqua-950',
     }));
   };
 

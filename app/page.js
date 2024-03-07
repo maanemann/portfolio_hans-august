@@ -25,7 +25,7 @@ export default function Home() {
           "
           imageClass="
             w-full
-            object-cover
+            object-cover object-top
             coolCorners
           "
         />

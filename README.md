@@ -3,6 +3,16 @@
 
 - [ ] [søgefunktion](https://nextjs.org/docs/app/api-reference/functions/use-search-params)
 
+- [ ] Undersøg fejl og advarsler i konsollen (og fix dem hvis muligt)
+
+    - [ ] Resultater skal ikke vises, hvis input er tomt
+
+    - [ ] Den skal ikke være case sensitive
+
+- [ ] Vis loading mens der loades (delvist done) og error når indholdet ikke vises (i stedet for stadig at vise loader)
+
+- [ ] Gør så filmene bliver fundet på en smartere måde end fra et hardcoded array (måske id'er konverteret til tal filtreret med større/mindre-end)
+
 
 ### done
 

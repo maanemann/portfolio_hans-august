@@ -30,6 +30,9 @@ export function ThemeWrapper({ children }) {
       borderATheme: 'border-ockerdust-700',
       textATheme: 'text-ockerdust-700',
       textBrightTheme: 'text-ockerdust-200',
+      bgReverseTheme: 'bg-ockerdust-700',
+      textReverseTheme: 'text-ockerdust-950',
+      placehReverseTheme: 'text-ockerdust-950/50',
 
       // fetch test :
       // imgPath: `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`

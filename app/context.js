@@ -2,8 +2,6 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
 
 
 // // #region themeContext
@@ -114,98 +112,7 @@ export function useImageLoopContext() {
   return useContext(imageLoopContext);
 }
 
-export function ImageLoopComponent({ linkClass, imageClass }) {
-  const { films } = useImageLoopContext();
-
-  return (
-    <>
-      {/* Her er brugt `map`, fordi den returnerer et nyt array (i modsætning til fx `for...of` (og `forEach?)), og den er ikke sekventiel (asynkron(?)), hvilket er fint her, hvor elementerne ikke behøver vente på hinanden (modsat promises i fetch requests) (mere om `index` mm. > read-more > *1*) : */}
-      {films.map((film, index) => (
-        <Link
-          href={`/dynamictest/${film.id}`}
-          key={index}
-          className={ linkClass }
-        >
-          <Image
-            src={film.image}
-            width={300} height={300}
-            alt={`Movie poster ${index}`}
-            className={ imageClass }
-            // `priority` gør billedet til et "eager" image, som hentes med det samme, og ikke først når det er i view = lazily loaded (default) :
-            priority
-          />
-        </Link>
-      ))}
-    </>
-  );
-}
-
 // // #endregion imageLoopContext
-
-
-// // #region imageContext
-
-// const imageContext = createContext();
-
-// export function ImageWrapper({ children }) {
-//   const [image, setImage] = useState(false)
-//   // const [image2, setImage2] = useState(false)
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const apiUrl = `http://api.themoviedb.org/3/movie/02?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
-//       const res = await fetch(apiUrl);
-//       const data = await res.json();
-//       setImage(`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`);
-//     };
-
-//     fetchData();
-//   }, [image]);
-
-//   return(
-//     <imageContext.Provider value={{ image }}>
-//       { children }
-//     </imageContext.Provider>
-//   )
-// };
-
-// export function useImageContext() {
-//   return useContext(imageContext);
-// }
-
-// // #endregion imageContext
-
-
-// // #region tutorialShit
-
-// // Her deklareres konteksten (?) :
-// const AppContext = createContext();
-
-// export function AppWrapper({ children }) {
-
-//   const [name, setName] = useState("Lauphex"
-//     // {
-//     //   hello: 'world'
-//     //   // isGreen: true,
-//     //   // color: {text: '#33ee33', bg: '#22aa50'}
-//     // }
-//   );
-
-//   return(
-//     // Den her skal wrapes rundt om de elementer ({children}), som skal påvirkes af conteksten :
-//     <AppContext.Provider value={{ name, setName }}>
-//     {/* Netninja: Her er value et objekt med "spread syntax" ("..."), som giver den alt dataen i {state} : */}
-//     {/* <AppContext.Provider value={{...this.state}}> */}
-//       { children }
-//     </AppContext.Provider>
-//   )
-// }
-
-// export function useAppContext() {
-//   return useContext(AppContext);
-// }
-
-// // #endregion tutorialShit
 
 
 // // #region read-more

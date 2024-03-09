@@ -5,6 +5,7 @@ const Loading = () => {
     text-2xl
     text-white/75
     mix-blend-luminosity
+    h-32 w-32 bg-brick-700
   ">
     <h1>
       LOADING...

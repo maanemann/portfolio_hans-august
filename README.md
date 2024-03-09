@@ -3,7 +3,7 @@
 
 - [ ] Vis loading mens der loades (delvist done) og error når indholdet ikke vises (i stedet for stadig at vise loader)
 
-  - [ ] Brug måske (try...catch) finally som Nikolai snakkede om
+  - [ ] Prøv at flytte komponentet væk fra context og sådan noget
 
 - [ ] Gør så filmene bliver fundet på en smartere måde end fra et hardcoded array (måske id'er konverteret til tal filtreret med større/mindre-end)
 

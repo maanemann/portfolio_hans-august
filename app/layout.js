@@ -17,15 +17,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <ThemeWrapper>
-        <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading />}>
+        <ThemeWrapper>
           <ImageLoopWrapper>
             <Body nextFont={ inter.className }>
               { children }
             </Body>
           </ImageLoopWrapper>
-        </Suspense>
-      </ThemeWrapper>
+        </ThemeWrapper>
+      </Suspense>
     </html>
   );
 }

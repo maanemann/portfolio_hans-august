@@ -8,6 +8,10 @@
   }
 }
 
+* {
+  transition: 1s all;
+}
+
 :root {
   background: black
 }

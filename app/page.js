@@ -1,9 +1,12 @@
 
 'use client'
 
-import { useThemeContext, ImageLoopComponent } from '@/app/context'
+import { useThemeContext } from '@/app/context'
+import ImageLoop from '@/components/ImageLoop'
 import ProjectItem from "@/components/ProjectItem";
-import Link from 'next/link';
+// import Link from 'next/link';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 export default function Home() {
   const { theme } = useThemeContext();
@@ -18,16 +21,18 @@ export default function Home() {
         grid gap-[3px] py-[3px]
         grid-cols-2 grid-flow-row
       '>
-        <ImageLoopComponent
-          linkClass="
-            w-full h-fit
-          "
-          imageClass="
-            w-full
-            object-cover object-top
-            coolCorners
-          "
-        />
+        <Suspense fallback={<Loading />}>
+          <ImageLoop
+            linkClass="
+              w-full h-fit
+            "
+            imageClass="
+              w-full
+              object-cover object-top
+              coolCorners
+            "
+          />
+        </Suspense>
       </section>
       <ProjectItem />
       <ProjectItem />

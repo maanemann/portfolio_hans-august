@@ -67,7 +67,11 @@ const idsContext = createContext();
 export function IdsWrapper({ children }) {
   // Så film kan skiftes ud baseret på theme state :
   const { theme } = useThemeContext();
-  const [ids, setIds] = useState([]);
+  const [ids, setIds] = useState(
+    theme.themeTitle === 'ockerdust'
+    ? ['02', '03', '05']
+    : ['06', '11', '12']
+  );
 
   let newIds;
 

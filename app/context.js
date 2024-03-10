@@ -57,34 +57,61 @@ export function useThemeContext() {
 // // #endregion themeContext
 
 
+// // #region idsContext
+
+// const idsContext = createContext();
+
+// export function IdsWrapper({ children }) {
+//   const [ids, setIds] = useState(['02', '03', '05']);
+
+//   return(
+//     <idsContext.Provider value={{ ids }}>
+//       { children }
+//     </idsContext.Provider>
+//   )
+// }
+
+// export function useIdsContext() {
+//   return useContext(idsContext);
+// }
+
+// // #endregion idsContext
+
+
 // // #region imageLoopContext
 
 const imageLoopContext = createContext();
 
-// export const dynamic = 'force-dynamic';
 export function ImageLoopWrapper({ children }) {
   // Så film kan skiftes ud baseret på theme state :
   const { theme } = useThemeContext();
   const [films, setFilms] = useState([])
+  const [ids, setIds] = useState([]);
+
+  let newIds;
+
+  useEffect(() => {
+    if (theme.themeTitle === 'ockerdust') {
+      newIds = ['02', '03', '05'];
+    } else {
+      newIds = ['06', '11', '12'];
+    }
+
+    setIds(newIds);
+  }, [theme]);
 
   useEffect(() => {
     const fetchData = async () => {
-      let ids;
-      if (theme.themeTitle === 'ockerdust') {
-        ids = ['02', '03', '05'];
-      } else {
-        ids = ['06', '11', '12'];
-      }
 
       const fetchedFilms = [];
 
       // `for...of` venter på at forrige proces sættes i gang, og `await` venter på at processen er færdig (resolved/rejected) (?) :
-      for (let id of ids) {
+      for (let id of newIds) {
         const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
         const res = await fetch(apiUrl);
         const data = await res.json();
-
         // console.log(data);
+
         // med push metoden tilføjes det nyt element til fetchedFilms aray'et, (som var tomt til at begynde med) :
         fetchedFilms.push({
           id,
@@ -102,7 +129,7 @@ export function ImageLoopWrapper({ children }) {
   }, [theme]);
 
   return(
-    <imageLoopContext.Provider value={{ films }}>
+    <imageLoopContext.Provider value={{ films, ids }}>
       { children }
     </imageLoopContext.Provider>
   )

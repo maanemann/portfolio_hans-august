@@ -1,20 +1,22 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useImageLoopContext } from '@/app/context';
+import { useImageLoopContext, useIdsContext } from '@/app/context';
 import { useState, useEffect } from 'react';
 
 
 // // #region min-metode
 
 export default function ImageLoop({ linkClass, imageClass }) {
-  const { films, ids } = useImageLoopContext();
+  const { ids } = useIdsContext();
+  const { films } = useImageLoopContext();
 
   return (
     <>
       {ids.map((id) => {
         return(<div key={id} className='w-32 h-32 bg-ocker-300'></div>)
       })}
+
       {/* Her er brugt `map`, fordi den returnerer et nyt array (i modsætning til fx `for...of` (og `forEach?)), og den er ikke sekventiel (asynkron(?)), hvilket er fint her, hvor elementerne ikke behøver vente på hinanden (modsat promises i fetch requests) : */}
       {films.map((film) => (
         <Link

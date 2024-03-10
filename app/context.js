@@ -57,35 +57,16 @@ export function useThemeContext() {
 // // #endregion themeContext
 
 
+
+
+
 // // #region idsContext
 
-// const idsContext = createContext();
+const idsContext = createContext();
 
-// export function IdsWrapper({ children }) {
-//   const [ids, setIds] = useState(['02', '03', '05']);
-
-//   return(
-//     <idsContext.Provider value={{ ids }}>
-//       { children }
-//     </idsContext.Provider>
-//   )
-// }
-
-// export function useIdsContext() {
-//   return useContext(idsContext);
-// }
-
-// // #endregion idsContext
-
-
-// // #region imageLoopContext
-
-const imageLoopContext = createContext();
-
-export function ImageLoopWrapper({ children }) {
+export function IdsWrapper({ children }) {
   // Så film kan skiftes ud baseret på theme state :
   const { theme } = useThemeContext();
-  const [films, setFilms] = useState([])
   const [ids, setIds] = useState([]);
 
   let newIds;
@@ -100,13 +81,53 @@ export function ImageLoopWrapper({ children }) {
     setIds(newIds);
   }, [theme]);
 
+  return(
+    <idsContext.Provider value={{ ids }}>
+      { children }
+    </idsContext.Provider>
+  )
+}
+
+export function useIdsContext() {
+  return useContext(idsContext);
+}
+
+// // #endregion idsContext
+
+
+
+
+
+// // #region imageLoopContext
+
+const imageLoopContext = createContext();
+
+export function ImageLoopWrapper({ children }) {
+  // Så film kan skiftes ud baseret på theme state :
+  // const { theme } = useThemeContext();
+  const { ids } = useIdsContext();
+  const [films, setFilms] = useState([])
+  // const [ids, setIds] = useState([]);
+
+  // let newIds;
+
+  // useEffect(() => {
+  //   if (theme.themeTitle === 'ockerdust') {
+  //     newIds = ['02', '03', '05'];
+  //   } else {
+  //     newIds = ['06', '11', '12'];
+  //   }
+
+  //   setIds(newIds);
+  // }, [theme]);
+
   useEffect(() => {
     const fetchData = async () => {
 
       const fetchedFilms = [];
 
       // `for...of` venter på at forrige proces sættes i gang, og `await` venter på at processen er færdig (resolved/rejected) (?) :
-      for (let id of newIds) {
+      for (let id of ids) {
         const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
         const res = await fetch(apiUrl);
         const data = await res.json();
@@ -126,10 +147,10 @@ export function ImageLoopWrapper({ children }) {
 
     fetchData();
     // Hold øje med theme state, så film kan opdateres, når theme state ændres :
-  }, [theme]);
+  }, [ids]);
 
   return(
-    <imageLoopContext.Provider value={{ films, ids }}>
+    <imageLoopContext.Provider value={{ films }}>
       { children }
     </imageLoopContext.Provider>
   )
@@ -140,6 +161,9 @@ export function useImageLoopContext() {
 }
 
 // // #endregion imageLoopContext
+
+
+
 
 
 // // #region read-more

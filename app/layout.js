@@ -1,6 +1,6 @@
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { ThemeWrapper, IdsWrapper, ImageLoopWrapper } from "./context";
+import { ThemeWrapper, ImageLoopWrapper } from "./context";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Body from "@/components/Body"
@@ -19,13 +19,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Suspense fallback={<Loading />}>
         <ThemeWrapper>
-          <IdsWrapper>
+          {/* <IdsWrapper> */}
             <ImageLoopWrapper>
               <Body nextFont={ inter.className }>
                 { children }
               </Body>
             </ImageLoopWrapper>
-          </IdsWrapper>
+          {/* </IdsWrapper> */}
         </ThemeWrapper>
       </Suspense>
     </html>

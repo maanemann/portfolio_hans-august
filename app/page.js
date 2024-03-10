@@ -22,16 +22,7 @@ export default function Home() {
         grid-cols-2 grid-flow-row
       '>
         <Suspense fallback={<Loading />}>
-          <ImageLoop
-            linkClass="
-              w-full h-fit
-            "
-            imageClass="
-              w-full
-              object-cover object-top
-              coolCorners
-            "
-          />
+          <ImageLoop />
         </Suspense>
       </section>
       <ProjectItem />

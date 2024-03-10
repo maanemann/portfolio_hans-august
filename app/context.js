@@ -27,6 +27,7 @@ export function ThemeWrapper({ children }) {
       bgBTheme: 'bg-ockerdust-950',
       borderATheme: 'border-ockerdust-700',
       textATheme: 'text-ockerdust-700',
+      textBTheme: 'text-ockerdust-900',
       textBrightTheme: 'text-ockerdust-200',
       bgReverseTheme: 'bg-ockerdust-700',
       textReverseTheme: 'text-ockerdust-950',
@@ -62,39 +63,39 @@ export function useThemeContext() {
 
 // // #region idsContext
 
-const idsContext = createContext();
+// const idsContext = createContext();
 
-export function IdsWrapper({ children }) {
-  // Så film kan skiftes ud baseret på theme state :
-  const { theme } = useThemeContext();
-  const [ids, setIds] = useState(
-    theme.themeTitle === 'ockerdust'
-    ? ['02', '03', '05']
-    : ['06', '11', '12']
-  );
+// export function IdsWrapper({ children }) {
+//   // Så film kan skiftes ud baseret på theme state :
+//   const { theme } = useThemeContext();
+//   const [ids, setIds] = useState(
+//     theme.themeTitle === 'ockerdust'
+//     ? ['02', '03', '05']
+//     : ['06', '11', '12']
+//   );
 
-  let newIds;
+//   let newIds;
 
-  useEffect(() => {
-    if (theme.themeTitle === 'ockerdust') {
-      newIds = ['02', '03', '05'];
-    } else {
-      newIds = ['06', '11', '12'];
-    }
+//   useEffect(() => {
+//     if (theme.themeTitle === 'ockerdust') {
+//       newIds = ['02', '03', '05'];
+//     } else {
+//       newIds = ['06', '11', '12'];
+//     }
 
-    setIds(newIds);
-  }, [theme]);
+//     setIds(newIds);
+//   }, [theme]);
 
-  return(
-    <idsContext.Provider value={{ ids }}>
-      { children }
-    </idsContext.Provider>
-  )
-}
+//   return(
+//     <idsContext.Provider value={{ ids }}>
+//       { children }
+//     </idsContext.Provider>
+//   )
+// }
 
-export function useIdsContext() {
-  return useContext(idsContext);
-}
+// export function useIdsContext() {
+//   return useContext(idsContext);
+// }
 
 // // #endregion idsContext
 
@@ -108,30 +109,28 @@ const imageLoopContext = createContext();
 
 export function ImageLoopWrapper({ children }) {
   // Så film kan skiftes ud baseret på theme state :
-  // const { theme } = useThemeContext();
-  const { ids } = useIdsContext();
+  const { theme } = useThemeContext();
+  // const { ids } = useIdsContext();
   const [films, setFilms] = useState([])
-  // const [ids, setIds] = useState([]);
-
-  // let newIds;
-
-  // useEffect(() => {
-  //   if (theme.themeTitle === 'ockerdust') {
-  //     newIds = ['02', '03', '05'];
-  //   } else {
-  //     newIds = ['06', '11', '12'];
-  //   }
-
-  //   setIds(newIds);
-  // }, [theme]);
+  const [ids, setIds] = useState(
+    theme.themeTitle === 'ockerdust'
+    ? ['02', '03', '05']
+    : ['06', '11', '12']
+  );
 
   useEffect(() => {
     const fetchData = async () => {
+      let newIds;
+      if (theme.themeTitle === 'ockerdust') {
+        newIds = ['02', '03', '05'];
+      } else {
+        newIds = ['06', '11', '12'];
+      }
 
       const fetchedFilms = [];
 
       // `for...of` venter på at forrige proces sættes i gang, og `await` venter på at processen er færdig (resolved/rejected) (?) :
-      for (let id of ids) {
+      for (let id of newIds) {
         const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
         const res = await fetch(apiUrl);
         const data = await res.json();
@@ -146,15 +145,16 @@ export function ImageLoopWrapper({ children }) {
         });
       }
 
+      setIds(newIds);
       setFilms(fetchedFilms);
     };
 
     fetchData();
     // Hold øje med theme state, så film kan opdateres, når theme state ændres :
-  }, [ids]);
+  }, [theme]);
 
   return(
-    <imageLoopContext.Provider value={{ films }}>
+    <imageLoopContext.Provider value={{ films, ids }}>
       { children }
     </imageLoopContext.Provider>
   )

@@ -30,7 +30,7 @@ const DynamicIdTest = ({ params }) => {
         className="
           w-full h-96
           object-cover object-top
-          coolCorners
+          coolCornersClass
         "
         priority
       />

@@ -3,7 +3,11 @@
 
 - [ ] Vis loading mens der loades (delvist done) og error når indholdet ikke vises (i stedet for stadig at vise loader)
 
-  - [ ] Selv når `ids` har deres egen context, forsinkes det. Du må sprøge copilot
+  - [ ] Error placeholders..
+
+    ---
+
+  - [x] Selv når `ids` har deres egen context, forsinkes det. Du må sprøge copilot
 
 - [ ] Gør så filmene bliver fundet på en smartere måde end fra et hardcoded array (måske id'er konverteret til tal filtreret med større/mindre-end)
 

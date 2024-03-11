@@ -32,7 +32,12 @@ body {
   @apply bacground-red-300;
 } */
 
-.coolCorners {
+.posterListClass {
+  width: 100%;
+  height: 16rem;
+}
+
+.coolCornersClass {
   clip-path: polygon(
     0 1rem, 1rem 0,
     100% 0,

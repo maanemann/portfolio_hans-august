@@ -25,8 +25,10 @@ export function ThemeWrapper({ children }) {
       themeTitle: 'ockerdust',
       bgATheme: 'bg-ockerdust-900',
       bgBTheme: 'bg-ockerdust-950',
+      bgBrightTheme: 'bg-ockerdust-700',
       borderATheme: 'border-ockerdust-700',
       textATheme: 'text-ockerdust-700',
+      textBTheme: 'text-ockerdust-900',
       textBrightTheme: 'text-ockerdust-200',
       bgReverseTheme: 'bg-ockerdust-700',
       textReverseTheme: 'text-ockerdust-950',
@@ -57,34 +59,84 @@ export function useThemeContext() {
 // // #endregion themeContext
 
 
+
+
+
+// // #region idsContext
+
+// const idsContext = createContext();
+
+// export function IdsWrapper({ children }) {
+//   // Så film kan skiftes ud baseret på theme state :
+//   const { theme } = useThemeContext();
+//   const [ids, setIds] = useState(
+//     theme.themeTitle === 'ockerdust'
+//     ? ['02', '03', '05']
+//     : ['06', '11', '12']
+//   );
+
+//   let newIds;
+
+//   useEffect(() => {
+//     if (theme.themeTitle === 'ockerdust') {
+//       newIds = ['02', '03', '05'];
+//     } else {
+//       newIds = ['06', '11', '12'];
+//     }
+
+//     setIds(newIds);
+//   }, [theme]);
+
+//   return(
+//     <idsContext.Provider value={{ ids }}>
+//       { children }
+//     </idsContext.Provider>
+//   )
+// }
+
+// export function useIdsContext() {
+//   return useContext(idsContext);
+// }
+
+// // #endregion idsContext
+
+
+
+
+
 // // #region imageLoopContext
 
 const imageLoopContext = createContext();
 
-// export const dynamic = 'force-dynamic';
 export function ImageLoopWrapper({ children }) {
   // Så film kan skiftes ud baseret på theme state :
   const { theme } = useThemeContext();
+  // const { ids } = useIdsContext();
   const [films, setFilms] = useState([])
+  const [ids, setIds] = useState(
+    theme.themeTitle === 'ockerdust'
+    ? ['02', '03', '05']
+    : ['06', '11', '12']
+  );
 
   useEffect(() => {
     const fetchData = async () => {
-      let ids;
+      let newIds;
       if (theme.themeTitle === 'ockerdust') {
-        ids = ['02', '03', '05'];
+        newIds = ['02', '03', '05'];
       } else {
-        ids = ['06', '11', '12'];
+        newIds = ['06', '11', '12'];
       }
 
       const fetchedFilms = [];
 
       // `for...of` venter på at forrige proces sættes i gang, og `await` venter på at processen er færdig (resolved/rejected) (?) :
-      for (let id of ids) {
+      for (let id of newIds) {
         const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
         const res = await fetch(apiUrl);
         const data = await res.json();
-
         // console.log(data);
+
         // med push metoden tilføjes det nyt element til fetchedFilms aray'et, (som var tomt til at begynde med) :
         fetchedFilms.push({
           id,
@@ -94,6 +146,7 @@ export function ImageLoopWrapper({ children }) {
         });
       }
 
+      setIds(newIds);
       setFilms(fetchedFilms);
     };
 
@@ -102,7 +155,7 @@ export function ImageLoopWrapper({ children }) {
   }, [theme]);
 
   return(
-    <imageLoopContext.Provider value={{ films }}>
+    <imageLoopContext.Provider value={{ films, ids }}>
       { children }
     </imageLoopContext.Provider>
   )
@@ -113,6 +166,9 @@ export function useImageLoopContext() {
 }
 
 // // #endregion imageLoopContext
+
+
+
 
 
 // // #region read-more

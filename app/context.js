@@ -25,6 +25,7 @@ export function ThemeWrapper({ children }) {
       themeTitle: 'ockerdust',
       bgATheme: 'bg-ockerdust-900',
       bgBTheme: 'bg-ockerdust-950',
+      bgBrightTheme: 'bg-ockerdust-700',
       borderATheme: 'border-ockerdust-700',
       textATheme: 'text-ockerdust-700',
       textBTheme: 'text-ockerdust-900',

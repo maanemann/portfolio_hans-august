@@ -30,7 +30,7 @@ export default function ImageLoop() {
                 // I globals.css: `*{transition: 1s all;}`
                 className="
                   posterListClass coolCornersClass
-                  opacity-0
+                  opacity-0 object-cover
                 "
                 // 👀 smooth image loading ↑↓ :
                 onLoad={(e) =>
@@ -46,7 +46,7 @@ export default function ImageLoop() {
           return (
             <div key={id} className={`
               posterListClass grid
-              ${theme.bgATheme} coolCornersClass
+              ${theme.bgBrightTheme} coolCornersClass
             `}>
               <div className={`
                 w-[calc(100%-6px)] h-[calc(100%-6px)]
@@ -56,7 +56,7 @@ export default function ImageLoop() {
                 <span className={`
                   block mx-8 my-4
                   text-4xl tracking-wider font-medium
-                  ${theme.textBTheme}
+                  ${theme.textATheme}
                 `}> Loading... </span>
               </div>
             </div>

@@ -1,5 +1,7 @@
 
-const Loading = () => {
+'use client'
+
+const Error = () => {
   return ( <div className="
     text-2xl
     text-white/75
@@ -7,9 +9,9 @@ const Loading = () => {
     h-32 w-32 bg-brick-700
   ">
     <h1>
-      LOADING...
+      Ups, there was an error :'(
     </h1>
   </div> );
 }
  
-export default Loading;
+export default Error;

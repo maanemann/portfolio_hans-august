@@ -6,7 +6,7 @@ import { useThemeContext, useImageLoopContext } from '@/app/context';
 export default function ImageLoop() {
   // const { ids } = useIdsContext();
   const { theme } = useThemeContext();
-  const { films, ids } = useImageLoopContext();
+  const { films, ids, error } = useImageLoopContext();
 
   return (
     <>
@@ -58,6 +58,13 @@ export default function ImageLoop() {
                   text-4xl tracking-wider font-medium
                   ${theme.textATheme}
                 `}> Loading... </span>
+                {error && (
+                  <span className={`
+                    block mx-8 my-4
+                    text-4xl tracking-wider font-medium
+                    ${theme.textATheme}
+                  `}> {error} </span>
+                )}
               </div>
             </div>
           )

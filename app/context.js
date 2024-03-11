@@ -118,6 +118,7 @@ export function ImageLoopWrapper({ children }) {
     ? ['02', '03', '05']
     : ['06', '11', '12']
   );
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -130,20 +131,31 @@ export function ImageLoopWrapper({ children }) {
 
       const fetchedFilms = [];
 
-      // `for...of` venter på at forrige proces sættes i gang, og `await` venter på at processen er færdig (resolved/rejected) (?) :
+      // `for...of` venter på at forrige proces sættes i gang (synkron, modsat map), og `await` venter på at processen er færdig (resolved / rejected ?) :
       for (let id of newIds) {
         const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
-        const res = await fetch(apiUrl);
-        const data = await res.json();
-        // console.log(data);
+        try {
+          const res = await fetch(apiUrl);
+  
+          if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+          }
+  
+          const data = await res.json();
+          // console.log(data);
 
-        // med push metoden tilføjes det nyt element til fetchedFilms aray'et, (som var tomt til at begynde med) :
-        fetchedFilms.push({
-          id,
-          image: `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`,
-          title: data.original_title,
-          overview: data.overview,
-        });
+          // med push metoden tilføjes det nyt element til fetchedFilms aray'et, (som var tomt til at begynde med) :
+          fetchedFilms.push({
+            id,
+            image: `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`,
+            title: data.original_title,
+            overview: data.overview,
+          });
+        } catch (error) {
+          console.error('Error fetching film:', error.message);
+          setError(error.message);
+          // Handle the error as needed, such as showing a message to the user or logging it
+        }
       }
 
       setIds(newIds);
@@ -155,7 +167,7 @@ export function ImageLoopWrapper({ children }) {
   }, [theme]);
 
   return(
-    <imageLoopContext.Provider value={{ films, ids }}>
+    <imageLoopContext.Provider value={{ films, ids, error }}>
       { children }
     </imageLoopContext.Provider>
   )

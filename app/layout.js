@@ -19,13 +19,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Suspense fallback={<Loading />}>
         <ThemeWrapper>
-          {/* <IdsWrapper> */}
             <ImageLoopWrapper>
               <Body nextFont={ inter.className }>
                 { children }
               </Body>
             </ImageLoopWrapper>
-          {/* </IdsWrapper> */}
         </ThemeWrapper>
       </Suspense>
     </html>

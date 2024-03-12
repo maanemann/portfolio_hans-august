@@ -122,44 +122,54 @@ export function ImageLoopWrapper({ children }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      let newIds;
-      if (theme.themeTitle === 'ockerdust') {
-        newIds = ['02', '03', '05'];
-      } else {
-        newIds = ['06', '11', '12'];
-      }
+      const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&page=1`;
+      try {
+        const res = await fetch(apiUrl);
 
-      const fetchedFilms = [];
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
 
-      // `for...of` venter på at forrige proces sættes i gang (synkron, modsat map), og `await` venter på at processen er færdig (resolved / rejected ?) :
-      for (let id of newIds) {
-        const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
-        try {
-          const res = await fetch(apiUrl);
-  
-          if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        const movies = data.results;
+        // console.log('movies:', movies);
+        let newIds;
+        const fetchedFilms = [];
+
+        if (theme.themeTitle === 'ockerdust') {
+          newIds = movies.slice(0, 3).map(movie => movie.id);
+          console.log('newIds:', newIds);
+        } else {
+          newIds = movies.slice(3, 6).map(movie => movie.id);
+        }
+
+
+        // `for...of` venter på at forrige proces sættes i gang (synkron, modsat map), og `await` venter på at processen er færdig (resolved / rejected ?) :
+        for (let id of newIds) {
+          const movieUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
+          const movieRes = await fetch(movieUrl);
+
+          if (!movieRes.ok) {
+            throw new Error(`HTTP error! status: ${movieRes.status}`);
           }
-  
-          const data = await res.json();
-          // console.log(data);
+
+          const movieData = await movieRes.json();
 
           // med push metoden tilføjes det nyt element til fetchedFilms aray'et, (som var tomt til at begynde med) :
           fetchedFilms.push({
             id,
-            image: `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`,
-            title: data.original_title,
-            overview: data.overview,
+            image: `https://image.tmdb.org/t/p/w1280/${movieData.backdrop_path}`,
+            title: movieData.original_title,
+            overview: movieData.overview,
           });
-        } catch (error) {
-          console.error('Error fetching film:', error.message);
-          setError(error.message);
-          // Handle the error as needed, such as showing a message to the user or logging it
         }
-      }
 
-      setIds(newIds);
-      setFilms(fetchedFilms);
+        setIds(newIds);
+        setFilms(fetchedFilms);
+      } catch (error) {
+        console.error('Error fetching film:', error.message);
+        setError(error.message);
+      }
     };
 
     fetchData();

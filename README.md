@@ -1,14 +1,16 @@
 
 ## todo
 
-- [ ] Gør så filmene bliver fundet på en smartere måde end fra et hardcoded array (måske id'er konverteret til tal filtreret med større/mindre-end)
-
 - [ ] Få copilot til at hjælpe med Image properties (detail cover må godt være højere res, hvis tilgængelig)
 
 - [ ] Prøv at lave et nyt route til search results og brug nexjs [useSearchParams](https://nextjs.org/docs/app/api-reference/functions/use-search-params) til at læse "query string" fra URL
 
 
 ### done
+
+- [x] Gør så filmene bliver fundet på en smartere måde end fra et hardcoded array (måske id'er konverteret til tal filtreret med større/mindre-end)
+
+- [x] Kig copilot's rettelser til ikke renderede billeder fra det nye dynamiske array
 
 - [x] Vis loading mens der loades (delvist done) og error når indholdet ikke vises (i stedet for stadig at vise loader)
 

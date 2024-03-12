@@ -113,11 +113,7 @@ export function ImageLoopWrapper({ children }) {
   const { theme } = useThemeContext();
   // const { ids } = useIdsContext();
   const [films, setFilms] = useState([])
-  const [ids, setIds] = useState(
-    theme.themeTitle === 'ockerdust'
-    ? ['02', '03', '05']
-    : ['06', '11', '12']
-  );
+  const [ids, setIds] = useState(['00', '01', '02']);
   const [error, setError] = useState(null);
 
   useEffect(() => {

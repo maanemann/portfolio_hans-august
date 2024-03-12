@@ -9,9 +9,9 @@ const Error = () => {
     h-32 w-32 bg-brick-700
   ">
     <h1>
-      Ups, there was an error :'(
+      Ups, there was an error !
     </h1>
   </div> );
 }
- 
+
 export default Error;

@@ -118,23 +118,26 @@ export function ImageLoopWrapper({ children }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&page=1`;
+      // En *liste* af populære film :
+      const popularListUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&page=1`;
       try {
-        const res = await fetch(apiUrl);
+        const res = await fetch(popularListUrl);
 
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
 
         const data = await res.json();
+        // `results` er det endpoint hvor de enkelte film ligger :
         const movies = data.results;
-        // console.log('movies:', movies);
+
         let newIds;
         const fetchedFilms = [];
 
         if (theme.themeTitle === 'ockerdust') {
+          // `slice` returnerer et nyt array og tager to argumenter: start index, og slut index på de items, der skal inkluderes. Herefter returnerer `map`igen et nyt array (modsat `for...of` / `forEach`, så man skulle lave et nyt tomt array, de kunne `push`e til) kun med `id` endpoints'ne på de filtrerede film :
           newIds = movies.slice(0, 3).map(movie => movie.id);
-          console.log('newIds:', newIds);
+          // console.log('newIds:', newIds);
         } else {
           newIds = movies.slice(3, 6).map(movie => movie.id);
         }
@@ -142,6 +145,7 @@ export function ImageLoopWrapper({ children }) {
 
         // `for...of` venter på at forrige proces sættes i gang (synkron, modsat map), og `await` venter på at processen er færdig (resolved / rejected ?) :
         for (let id of newIds) {
+          // Sti til den *enkelte* film :
           const movieUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`;
           const movieRes = await fetch(movieUrl);
 
@@ -153,7 +157,9 @@ export function ImageLoopWrapper({ children }) {
 
           // med push metoden tilføjes det nyt element til fetchedFilms aray'et, (som var tomt til at begynde med) :
           fetchedFilms.push({
+            // id er både key/property og value (endpoint på filmen) og kan derfor forkortes til bare `id` :
             id,
+            // `backdrop_path`, `original_title` og `overview` er endpoints på filmen :
             image: `https://image.tmdb.org/t/p/w1280/${movieData.backdrop_path}`,
             title: movieData.original_title,
             overview: movieData.overview,

@@ -8,7 +8,7 @@ const DynamicIdTest = ({ params }) => {
   const { films } = useImageLoopContext();
   const { theme } = useThemeContext();
 
-  // // med ´find´ metoden finder vi den film der har samme id som prams.id. Der bruges `==` (loose equality), i stedet for `===` (strict equality), fordi `params.id` er en string, og `film.id` er et number. Man kunne også konvertere `params.id` til et number med `number(params.id)` :
+  // med ´find´ metoden finder vi den film der har samme id som prams.id. Der bruges `==` (loose equality), i stedet for `===` (strict equality), fordi `params.id` er en string, og `film.id` er et tal. Man kunne også konvertere `params.id` til et number med `number(params.id)` :
   const film = films.find(film => film.id == (params.id));
 
   if (!film) {

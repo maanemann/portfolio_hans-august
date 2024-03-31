@@ -12,9 +12,9 @@ const MainNav = () => {
 
   const filteredFilms = searchTerm !== ""
     ? films.filter(film =>
-        // filteret gøres case-insensitive ved at konvertere alle strings til lowercase :
-        film.title.toLowerCase().includes(searchTerm.toLowerCase())
-        || film.overview.toLowerCase().includes(searchTerm.toLowerCase()))
+      // filteret gøres case-insensitive ved at konvertere alle strings til lowercase :
+      film.title.toLowerCase().includes(searchTerm.toLowerCase())
+      || film.overview.toLowerCase().includes(searchTerm.toLowerCase()))
     // Hvis søgefeltet er tomt vises ingenting (tom array) :
     : [];
 

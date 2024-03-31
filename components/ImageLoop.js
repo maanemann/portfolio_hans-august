@@ -20,7 +20,10 @@ export default function ImageLoop() {
             <Link
               href={`/dynamictest/${film.id}`}
               key={film.id}
-              className="w-full h-fit"
+              className={`
+                posterListClass grid
+                ${theme.bgBrightTheme} coolCornersClass
+              `}
             >
               <Image
                 placeholder="empty"

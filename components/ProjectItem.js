@@ -1,10 +1,18 @@
-const ProjectItem = () => {
+import Image from "next/image";
+
+const ProjectItem = ({ imgSrc, imgAlt }) => {
   return ( <figure className="
-    w-full h-[32rem]
+    relative posterListClass overflow-hidden
     bg-ockerdust-600/35
     coolCornersClass
-    pfff
-  "></figure> );
+  ">
+    <Image
+      src={ imgSrc } alt={ imgAlt } priority
+      fill sizes="45vw"
+      className="absolute object-cover"
+    />
+  </figure> );
 }
  
 export default ProjectItem;
+

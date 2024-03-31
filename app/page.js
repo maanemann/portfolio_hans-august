@@ -7,26 +7,28 @@ import ProjectItem from "@/components/ProjectItem";
 // import Link from 'next/link';
 import { Suspense } from 'react';
 import Loading from './loading';
+import cocoon_init from "@/public/projects/cocoon/cocoonUI_init.jpg"
 
 export default function Home() {
   const { theme } = useThemeContext();
 
   return (
     <main className={`
-      w-full grid gap-[3px] p-[3px]
+      w-full grid gap-1 p-1
       overflow-y-scroll
       bg-blend-darken ${theme.bgBTheme}
     `}>
       <section className='
-        grid gap-[3px] py-[3px]
+        grid gap-1 py-1 content-start
         grid-cols-2 grid-flow-row
       '>
         <Suspense fallback={<Loading />}>
+          <ProjectItem
+            imgSrc={ cocoon_init } imgAlt="Cocoon UI"
+          />
           <ImageLoop />
         </Suspense>
       </section>
-      <ProjectItem />
-      <ProjectItem />
     </main>
   );
 }

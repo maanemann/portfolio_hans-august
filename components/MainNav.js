@@ -1,22 +1,21 @@
 
 'use client'
 
-import { useThemeContext, useImageLoopContext } from "@/app/context";
+import { useThemeContext } from "@/app/context";
 import { useState } from "react";
 import Link from "next/link";
 
 const MainNav = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
   const { theme } = useThemeContext();
-  const { films } = useImageLoopContext();
 
-  const filteredFilms = searchTerm !== ""
-    ? films.filter(film =>
-      // filteret gøres case-insensitive ved at konvertere alle strings til lowercase :
-      film.title.toLowerCase().includes(searchTerm.toLowerCase())
-      || film.overview.toLowerCase().includes(searchTerm.toLowerCase()))
-    // Hvis søgefeltet er tomt vises ingenting (tom array) :
-    : [];
+  // const filteredFilms = searchTerm !== ""
+  //   ? films.filter(film =>
+  //     // filteret gøres case-insensitive ved at konvertere alle strings til lowercase :
+  //     film.title.toLowerCase().includes(searchTerm.toLowerCase())
+  //     || film.overview.toLowerCase().includes(searchTerm.toLowerCase()))
+  //   // Hvis søgefeltet er tomt vises ingenting (tom array) :
+  //   : [];
 
   return (
     <nav
@@ -40,8 +39,13 @@ const MainNav = () => {
         `} />
       </Link>
 
+
+
+      {/* // #region search-field-&-results
+      */}
+
       {/* når value ændres, reflekteres det i searchTerm (state ↑) : */}
-      <input
+      {/* <input
         type="text"
         // searchTerm som value gør dette til et "controlled component" (form element in react hvis value kontrolleres af state), og sikrer at input er 'i sync' med searchTerm (men det virker også uden) :
         value={searchTerm}
@@ -57,10 +61,10 @@ const MainNav = () => {
           px-4 py-1 rounded-full mb-3
           focus:outline-none
         `}
-      />
+      /> */}
 
       {/* Søgeresultater.. (index er nødvendig for at react har en id at gå efter til hver item) : */}
-      {filteredFilms.map((film, index) => (
+      {/* {filteredFilms.map((film, index) => (
         <Link
           href={`/dynamictest/${film.id}`}
           key={index}
@@ -72,7 +76,11 @@ const MainNav = () => {
         >
           {film.title}
         </Link>
-      ))}
+      ))} */}
+
+      {/* // #endregion search-field-&-results */}
+
+
 
       {/* <ul className={`
         ${theme.textATheme}

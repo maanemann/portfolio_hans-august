@@ -2,7 +2,6 @@
 'use client'
 
 import { useThemeContext } from '@/app/context'
-import ImageLoop from '@/components/ImageLoop'
 import ProjectItem from "@/components/ProjectItem";
 // import Link from 'next/link';
 import { Suspense } from 'react';
@@ -18,7 +17,7 @@ export default function Home() {
     <main className={`
       w-full grid gap-1 p-1
       overflow-y-scroll
-      bg-blend-darken ${theme.bgBTheme}
+      ${theme.bgBTheme}
     `}>
       <section className='
         grid gap-1 py-1 content-start
@@ -34,7 +33,6 @@ export default function Home() {
           <ProjectItem
             imgSrc={ kalimba_init } imgAlt="Kalimba UI"
           />
-          <ImageLoop />
         </Suspense>
       </section>
     </main>

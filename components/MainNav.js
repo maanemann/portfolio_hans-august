@@ -19,11 +19,11 @@ const MainNav = () => {
 
   return (
     <nav
-      className="w-64 px-20
+      className="w-96 px-10
     ">
       <Link
         href="/#"
-        className="block mb-16"
+        className="block w-24 mx-auto mb-16"
       >
         <div className={`
           w-full aspect-square
@@ -38,6 +38,17 @@ const MainNav = () => {
           mx-auto -mt-6
         `} />
       </Link>
+
+      <ul className={`
+        ${theme.textATheme}
+      `}>
+        <li><Link href="#">
+          This portfolio is a work in progress, but try changing the theme below :)
+        </Link></li>
+        <li className="text-4xl text-center mt-2"><Link href="#">
+          ↓
+        </Link></li>
+      </ul>
 
 
 
@@ -82,16 +93,6 @@ const MainNav = () => {
 
 
 
-      {/* <ul className={`
-        ${theme.textATheme}
-      `}>
-        <li><Link href="#">
-          hans august
-        </Link></li>
-        <li><Link href="#">
-          interface/web dev/design
-        </Link></li>
-      </ul> */}
     </nav>
    );
 }

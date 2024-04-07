@@ -8,6 +8,8 @@ import ProjectItem from "@/components/ProjectItem";
 import { Suspense } from 'react';
 import Loading from './loading';
 import cocoon_init from "@/public/projects/cocoon/cocoonUI_init.jpg"
+import pioneers_init from "@/public/projects/trailmakers/pioneersUI_init.png"
+import kalimba_init from "@/public/projects/kalimba/kalimbaUI_init.png"
 
 export default function Home() {
   const { theme } = useThemeContext();
@@ -25,6 +27,12 @@ export default function Home() {
         <Suspense fallback={<Loading />}>
           <ProjectItem
             imgSrc={ cocoon_init } imgAlt="Cocoon UI"
+          />
+          <ProjectItem
+            imgSrc={ pioneers_init } imgAlt="Trailmakers UI"
+          />
+          <ProjectItem
+            imgSrc={ kalimba_init } imgAlt="Kalimba UI"
           />
           <ImageLoop />
         </Suspense>

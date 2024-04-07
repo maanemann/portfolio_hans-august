@@ -8,7 +8,7 @@ const ProjectItem = ({ imgSrc, imgAlt }) => {
   ">
     <Image
       src={ imgSrc } alt={ imgAlt } priority
-      fill sizes="45vw"
+      fill sizes="64vw"
       className="absolute object-cover"
     />
   </figure> );

@@ -6,6 +6,7 @@ import ProjectItem from "@/components/ProjectItem";
 // import Link from 'next/link';
 import { Suspense } from 'react';
 import Loading from './loading';
+import data from '@/public/projectsData.json';
 import cocoon_init from "@/public/projects/cocoon/cocoonUI_init.jpg"
 import pioneers_init from "@/public/projects/trailmakers/pioneersUI_init.png"
 import kalimba_init from "@/public/projects/kalimba/kalimbaUI_init.png"
@@ -24,7 +25,15 @@ export default function Home() {
         grid-cols-2 grid-flow-row
       '>
         <Suspense fallback={<Loading />}>
-          <ProjectItem
+          {data.map(project => (
+            <ProjectItem
+              key={project.id}
+              imgSrc={ project.imgSrc }
+              imgAlt={ project.imgAlt }
+              link={`/projects/${project.id}`}
+            />
+          ))}
+          {/* <ProjectItem
             imgSrc={ cocoon_init } imgAlt="Cocoon UI"
           />
           <ProjectItem
@@ -32,7 +41,7 @@ export default function Home() {
           />
           <ProjectItem
             imgSrc={ kalimba_init } imgAlt="Kalimba UI"
-          />
+          /> */}
         </Suspense>
       </section>
     </main>

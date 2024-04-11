@@ -1,0 +1,19 @@
+
+[
+  {
+    "id": "cocoon",
+    "imgSrc": "/projects/cocoon/cocoonUI_init.jpg",
+    "imgAlt": "Cocoon UI"
+  },
+  {
+    "id": "trailmakers",
+    "imgSrc": "/projects/trailmakers/pioneersUI_init.png",
+    "imgAlt": "Pioneers UI"
+  },
+  {
+    "id": "kalimba",
+    "imgSrc": "/projects/kalimba/kalimbaUI_init.png",
+    "imgAlt": "Kalimba UI"
+  }
+]
+

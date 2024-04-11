@@ -9,7 +9,7 @@
 }
 
 * {
-  transition: 1s all;
+  transition: .33s all;
 }
 
 :root {

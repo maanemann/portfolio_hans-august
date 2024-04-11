@@ -44,7 +44,7 @@ const Body = ({ nextFont, children }) => {
   return (
     <body className={`
       ${ nextFont }>
-      flex h-screen overflow-hidden
+      flex w-screen h-screen overflow-hidden
       ${theme.bgATheme}
     `}>
       <MainNav />

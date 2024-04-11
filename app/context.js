@@ -33,6 +33,7 @@ export function ThemeWrapper({ children }) {
       bgReverseTheme: 'bg-ockerdust-700',
       textReverseTheme: 'text-ockerdust-950',
       placehReverseTheme: 'text-ockerdust-950/50',
+      scrollbarTheme: 'scrOckerdustCustom',
 
       // fetch test :
       // imgPath: `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`

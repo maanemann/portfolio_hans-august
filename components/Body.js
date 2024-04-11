@@ -22,6 +22,7 @@ const Body = ({ nextFont, children }) => {
       textBTheme: 'text-ockerdust-900',
       textBrightTheme: 'text-ockerdust-200',
       textReverseTheme: 'text-ockerdust-950',
+      scrollbarTheme: 'scrOckerdustCustom',
     }));
   };
 
@@ -38,14 +39,15 @@ const Body = ({ nextFont, children }) => {
       textBTheme: 'text-aqua-900',
       textBrightTheme: 'text-aqua-200',
       textReverseTheme: 'text-aqua-950',
+      scrollbarTheme: 'scrAquaCustom',
     }));
   };
 
   return (
     <body className={`
-      ${ nextFont }>
-      flex w-screen h-screen overflow-hidden
-      ${theme.bgATheme}
+      ${ nextFont }> flex w-screen h-screen
+      overflow-hidden ${theme.bgATheme}
+      scrThinCustom ${theme.scrollbarTheme}
     `}>
       <MainNav />
       <div className="
@@ -65,7 +67,13 @@ const Body = ({ nextFont, children }) => {
             bg-aqua-800 rounded-full
         "/>
       </div>
-      { children }
+      <main className={`
+        w-full grid gap-1 p-1
+        overflow-y-scroll
+        ${theme.bgBTheme}
+      `}>
+        { children }
+      </main>
     </body>
   );
 }

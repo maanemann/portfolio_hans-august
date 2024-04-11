@@ -32,12 +32,12 @@ body {
   @apply bacground-red-300;
 } */
 
-.posterListClass {
+.posterListCustom {
   width: 100%;
   height: 16rem;
 }
 
-.coolCornersClass {
+.coolCornersCustom {
   clip-path: polygon(
     0 1rem, 1rem 0,
     100% 0,
@@ -54,7 +54,16 @@ body {
 
 * {
     scrollbar-width: thin;
+}
+
+.scrOckerdustCustom {
+    /* scrollbar-width: thin; */
     scrollbar-color: theme('colors.ockerdust.700') theme('colors.ockerdust.900');
+}
+
+.scrAquaCustom {
+    /* scrollbar-width: thin; */
+    scrollbar-color: theme('colors.aqua.700') theme('colors.aqua.900');
 }
 
 /* Chrome, Edge, Safari : */

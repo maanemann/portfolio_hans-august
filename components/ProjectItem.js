@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const ProjectItem = ({ imgSrc, imgAlt, link }) => {
   return ( <figure className="
-    relative posterListClass overflow-hidden
+    relative posterListCustom overflow-hidden
     bg-ockerdust-600/35
-    coolCornersClass
+    coolCornersCustom
   ">
     <Link href={ link } className="
       absolute w-full h-full

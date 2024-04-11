@@ -1,25 +1,16 @@
 
 'use client'
 
-import { useThemeContext } from '@/app/context'
+// import { useThemeContext } from '@/app/context'
 import ProjectItem from "@/components/ProjectItem";
-// import Link from 'next/link';
 import { Suspense } from 'react';
 import Loading from './loading';
 import data from '@/public/projectsData.json';
-import cocoon_init from "@/public/projects/cocoon/cocoonUI_init.jpg"
-import pioneers_init from "@/public/projects/trailmakers/pioneersUI_init.png"
-import kalimba_init from "@/public/projects/kalimba/kalimbaUI_init.png"
 
 export default function Home() {
-  const { theme } = useThemeContext();
+  // const { theme } = useThemeContext();
 
   return (
-    <main className={`
-      w-full grid gap-1 p-1
-      overflow-y-scroll
-      ${theme.bgBTheme}
-    `}>
       <section className='
         grid gap-1 py-1 content-start
         grid-cols-2 grid-flow-row
@@ -44,7 +35,6 @@ export default function Home() {
           /> */}
         </Suspense>
       </section>
-    </main>
   );
 }
 

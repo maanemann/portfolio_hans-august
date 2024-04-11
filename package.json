@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "cleanD": "powershell -Command ./clean-start-dev.ps1",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

@@ -5,7 +5,7 @@
 import ProjectItem from "@/components/ProjectItem";
 import { Suspense } from 'react';
 import Loading from './loading';
-import data from '@/public/projectsData.json';
+import data from '@/data/projectsData.json';
 
 export default function Home() {
   // const { theme } = useThemeContext();

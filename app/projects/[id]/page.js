@@ -1,7 +1,7 @@
 
 'use client'
 
-import data from '@/public/projectsData.json';
+import data from '@/data/projectsData.json';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 

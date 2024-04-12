@@ -45,9 +45,10 @@ const Body = ({ nextFont, children }) => {
 
   return (
     <body className={`
-      ${ nextFont }> flex w-screen h-screen
+      ${ nextFont } flex w-screen h-screen
       overflow-hidden ${theme.bgATheme}
       scrThinCustom ${theme.scrollbarTheme}
+      tracking-normal
     `}>
       <MainNav />
       <div className="

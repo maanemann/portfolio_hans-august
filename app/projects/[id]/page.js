@@ -13,15 +13,18 @@ const ProjectDetails = () => {
   const project = data.find(project => project.id === id);
   const imgWidth = project.imgWidth;
   const imgHeight = project.imgHeight;
-  return ( <>
-      <div className={`${theme.textATheme}`}
-      >
-        <h1 className="text-3xl font-bold">{project.title}</h1>
+  return (
+    <article className='p-6 py-10 2xl:py-24
+    grid gap-10 w-full max-w-[64rem] mx-auto'>
+      <div className={`${theme.textATheme}`}>
+        <h1 className="text-3xl font-bold pb-8">{project.title}</h1>
         {/* `\n` is a "newline character" used in projectsData.json, and with the split method, the string is split into an array of substrings, which is then mapped over to render each substring as a paragraph
         */}
-        <div className='grid gap-1'>
+        <div className='grid gap-8'>
           {project.description.split('\n').map((paragraph, index) => (
-            <p key={index} className="paragraph">{paragraph}</p>
+            <p key={index} className="
+              paragraph lg:columns-2 gap-8
+            ">{paragraph}</p>
           ))}
         </div>
       </div>
@@ -43,7 +46,8 @@ const ProjectDetails = () => {
           }
         />
       </div>
-  </> );
+    </article>
+  );
 }
  
 export default ProjectDetails;

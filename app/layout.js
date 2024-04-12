@@ -1,13 +1,17 @@
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ThemeWrapper } from "./context";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Body from "@/components/Body"
 import { Suspense } from "react";
 import Loading from "./loading";
 
-const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({
+  weight: ['400', '700'],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "Hans August",
@@ -19,7 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Suspense fallback={<Loading />}>
         <ThemeWrapper>
-            <Body nextFont={ inter.className }>
+            <Body nextFont={ dmSans.className }>
               { children }
             </Body>
         </ThemeWrapper>

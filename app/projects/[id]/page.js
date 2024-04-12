@@ -17,7 +17,16 @@ const ProjectDetails = () => {
     <article className='p-6 py-10 2xl:py-24
     grid gap-10 w-full max-w-[64rem] mx-auto'>
       <div className={`${theme.textATheme}`}>
-        <h1 className="text-3xl font-bold pb-8">{project.title}</h1>
+        <div className='flex'>
+          <h1 className="text-8xl font-bold pb-8">{project.title}</h1>
+          <span className={`
+            ml-auto mt-5 h-16 w-16
+            text-center text-4xl
+            leading-[3.75rem]
+            rounded-full border-3
+            ${theme.borderATheme}
+          `}>UI</span>
+        </div>
         {/* `\n` is a "newline character" used in projectsData.json, and with the split method, the string is split into an array of substrings, which is then mapped over to render each substring as a paragraph
         */}
         <div className='grid gap-8'>

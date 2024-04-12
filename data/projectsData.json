@@ -2,29 +2,29 @@
 [
   {
     "id": "cocoon",
+    "title": "Cocoon",
     "imgSrc": "/projects/cocoon/cocoonUI_init.jpg",
     "imgAlt": "Cocoon UI",
     "imgWidth": "2162",
     "imgHeight": "1455",
-    "title": "Cocoon UI",
     "description": "I had the honour of designing the UI / UX for Cocoon, an award-winning puzzle game, in which you delve deep into surreal worlds, nested within each other. From Geometric Interactive, a talented team, including developers behind Limbo and Inside. \n Here you see the loading screen, round like a dial, or a clock. It gives an overview of the game, your progress and other information that you learn to understand through playing the game. Everything you see is bound to the symbolics and logics of the game, all boiled down to one display."
   },
   {
     "id": "trailmakers",
+    "title": "Trailmakers",
     "imgSrc": "/projects/trailmakers/pioneersUI_init.png",
     "imgAlt": "Pioneers UI",
     "imgWidth": "4122",
     "imgHeight": "2988",
-    "title": "Trailmakers »building« UI",
     "description": "blabla.."
   },
   {
     "id": "kalimba",
+    "title": "Kalimba",
     "imgSrc": "/projects/kalimba/kalimbaUI_init.png",
     "imgAlt": "Kalimba UI",
     "imgWidth": "1952",
     "imgHeight": "1952",
-    "title": "Kalimba mobile UI",
     "description": "blabla.."
   }
 ]

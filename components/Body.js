@@ -68,8 +68,9 @@ const Body = ({ nextFont, children }) => {
         "/>
       </div>
       <main className={`
-        w-full grid gap-1 p-1
-        overflow-y-scroll
+        w-full h-full flex flex-col
+        items-stretch gap-1 p-1
+        overflow-y-auto
         ${theme.bgBTheme}
       `}>
         { children }

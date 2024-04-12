@@ -3,17 +3,29 @@
   {
     "id": "cocoon",
     "imgSrc": "/projects/cocoon/cocoonUI_init.jpg",
-    "imgAlt": "Cocoon UI"
+    "imgAlt": "Cocoon UI",
+    "imgWidth": "2162",
+    "imgHeight": "1455",
+    "title": "Cocoon UI",
+    "description": "Surreal worlds from the deep unconsciousness nested within each other. I have had the honour of designing the UI / UX for this award-winning puzzle game from Geometric Interactive, a team of incredible talents, including developers behind Limbo and Inside."
   },
   {
     "id": "trailmakers",
     "imgSrc": "/projects/trailmakers/pioneersUI_init.png",
-    "imgAlt": "Pioneers UI"
+    "imgAlt": "Pioneers UI",
+    "imgWidth": "4122",
+    "imgHeight": "2988",
+    "title": "Trailmakers »building« UI",
+    "description": "blabla.."
   },
   {
     "id": "kalimba",
     "imgSrc": "/projects/kalimba/kalimbaUI_init.png",
-    "imgAlt": "Kalimba UI"
+    "imgAlt": "Kalimba UI",
+    "imgWidth": "1952",
+    "imgHeight": "1952",
+    "title": "Kalimba mobile UI",
+    "description": "blabla.."
   }
 ]
 

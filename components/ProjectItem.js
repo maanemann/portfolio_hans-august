@@ -14,7 +14,10 @@ const ProjectItem = ({ imgSrc, imgAlt, link }) => {
       <Image
         src={ imgSrc } alt={ imgAlt }
         priority fill sizes="64vw"
-        className="absolute object-cover"
+        className="absolute object-cover opacity-0"
+        onLoad={(e) =>
+          e.target.classList.remove('opacity-0')
+        }
       />
     </Link>
   </figure> );

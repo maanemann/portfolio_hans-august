@@ -42,12 +42,22 @@ const MainNav = () => {
       <ul className={`
         ${theme.textATheme}
       `}>
-        <li><Link href="#">
-          This portfolio is a work in progress, but try changing the theme below :)
-        </Link></li>
-        <li className="text-4xl text-center mt-2"><Link href="#">
-          ↓
-        </Link></li>
+        <li>
+          Welcome to my portfolio. You're lucky to have gained beta access, while it's still in the making! Here are some of the features to come:
+          <ul className="
+            list-disc list-inside ml-2 my-4
+          ">
+            <li> More projects </li>
+            <li> CV (interactive?) </li>
+            <li> About page </li>
+            <li> Navigation to replace this.. </li>
+          </ul>
+          Please click around, feel at home and pick a color theme you like below (there are more in the oven)
+        </li>
+        <li className="text-lg mt-1 ml-2">
+        ↓
+          {/* ↓ ↓▼▾ 🠃🠋🠇🠛🠣 */}
+        </li>
       </ul>
 
 

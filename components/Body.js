@@ -17,8 +17,8 @@ const Body = ({ nextFont, children }) => {
       bgBTheme: "bg-ockerdust-950",
       bgBrightTheme: 'bg-ockerdust-700',
       bgReverseTheme: 'bg-ockerdust-700',
-      borderATheme: "border-ockerdust-700",
-      textATheme: 'text-ockerdust-700',
+      borderATheme: "border-ockerdust-600",
+      textATheme: 'text-ockerdust-600',
       textBTheme: 'text-ockerdust-900',
       textBrightTheme: 'text-ockerdust-200',
       textReverseTheme: 'text-ockerdust-950',
@@ -59,7 +59,7 @@ const Body = ({ nextFont, children }) => {
           onClick={applyOckerdust}
           className="
             w-6 aspect-square cursor-pointer
-            bg-ockerdust-800 rounded-full
+            bg-ockerdust-700 rounded-full
         "/>
         <div
           onClick={applyAqua}

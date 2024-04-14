@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const ProjectItem = ({ imgSrc, imgAlt, link }) => {
   return ( <figure className="
-    relative posterListCustom overflow-hidden
+    relative posterListCustom
     bg-ockerdust-600/35
     coolCornersCustom
   ">

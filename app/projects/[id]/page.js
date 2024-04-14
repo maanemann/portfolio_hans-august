@@ -19,18 +19,28 @@ const ProjectDetails = () => {
       <div className={`${theme.textATheme}`}>
         <div className='flex'>
           <h1 className="text-8xl font-bold pb-8">{project.title}</h1>
-          <span className={`
-            ml-auto mt-5 h-16 w-16
-            text-center text-4xl
-            leading-[3.75rem]
+          <div className='
+            ml-auto h-fit w-max mt-7
             rounded-full border-3
             ${theme.borderATheme}
-          `}>UI</span>
+          '>
+          <span className={`
+            block px-6 py-2
+            text-center text-2xl
+            font-medium
+          `}>
+            UI / UX
+            {/* 🞵🞶🞷🞸🞹🞺 */}
+          </span>
+          </div>
         </div>
         {/* `\n` is a "newline character" used in projectsData.json, and with the split method, the string is split into an array of substrings, which is then mapped over to render each substring as a paragraph
         */}
+        <p className='font-medium mb-3'>
+          Company: { project.company }
+        </p>
         <div className='grid gap-8'>
-          {project.description.split('\n').map((paragraph, index) => (
+          { project.description.split('\n').map((paragraph, index) => (
             <p key={index} className="
               paragraph lg:columns-2 gap-8
             ">{paragraph}</p>

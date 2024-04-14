@@ -8,7 +8,7 @@ import { Suspense } from "react";
 import Loading from "./loading";
 
 const dmSans = DM_Sans({
-  weight: ['400', '700'],
+  weight: ['400', '500', '700'],
   subsets: ["latin"],
   display: "swap",
 });

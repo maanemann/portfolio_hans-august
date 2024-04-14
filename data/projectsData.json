@@ -3,29 +3,32 @@
   {
     "id": "cocoon",
     "title": "Cocoon",
+    "company": "Geometric Interactive",
     "imgSrc": "/projects/cocoon/cocoonUI_init.jpg",
     "imgAlt": "Cocoon UI",
     "imgWidth": "2162",
     "imgHeight": "1455",
-    "description": "I had the honour of designing the UI / UX for Cocoon, an award-winning puzzle game, in which you delve deep into surreal worlds, nested within each other. From Geometric Interactive, a talented team, including developers behind Limbo and Inside. \n Here you see the loading screen, round like a dial, or a clock. It gives an overview of the game, your progress and other information that you learn to understand through playing the game. Everything you see is bound to the symbolics and logics of the game, all boiled down to one display."
+    "description": "I had the honour of designing the interface for Cocoon, an award-winning puzzle game, in which you delve deep into surreal worlds, nested within each other. From Geometric Interactive, a talented team, including developers behind Limbo and Inside. \n Here you see the loading screen, round like a dial, or a clock. It gives an overview of the game, your progress and other information that you learn to understand through playing the game. Everything you see is bound to the symbolics and logics of the game, all boiled down to one display."
   },
   {
     "id": "trailmakers",
     "title": "Trailmakers",
+    "company": "Flashbulb Games",
     "imgSrc": "/projects/trailmakers/pioneersUI_init.png",
     "imgAlt": "Pioneers UI",
     "imgWidth": "4122",
     "imgHeight": "2988",
-    "description": "blabla.."
+    "description": "Trailmakers gives you an open world to explore with the help of any thinkable vehicle that you build yourself. In collaboration with creative director Mikkel Thorsted I had a lot of fun brainstormin, designing and implementing the UI / UX for the player to get the most intuitive approach to building a 3D vehicle on a flat screen – sorta like Lego, but without being able to touch the pieces, and with rocket engines. \n Apart from the building interface, I also worked on the inventory for the many blocks you find on your journey, which have to be sorted and stored in a way that makes sense to the player."
   },
   {
     "id": "kalimba",
     "title": "Kalimba",
+    "company": "Press Play / Flashbulb Games",
     "imgSrc": "/projects/kalimba/kalimbaUI_init.png",
     "imgAlt": "Kalimba UI",
     "imgWidth": "1952",
     "imgHeight": "1952",
-    "description": "blabla.."
+    "description": "Kalimba is a puzzle platformer, in which everything is build of triangles. When the game was ported to iOS it required a new, touch-friendly UI, which was my responsibility. As something new for the menu, I decided to approach the in-game triangle (or trixel) grid as a strict dogma and made everything in the UI out of triangles. This way the UI blends naturally into the game world, instead of just being a layer on top of it."
   }
 ]
 

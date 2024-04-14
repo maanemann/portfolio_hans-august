@@ -43,7 +43,7 @@ const MainNav = () => {
         ${theme.textATheme}
       `}>
         <li>
-          Welcome to my portfolio. You're lucky to have gained beta access, while it's still in the making! Here are some of the features to come:
+          Welcome to my portfolio. You&apos;re lucky to have gained beta access, while it&apos;s still in the making! Here are some of the features to come:
           <ul className="
             list-disc list-inside ml-2 my-4
           ">

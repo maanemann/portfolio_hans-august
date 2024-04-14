@@ -48,21 +48,28 @@ const ProjectDetails = () => {
         </div>
       </div>
       <div
-        className='relative w-full'
+        className={`relative w-full ${theme.bgATheme}`}
         style={{
           // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
           paddingBottom: `${imgHeight / imgWidth * 100}%`
         }}
       >
+        <p className={`
+          block mt-6 ml-10 opacity-65
+          text-4xl font-bold tracking-wider italic ${theme.textATheme}
+        `}>
+          Loading...
+        </p>
         <Image
           src={project.imgSrc} alt={project.imgAlt}
           priority fill sizes="100vw"
           className="w-full object-contain object-left-top
             opacity-0
           "
-          onLoad={(e) =>
-            e.target.classList.remove('opacity-0')
-          }
+          onLoad={(e) => {
+            e.target.classList.remove('opacity-0');
+            e.target.previousElementSibling.remove();
+          }}
         />
       </div>
     </article>

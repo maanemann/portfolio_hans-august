@@ -19,7 +19,7 @@ const MainNav = () => {
 
   return (
     <nav
-      className="w-96 px-10
+      className="w-96 px-14
     ">
       <Link
         href="/#"
@@ -45,7 +45,7 @@ const MainNav = () => {
         <li>
           Welcome to my portfolio. You&apos;re lucky to have gained beta access, while it&apos;s still in the making! Here are some of the features to come:
           <ul className="
-            list-disc list-inside ml-2 my-4
+            list-disc ml-2 my-4 pl-3
           ">
             <li> More projects </li>
             <li> CV (interactive?) </li>
@@ -54,7 +54,7 @@ const MainNav = () => {
           </ul>
           Please click around, feel at home and pick a color theme you like below (there are more in the oven)
         </li>
-        <li className="text-lg mt-1 ml-2">
+        <li className="text-lg mt-2 ml-2">
         ↓
           {/* ↓ ↓▼▾ 🠃🠋🠇🠛🠣 */}
         </li>

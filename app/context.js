@@ -23,16 +23,17 @@ export function ThemeWrapper({ children }) {
     // // Hent state fra local storage, hvis det findes, ellers brug default state :
     // return savedTheme ? JSON.parse(savedTheme) : {
       themeTitle: 'ockerdust',
+      textATheme: 'text-ockerdust-200',
+      textA2Theme: 'text-ockerdust-300',
+      textBTheme: 'text-ockerdust-900',
+      textBrightTheme: 'text-ockerdust-200',
+      textReverseTheme: 'text-ockerdust-950',
+      placehReverseTheme: 'text-ockerdust-950/50',
+      borderATheme: 'border-ockerdust-300',
       bgATheme: 'bg-ockerdust-900',
       bgBTheme: 'bg-ockerdust-950',
       bgBrightTheme: 'bg-ockerdust-700',
-      borderATheme: 'border-ockerdust-200',
-      textATheme: 'text-ockerdust-200',
-      textBTheme: 'text-ockerdust-900',
-      textBrightTheme: 'text-ockerdust-200',
       bgReverseTheme: 'bg-ockerdust-700',
-      textReverseTheme: 'text-ockerdust-950',
-      placehReverseTheme: 'text-ockerdust-950/50',
       scrollbarTheme: 'scrOckerdustCustom',
 
       // fetch test :

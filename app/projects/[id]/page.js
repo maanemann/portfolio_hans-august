@@ -14,11 +14,11 @@ const ProjectDetails = () => {
   const imgWidth = project.imgWidth;
   const imgHeight = project.imgHeight;
   return (
-    <article className='p-6 py-10 2xl:py-24
+    <article className='p-6 py-14 2xl:py-24
     grid gap-10 w-full max-w-[64rem] mx-auto'>
       <div className={`${theme.textATheme}`}>
         <div className='flex'>
-          <h1 className="text-8xl font-bold pb-8">{project.title}</h1>
+          <h1 className="text-8xl font-bold pb-11">{project.title}</h1>
           <div className='
             ml-auto h-fit w-max mt-7
             rounded-full border-3

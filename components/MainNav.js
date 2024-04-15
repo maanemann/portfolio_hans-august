@@ -2,7 +2,6 @@
 'use client'
 
 import { useThemeContext } from "@/app/context";
-import { useState } from "react";
 import Link from "next/link";
 
 const MainNav = () => {
@@ -19,17 +18,19 @@ const MainNav = () => {
 
   return (
     <nav
-      className="w-96 px-14
+      className="w-96 px-14 pt-[4.5rem] mb-[4.5rem] overflow-y-auto
     ">
       <Link
         href="/#"
-        className="block w-24 mx-auto mb-16"
+        className="
+          block w-24 mx-auto mb-[4.5rem] opacity-90
+        "
       >
         <div className={`
           w-full aspect-square
           border-x-3 border-t-3
           ${theme.borderATheme}
-          mx-auto mt-16
+          mx-auto
         `} />
         <div className={`
           w-[calc(100%+3rem)] -ml-6
@@ -40,7 +41,8 @@ const MainNav = () => {
       </Link>
 
       <ul className={`
-        ${theme.textATheme}
+        ${theme.textA2Theme}
+        font-medium tracking-wide opacity-90
       `}>
         <li>
           Welcome to my portfolio. You&apos;re lucky to have gained beta access, while it&apos;s still in the making! Here are some of the features to come:

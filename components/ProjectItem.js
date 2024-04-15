@@ -19,7 +19,7 @@ const ProjectItem = ({ imgSrc, imgAlt, link }) => {
     ">
       <p className={`
         block mt-6 ml-12 opacity-65
-        text-4xl font-bold tracking-wider italic ${theme.textATheme}
+        text-4xl font-bold tracking-wider italic ${theme.textA2Theme}
       `}>
         Loading...
       </p>

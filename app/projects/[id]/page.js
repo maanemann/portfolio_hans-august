@@ -62,7 +62,7 @@ const ProjectDetails = () => {
         </p>
         <Image
           src={project.imgSrc} alt={project.imgAlt}
-          priority fill sizes="100vw"
+          priority fill sizes="90vw"
           className="w-full object-contain object-left-top
             opacity-0
           "

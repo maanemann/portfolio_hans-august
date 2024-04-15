@@ -6,49 +6,44 @@ import { createContext, useContext, useState } from "react";
 
 // // #region themeContext
 
+const themes = {
+  ockerdust: {
+    textATheme: 'text-ockerdust-200',
+    textA2Theme: 'text-ockerdust-300',
+    textBTheme: 'text-ockerdust-900',
+    textBrightTheme: 'text-ockerdust-200',
+    textReverseTheme: 'text-ockerdust-950',
+    placehReverseTheme: 'text-ockerdust-950/50',
+    borderATheme: 'border-ockerdust-300',
+    bgATheme: 'bg-ockerdust-900',
+    bgBTheme: 'bg-ockerdust-950',
+    bgBrightTheme: 'bg-ockerdust-700',
+    bgReverseTheme: 'bg-ockerdust-700',
+    scrollbarTheme: 'scrOckerdustCustom',
+  },
+  aqua: {
+    textATheme: 'text-aqua-200',
+    textA2Theme: 'text-aqua-300',
+    textBTheme: 'text-aqua-900',
+    textBrightTheme: 'text-aqua-200',
+    textReverseTheme: 'text-aqua-950',
+    borderATheme: "border-aqua-300",
+    bgATheme: "bg-aqua-900",
+    bgBTheme: "bg-aqua-950",
+    bgBrightTheme: 'bg-aqua-700',
+    bgReverseTheme: 'bg-aqua-700',
+    scrollbarTheme: 'scrAquaCustom',
+  },
+};
+
 const themeContext = createContext();
 
 export function ThemeWrapper({ children }) {
-
-  const [theme, setTheme] = useState(
-    // () =>
-    {
-    // // For at undgå fejlmeddelelse, returneres null, når det læses på serveren, som ikke har 'window' (fejl opstår enten fordi localStorage ikke findes, eller fordi state er noget andet på klienten end serveren) :
-    // let savedTheme;
-    // try {
-    //   savedTheme = typeof window !== 'undefined' && localStorage.getItem('theme');
-    // } catch (error) {
-    //   savedTheme = null;
-    // }
-    // // Hent state fra local storage, hvis det findes, ellers brug default state :
-    // return savedTheme ? JSON.parse(savedTheme) : {
-      themeTitle: 'ockerdust',
-      textATheme: 'text-ockerdust-200',
-      textA2Theme: 'text-ockerdust-300',
-      textBTheme: 'text-ockerdust-900',
-      textBrightTheme: 'text-ockerdust-200',
-      textReverseTheme: 'text-ockerdust-950',
-      placehReverseTheme: 'text-ockerdust-950/50',
-      borderATheme: 'border-ockerdust-300',
-      bgATheme: 'bg-ockerdust-900',
-      bgBTheme: 'bg-ockerdust-950',
-      bgBrightTheme: 'bg-ockerdust-700',
-      bgReverseTheme: 'bg-ockerdust-700',
-      scrollbarTheme: 'scrOckerdustCustom',
-
-      // fetch test :
-      // imgPath: `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`
-  //   };
-  });
-
-  // useEffect(() => {
-  //   // Save the theme to local storage whenever it changes
-  //   localStorage.setItem('theme', JSON.stringify(theme));
-  // }, [theme]);
+  const [themeKey, setThemeKey] = useState('ockerdust');
 
   return(
-    // <themeContext.Provider value={{...this.theme}}>
-    <themeContext.Provider value={{ theme, setTheme }}>
+    // Here we serve two properties to use elsewhere: `theme` and `setTheme`. `theme` refers to the `themes` variable (above) – that stores the theme objects – and points to the property (theme name) that matches what's stored in the state. Bracket notation is used instead of dot notation, as `themeKey` is a (state) variable refering to a property rather than a property itself. `setTheme` just fires the setter function (`setThemeKey`) for the state variable `themeKey` :
+    <themeContext.Provider value={{ theme: themes[themeKey], setTheme: setThemeKey }}>
       { children }
     </themeContext.Provider>
   )
@@ -60,10 +55,3 @@ export function useThemeContext() {
 
 // // #endregion themeContext
 
-
-
-// // #region read-more
-
-// *1* : ´map´ tager en callback funktion som argument, og denne funktion kan tage tre argumenter: det aktuelle element, index og det oprindelige array. Her er brugt de første to argumenter. Index er en nul-baseret værdi, som repræsenterer det aktuelle element i array'et, hvilket react bruger til at opdatere DOM korrekt.
-
-// // #endregion read-more

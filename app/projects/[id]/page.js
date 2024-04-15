@@ -14,7 +14,7 @@ const ProjectDetails = () => {
   const imgWidth = project.imgWidth;
   const imgHeight = project.imgHeight;
   return (
-    <article className='p-6 py-14 2xl:py-24
+    <article className='p-8 pt-14 2xl:py-24
     grid gap-10 w-full max-w-[64rem] mx-auto'>
       <div className={`${theme.textATheme}`}>
         <div className='flex'>
@@ -48,7 +48,7 @@ const ProjectDetails = () => {
         </div>
       </div>
       <div
-        className={`relative w-full ${theme.bgATheme}`}
+        className={`relative w-full ${theme.bgATheme} xl:mb-6`}
         style={{
           // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
           paddingBottom: `${imgHeight / imgWidth * 100}%`

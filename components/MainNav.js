@@ -45,7 +45,7 @@ const MainNav = () => {
         font-medium tracking-wide opacity-90
       `}>
         <li>
-          Welcome to my portfolio. You&apos;re lucky to have gained beta access, while it&apos;s still in the making! Here are some of the features to come:
+          Welcome to my portfolio. You&apos;re lucky to have gained beta access, while it&apos;s still in the making! This might have turned up next time you check:
           <ul className="
             list-disc ml-2 my-4 pl-3
           ">

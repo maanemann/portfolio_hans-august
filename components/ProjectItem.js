@@ -16,7 +16,15 @@ const ProjectItem = ({ imgSrc, imgAlt, link }) => {
     <Link href={ link } className="
       absolute w-full h-full
       hover:saturate-[1.33] hover:brightness-[1.1]
-    ">
+      "
+      // onClick={
+      //   function() {
+      //     const mainNavUl = document.querySelector('.mainNavUlCustom');
+      //     mainNavUl.classList.add('opacity-55');
+      //     mainNavUl.classList.remove('opacity-90');
+      //   }
+      // }
+    >
       <p className={`
         block mt-6 ml-12 opacity-65
         text-4xl font-bold tracking-wider italic ${theme.textA2Theme}

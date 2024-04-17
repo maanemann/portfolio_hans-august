@@ -2,11 +2,35 @@
 'use client'
 
 import { useThemeContext } from "@/app/context";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const MainNav = () => {
   // const [searchTerm, setSearchTerm] = useState("");
   const { theme } = useThemeContext();
+  const pathname = usePathname();
+
+  useEffect(() => {
+      const mainNavUl = document.querySelector('.mainNavUlCustom');
+      if (pathname === '/') {
+        mainNavUl.classList.add('brightness-90');
+        mainNavUl.classList.remove('brightness-[.66]');
+        mainNavUl.classList.remove('saturate-[66%]');
+        mainNavUl.classList.remove('-hue-rotate-15');
+        mainNavUl.classList.remove('hover:brightness-[.9]');
+        mainNavUl.classList.remove('hover:saturate-[1]');
+        mainNavUl.classList.remove('hover:hue-rotate-0');
+      } else {
+        mainNavUl.classList.add('brightness-[.66]');
+        mainNavUl.classList.add('saturate-[66%]');
+        mainNavUl.classList.add('-hue-rotate-15');
+        mainNavUl.classList.add('hover:brightness-[.9]');
+        mainNavUl.classList.add('hover:saturate-[1]');
+        mainNavUl.classList.add('hover:hue-rotate-0');
+        mainNavUl.classList.remove('brightness-90');
+      }
+  }, [pathname]);
 
   // const filteredFilms = searchTerm !== ""
   //   ? films.filter(film =>
@@ -18,12 +42,15 @@ const MainNav = () => {
 
   return (
     <nav
-      className="w-96 px-14 pt-[4.5rem] mb-[4.5rem] overflow-y-auto
+      className="
+        mainNavUlCustom opacity-90
+        w-96 px-14 pt-[4.5rem] mb-[4.5rem]
+        overflow-y-auto
     ">
       <Link
         href="/#"
         className="
-          block w-24 mx-auto mb-[4.5rem] opacity-90
+          block w-24 mx-auto mb-[4.5rem]
         "
       >
         <div className={`
@@ -42,7 +69,7 @@ const MainNav = () => {
 
       <ul className={`
         ${theme.textA2Theme}
-        font-medium tracking-wide opacity-90
+        font-medium tracking-wide
       `}>
         <li>
           Welcome to my portfolio. You&apos;re lucky to have gained beta access, while it&apos;s still in the making! This might have turned up next time you check:

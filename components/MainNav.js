@@ -43,6 +43,7 @@ const MainNav = () => {
   return (
     <nav
       className="
+        hidden md:block
         mainNavUlCustom opacity-90
         w-96 px-14 pt-[4.5rem] mb-[4.5rem]
         overflow-y-auto

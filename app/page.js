@@ -11,31 +11,24 @@ export default function Home() {
   // const { theme } = useThemeContext();
 
   return (
-      <section className='
-        grid gap-1 pt-1 mb-16 md:mb-1 content-start
-        sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2
-        grid-flow-row
-      '>
-        <Suspense fallback={<Loading />}>
-          {data.map(project => (
-            <ProjectItem
-              key={project.id}
-              imgSrc={ project.imgSrc }
-              imgAlt={ project.imgAlt }
-              link={`/projects/${project.id}`}
-            />
-          ))}
-          {/* <ProjectItem
-            imgSrc={ cocoon_init } imgAlt="Cocoon UI"
-          />
-          <ProjectItem
-            imgSrc={ pioneers_init } imgAlt="Trailmakers UI"
-          />
-          <ProjectItem
-            imgSrc={ kalimba_init } imgAlt="Kalimba UI"
-          /> */}
-        </Suspense>
-      </section>
+      <div>
+        <section className='
+          grid gap-1 mb-16 md:mb-0 content-start
+          sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2
+          grid-flow-row rounded-r-lg overflow-y-hidden
+        '>
+          <Suspense fallback={<Loading />}>
+            {data.map(project => (
+              <ProjectItem
+                key={project.id}
+                imgSrc={ project.imgSrc }
+                imgAlt={ project.imgAlt }
+                link={`/projects/${project.id}`}
+              />
+            ))}
+          </Suspense>
+        </section>
+      </div>
   );
 }
 

@@ -10,6 +10,7 @@ const themes = {
   ockerdust: {
     textATheme: 'text-ockerdust-200',
     textA2Theme: 'text-ockerdust-300',
+    textA3Theme: 'text-ockerdust-400',
     textBTheme: 'text-ockerdust-900',
     textBrightTheme: 'text-ockerdust-200',
     textReverseTheme: 'text-ockerdust-950',
@@ -18,12 +19,13 @@ const themes = {
     bgATheme: 'bg-ockerdust-900',
     bgBTheme: 'bg-ockerdust-950',
     bgBrightTheme: 'bg-ockerdust-700',
-    bgReverseTheme: 'bg-ockerdust-700',
+    bgBrightBTheme: 'bg-ockerdust-800',
     scrollbarTheme: 'scrOckerdustCustom',
   },
   aqua: {
     textATheme: 'text-aqua-200',
     textA2Theme: 'text-aqua-300',
+    textA3Theme: 'text-aqua-400',
     textBTheme: 'text-aqua-900',
     textBrightTheme: 'text-aqua-200',
     textReverseTheme: 'text-aqua-950',
@@ -31,7 +33,7 @@ const themes = {
     bgATheme: "bg-aqua-900",
     bgBTheme: "bg-aqua-950",
     bgBrightTheme: 'bg-aqua-700',
-    bgReverseTheme: 'bg-aqua-700',
+    bgBrightBTheme: 'bg-aqua-800',
     scrollbarTheme: 'scrAquaCustom',
   },
 };

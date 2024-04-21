@@ -4,14 +4,32 @@
 import { useThemeContext } from "@/app/context";
 import MainNav from "./MainNav";
 import ThemeButts from "./ThemeButts";
+import { useState, useEffect } from "react";
+
+// if (typeof document !== 'undefined') {
+//   const mainContent = document.querySelector('.mainContentCustom');
+//   const hasScrollableContent = mainContent.scrollHeight > mainContent.clientHeight;
+//   if (hasScrollableContent) {
+//     mainContent.classList.add('pr-2', 'mr-2');
+//   }
+// }
 
 const Body = ({ nextFont, children }) => {
   const { theme } = useThemeContext();
+  const [ scrollPadding, setScrollPadding ] = useState('');
+
+  useEffect(() => {
+    const mainContent = document.querySelector('.mainContentCustom');
+    const hasScrollableContent = mainContent.scrollHeight > mainContent.clientHeight;
+    if (hasScrollableContent) {
+      setScrollPadding('pr-2');
+    }
+  }, []);
 
   return (
     <body className={`
       ${ nextFont } w-screen h-screen
-      flex p-8 ${ theme.bgBrightTheme }
+      flex p-2 pt-10 ${ theme.bgBrightBTheme }
       scrThinCustom ${theme.scrollbarTheme}
       tracking-normal
     `}>
@@ -21,16 +39,37 @@ const Body = ({ nextFont, children }) => {
         bgTextureCustom rounded-2xl
         overflow-hidden
       `}>
+        <div className={`
+          ${ theme.textATheme }
+        `}>
+          <span className={`
+            fixed top-3 left-6 uppercase opacity-65
+            text-sm font-bold tracking-wider
+          `}>
+            Hans August &nbsp;— &nbsp;Portfolio
+          </span>
+          <span className={`
+            fixed top-2 right-6 opacity-60
+            ${ theme.textA3Theme }
+          `}>
+            🞵🞶🞷🞸🞹🞺
+          </span>
+        </div>
         <MainNav />
         <ThemeButts />
-        <main className={`
-          w-full h-full flex flex-col
-          items-stretch gap-1 p-1
-          overflow-y-auto
-          ${theme.bgBTheme}
+        <div className={`
+          ${theme.bgBTheme} w-full p-2 m-2 rounded-xl
         `}>
-          { children }
-        </main>
+          <main className={`
+            w-full h-full flex flex-col
+            items-stretch gap-1
+            overflow-y-auto rounded-xl
+            mainContentCustom ${scrollPadding}
+            ${theme.bgBTheme}
+          `}>
+            { children }
+          </main>
+        </div>
       </div>
     </body>
   );

@@ -3,43 +3,35 @@
 
 import { useThemeContext } from "@/app/context";
 import MainNav from "./MainNav";
+import ThemeButts from "./ThemeButts";
 
 const Body = ({ nextFont, children }) => {
-  const { theme, setTheme } = useThemeContext();
+  const { theme } = useThemeContext();
 
   return (
     <body className={`
-      ${ nextFont } flex w-screen h-screen
-      overflow-hidden ${theme.bgATheme}
+      ${ nextFont } w-screen h-screen
+      flex p-8 ${ theme.bgBrightTheme }
       scrThinCustom ${theme.scrollbarTheme}
       tracking-normal
     `}>
-      <MainNav />
-      <div className="
-        absolute bottom-6 left-6
-        flex gap-4
-      ">
-        <div
-          onClick={() => setTheme('ockerdust')}
-          className="
-            w-6 aspect-square cursor-pointer
-            bg-ockerdust-700 rounded-full
-        "/>
-        <div
-          onClick={() => setTheme('aqua')}
-          className="
-            w-6 aspect-square cursor-pointer
-            bg-aqua-800 rounded-full
-        "/>
-      </div>
-      <main className={`
-        w-full h-full flex flex-col
-        items-stretch gap-1 p-1
-        overflow-y-auto
-        ${theme.bgBTheme}
+      <div className={`
+        flex relative w-full
+        ${ theme.bgATheme }
+        bgTextureCustom rounded-2xl
+        overflow-hidden
       `}>
-        { children }
-      </main>
+        <MainNav />
+        <ThemeButts />
+        <main className={`
+          w-full h-full flex flex-col
+          items-stretch gap-1 p-1
+          overflow-y-auto
+          ${theme.bgBTheme}
+        `}>
+          { children }
+        </main>
+      </div>
     </body>
   );
 }

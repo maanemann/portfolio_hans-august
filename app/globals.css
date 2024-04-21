@@ -17,7 +17,7 @@
   background: black
 }
 
-body {
+.bgTextureCustom {
   /* background-color: theme('colors.ockerdust.900'); */
   background-image: url(../public/bg-pat.svg);
   /* Gammel idé : */
@@ -59,6 +59,10 @@ body {
 .scrAquaCustom {
     /* scrollbar-width: thin; */
     scrollbar-color: theme('colors.aqua.700') theme('colors.aqua.900');
+}
+
+.maskCompositeCustom {
+    mask-composite: exclude;
 }
 
 /* Chrome, Edge, Safari : */

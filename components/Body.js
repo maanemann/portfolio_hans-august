@@ -5,6 +5,7 @@ import { useThemeContext } from "@/app/context";
 import MainNav from "./MainNav";
 import ThemeButts from "./ThemeButts";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 // if (typeof document !== 'undefined') {
 //   const mainContent = document.querySelector('.mainContentCustom');
@@ -16,38 +17,55 @@ import { useState, useEffect } from "react";
 
 const Body = ({ nextFont, children }) => {
   const { theme } = useThemeContext();
-  const [ scrollPadding, setScrollPadding ] = useState('');
+  // const [ scrollPadding, setScrollPadding ] = useState('');
 
-  useEffect(() => {
-    const mainContent = document.querySelector('.mainContentCustom');
-    const hasScrollableContent = mainContent.scrollHeight > mainContent.clientHeight;
-    if (hasScrollableContent) {
-      setScrollPadding('pr-2');
-    }
-  }, []);
+  // useEffect(() => {
+  //   const mainContent = document.querySelector('.mainContentCustom');
+  //   const hasScrollableContent = mainContent.scrollHeight > mainContent.clientHeight;
+  //   if (hasScrollableContent) {
+  //     setScrollPadding('pr-2');
+  //   }
+  // }, []);
 
   return (
     <body className={`
-      ${ nextFont } w-screen h-screen
-      flex p-2 pt-10 ${ theme.bgBrightBTheme }
-      scrThinCustom ${theme.scrollbarTheme}
-      tracking-normal
+      ${ nextFont } w-screen h-screen flex p-2 pt-10
+      ${ theme.bgBrightBTheme } tracking-normal
+      ${theme.scrollbarTheme} scrThinCustom
     `}>
       <div className={`
         flex relative w-full
-        ${ theme.bgATheme }
-        bgTextureCustom rounded-2xl
-        overflow-hidden
+        ${ theme.bgATheme } bgTextureCustom
+        overflow-hidden rounded-md
       `}>
         <div className={`
           ${ theme.textATheme }
         `}>
-          <span className={`
-            fixed top-3 left-6 uppercase opacity-65
-            text-sm font-bold tracking-wider
-          `}>
-            Hans August &nbsp;— &nbsp;Portfolio
-          </span>
+          <Link href="/#"
+            className={`
+              fixed top-3 left-6 uppercase opacity-65
+              text-sm font-bold tracking-wider flex
+            `}>
+            <div
+              className="block w-3.5 mt-[0.175rem] mr-5"
+            >
+              <div className={`
+                w-full aspect-square
+                border-x-3 border-t-3 grid
+                ${theme.borderBTheme}
+              `}>
+                <div className={`
+                  w-[calc(100%+.85rem)]
+                  border-t-3 mt-0.5
+                  self-center justify-self-center
+                  ${theme.borderBTheme}
+                `} />
+              </div>
+            </div>
+            <span>
+              Hans August &nbsp;— &nbsp;Portfolio
+            </span>
+          </Link>
           <span className={`
             fixed top-2 right-6 opacity-60
             ${ theme.textA3Theme }
@@ -57,19 +75,18 @@ const Body = ({ nextFont, children }) => {
         </div>
         <MainNav />
         <ThemeButts />
-        <div className={`
-          ${theme.bgBTheme} w-full p-2 m-2 rounded-xl
-        `}>
+        {/* <div className={`
+          ${theme.bgBTheme} w-full
+        `}> */}
           <main className={`
             w-full h-full flex flex-col
-            items-stretch gap-1
-            overflow-y-auto rounded-xl
-            mainContentCustom ${scrollPadding}
+            items-stretch gap-1 p-2
+            overflow-y-auto
             ${theme.bgBTheme}
           `}>
             { children }
           </main>
-        </div>
+        {/* </div> */}
       </div>
     </body>
   );

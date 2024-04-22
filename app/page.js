@@ -13,9 +13,9 @@ export default function Home() {
   return (
       <div>
         <section className='
-          grid gap-1 mb-16 md:mb-0 content-start
+          grid gap-2 mb-16 md:mb-0 content-start
           sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2
-          grid-flow-row rounded-r-lg overflow-y-hidden
+          grid-flow-row overflow-y-hidden
         '>
           <Suspense fallback={<Loading />}>
             {data.map(project => (

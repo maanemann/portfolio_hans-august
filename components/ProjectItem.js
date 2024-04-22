@@ -9,7 +9,7 @@ const ProjectItem = ({ imgSrc, imgAlt, link }) => {
   const { theme } = useThemeContext();
 
   return ( <figure className={`
-    relative posterListCustom
+    relative w-full h-[16rem] xl:h-[24rem] 2xl:h-[32rem]
     ${theme.bgATheme}
     coolCornersCustom
   `}>
@@ -17,13 +17,6 @@ const ProjectItem = ({ imgSrc, imgAlt, link }) => {
       absolute w-full h-full
       hover:saturate-[1.33] hover:brightness-[1.1]
       "
-      // onClick={
-      //   function() {
-      //     const mainNavUl = document.querySelector('.mainNavUlCustom');
-      //     mainNavUl.classList.add('opacity-55');
-      //     mainNavUl.classList.remove('opacity-90');
-      //   }
-      // }
     >
       <p className={`
         block mt-6 ml-12 opacity-65

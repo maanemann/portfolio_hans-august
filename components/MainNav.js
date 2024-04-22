@@ -4,7 +4,6 @@
 import { useThemeContext } from "@/app/context";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
 
 const MainNav = () => {
   // const [searchTerm, setSearchTerm] = useState("");
@@ -45,10 +44,10 @@ const MainNav = () => {
       className="
         hidden md:block
         mainNavUlCustom opacity-90
-        w-96 px-14 pt-[4.5rem] mt-2 mb-[4.5rem]
+        p-10 mb-[4.5rem]
         overflow-y-auto
     ">
-      <Link
+      {/* <Link
         href="/#"
         className="
           block w-24 mx-auto mb-[4.5rem]
@@ -66,7 +65,7 @@ const MainNav = () => {
           ${theme.borderATheme}
           mx-auto -mt-6
         `} />
-      </Link>
+      </Link> */}
 
       <ul className={`
         ${theme.textA2Theme}

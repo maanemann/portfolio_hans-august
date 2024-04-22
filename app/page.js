@@ -11,24 +11,25 @@ export default function Home() {
   // const { theme } = useThemeContext();
 
   return (
-      <div>
-        <section className='
-          grid gap-2 mb-16 md:mb-0 content-start
-          sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2
-          grid-flow-row overflow-y-hidden
-        '>
-          <Suspense fallback={<Loading />}>
-            {data.map(project => (
-              <ProjectItem
-                key={project.id}
-                imgSrc={ project.imgSrc }
-                imgAlt={ project.imgAlt }
-                link={`/projects/${project.id}`}
-              />
-            ))}
-          </Suspense>
-        </section>
-      </div>
+    <div>
+      <section className='
+        grid gap-2 mb-16 md:mb-0 content-start
+        sm:grid-cols-2 md:grid-cols-1
+        lg:grid-cols-2 xl:grid-cols-3
+        grid-flow-row overflow-y-hidden
+      '>
+        <Suspense fallback={<Loading />}>
+          {data.map(project => (
+            <ProjectItem
+              key={project.id}
+              imgSrc={ project.imgSrc }
+              imgAlt={ project.imgAlt }
+              link={`/projects/${project.id}`}
+            />
+          ))}
+        </Suspense>
+      </section>
+    </div>
   );
 }
 

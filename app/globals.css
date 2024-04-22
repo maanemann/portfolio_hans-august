@@ -31,11 +31,6 @@
   @apply bacground-red-300;
 } */
 
-.posterListCustom {
-  width: 100%;
-  height: 16rem;
-}
-
 .coolCornersCustom {
   clip-path: polygon(
     0 1rem, 1rem 0,

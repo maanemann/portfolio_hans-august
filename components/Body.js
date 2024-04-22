@@ -34,11 +34,22 @@ const Body = ({ nextFont, children }) => {
       ${theme.scrollbarTheme} scrThinCustom
     `}>
       <div className={`
-        flex relative w-full
+        grid md:grid-cols-[16rem,auto]
+        relative w-full
         ${ theme.bgATheme } bgTextureCustom
         overflow-hidden rounded-md
       `}>
-        <div className={`
+        <MainNav />
+        <main className={`
+          w-full h-full flex flex-col
+          items-stretch gap-1 p-2
+          overflow-y-auto
+          ${theme.bgBTheme}
+        `}>
+          { children }
+        </main>
+      </div>
+      <div className={`
           ${ theme.textATheme }
         `}>
           <Link href="/#"
@@ -73,21 +84,7 @@ const Body = ({ nextFont, children }) => {
             🞵🞶🞷🞸🞹🞺
           </span>
         </div>
-        <MainNav />
-        <ThemeButts />
-        {/* <div className={`
-          ${theme.bgBTheme} w-full
-        `}> */}
-          <main className={`
-            w-full h-full flex flex-col
-            items-stretch gap-1 p-2
-            overflow-y-auto
-            ${theme.bgBTheme}
-          `}>
-            { children }
-          </main>
-        {/* </div> */}
-      </div>
+      <ThemeButts />
     </body>
   );
 }

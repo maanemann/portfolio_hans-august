@@ -4,16 +4,7 @@
 import { useThemeContext } from "@/app/context";
 import MainNav from "./MainNav";
 import ThemeButts from "./ThemeButts";
-import { useState, useEffect } from "react";
 import Link from "next/link";
-
-// if (typeof document !== 'undefined') {
-//   const mainContent = document.querySelector('.mainContentCustom');
-//   const hasScrollableContent = mainContent.scrollHeight > mainContent.clientHeight;
-//   if (hasScrollableContent) {
-//     mainContent.classList.add('pr-2', 'mr-2');
-//   }
-// }
 
 const Body = ({ nextFont, children }) => {
   const { theme } = useThemeContext();
@@ -31,7 +22,7 @@ const Body = ({ nextFont, children }) => {
     <body className={`
       ${ nextFont } w-screen h-screen flex p-2 pt-10
       ${ theme.bgBrightBTheme } tracking-normal
-      ${theme.scrollbarTheme} scrThinCustom
+      ${ theme.scrollbarTheme } scrThinCustom
     `}>
       <div className={`
         grid md:grid-cols-[16rem,auto]
@@ -74,7 +65,7 @@ const Body = ({ nextFont, children }) => {
               </div>
             </div>
             <span>
-              Hans August &nbsp;— &nbsp;Portfolio
+              Hans August — Portfolio
             </span>
           </Link>
           <span className={`

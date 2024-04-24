@@ -45,6 +45,10 @@ body {
   );
 }
 
+.orphansCustom {
+  orphans: 3;
+}
+
 
 /* // #region scrollbar
 */

@@ -49,10 +49,12 @@ const ProjectDetails = () => {
         <p className='font-medium mb-3'>
           Company: { project.company }
         </p>
-        <div className='grid gap-8'>
+        <div className='lg:columns-2 gap-10'>
+          {/* `orphans` virker desværre ikke i ff (`orphansCustom`) */}
           { project.description.split('\n').map((paragraph, index) => (
             <p key={index} className="
-              paragraph lg:columns-2 gap-8
+              orphansCustom
+              mb-7 last:mb-0 text-pretty
             ">{paragraph}</p>
           ))}
         </div>

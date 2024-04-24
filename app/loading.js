@@ -1,16 +1,17 @@
 
-// Den her loading kræver vist noget mere setup..
+'use client'
+
+import { useThemeContext } from "@/app/context";
+
 const Loading = () => {
-  return ( <div className="
-    text-2xl
-    text-white/75
-    mix-blend-luminosity
-    h-32 w-32 bg-brick-700
-  ">
-    <h1>
-      LOADING...
-    </h1>
-  </div> );
+  const { theme } = useThemeContext();
+
+  return ( <p className={`
+    block mt-6 ml-12 opacity-65
+    text-4xl font-bold tracking-wider italic ${theme.textA2Theme}
+  `}>
+    Loading...
+  </p> );
 }
  
 export default Loading;

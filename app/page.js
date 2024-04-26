@@ -19,6 +19,7 @@ export default function Home() {
           {data.map(project => (
             <ProjectItem
               key={project.id}
+              title={ project.title }
               imgSrc={ project.imgSrc }
               imgAlt={ project.imgAlt }
               link={`/projects/${project.id}`}

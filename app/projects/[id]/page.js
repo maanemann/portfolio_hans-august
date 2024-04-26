@@ -36,18 +36,29 @@ const ProjectDetails = () => {
         </div>
         {/* `\n` is a "newline character" used in projectsData.json, and with the split method, the string is split into an array of substrings, which is then mapped over to render each substring as a paragraph
         */}
-        <p className='font-medium mb-3'>
-          Company: { project.company }
-        </p>
-        <div className='lg:columns-2 gap-10'>
-          {/* `orphans` virker desværre ikke i ff (`orphansCustom`) */}
-          { project.description.split('\n').map((paragraph, index) => (
-            <p key={index} className="
-              orphansCustom
-              mb-7 last:mb-0 text-pretty
-            ">{paragraph}</p>
-          ))}
-        </div>
+        {/* Render `project.company` if not empty : */}
+        { project.company && (
+          <p className='font-medium mb-3'>
+            Company: { project.company }
+          </p>
+        )}
+        {  project.description ? (
+          <div className='lg:columns-2 gap-10'>
+            {/* `orphans` virker desværre ikke i ff (`orphansCustom`) */}
+            { project.description.split('\n').map((paragraph, index) => (
+              <p key={index} className="
+                orphansCustom
+                mb-7 last:mb-0 text-pretty
+              ">{paragraph}</p>
+            ))}
+          </div>
+        )
+        : (
+          <p className='mb-7 text-pretty max-w-[32rem]'>
+            No description yet, only this placeholder text. Have a look at some of the later projects, they should have one.
+          </p>
+        )
+      }
       </div>
       <div
         className={`relative w-full ${theme.bgATheme} xl:mb-6`}

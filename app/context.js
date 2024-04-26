@@ -20,6 +20,7 @@ const themes = {
     bgBrightTheme: 'bg-ockerdust-700',
     bgReverseTheme: 'bg-ockerdust-700',
     scrollbarTheme: 'scrOckerdustCustom',
+    gradientTheme: 'from-ockerdust-800',
   },
   aqua: {
     textATheme: 'text-aqua-200',
@@ -33,6 +34,7 @@ const themes = {
     bgBrightTheme: 'bg-aqua-700',
     bgReverseTheme: 'bg-aqua-700',
     scrollbarTheme: 'scrAquaCustom',
+    gradientTheme: 'from-aqua-800',
   },
 };
 

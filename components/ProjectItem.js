@@ -30,22 +30,21 @@ const ProjectItem = ({ title, imgSrc, imgAlt, link }) => {
           absolute object-cover
           hover:grayscale-0
           group-hover:opacity-100
-          group-hover:mix-blend-normal
         "
         onLoad={(e) => {
-          e.target.classList.add('opacity-50');
+          e.target.classList.add('opacity-55');
           e.target.classList.remove('opacity-0');
           e.target.previousElementSibling.remove();
           e.target.nextElementSibling.classList.remove('opacity-0');
         }}
       />
       <div className="
-        opacity-0 touch:hidden
+        opacity-0
       ">
         <div className={`
-          absolute w-full h-full
-          bg-gradient-to-t from-ockerdust-800 to-transparent
-          group-hover:opacity-50
+          absolute w-full h-full bottom-0
+          bg-gradient-to-t ${theme.gradientTheme} to-transparent
+          group-hover:opacity-0
         `}/>
         <h2 className={`
           absolute bottom-0 text-nowrap my-1 mx-3

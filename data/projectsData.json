@@ -29,6 +29,16 @@
     "imgWidth": "1952",
     "imgHeight": "1952",
     "description": "Kalimba is a puzzle platformer, in which everything is build of triangles. When the game was ported to iOS it required a new, touch-friendly UI, which was my responsibility. As something new for the menu, I decided to approach the in-game triangle (or trixel) grid as a strict dogma and made everything in the UI out of triangles. This way the UI blends naturally into the game world, instead of just being a layer on top of it."
+  },
+  {
+    "id": "ropaa",
+    "title": "Ro/På",
+    "company": "",
+    "imgSrc": "/projects/ropaa/roopaa_init.png",
+    "imgAlt": "Ro På",
+    "imgWidth": "2380",
+    "imgHeight": "1622",
+    "description": "This is the result of an unreleased project made with Mikkel Kortsen Sørensen. After interviewing a number of subjects on their use of digital health services, we found that many people were misinformed and scared by the information they found online. We wanted to create a service that would provide validated information in a calm and reassuring way. \n \"Ro/På\" (loosely translated to \"don't worry\") is a suggestion for how the The Danish Health Authority could provide us with validated information, served in proportion to how common or rare the illness is, and with thorough guidance for how to treat it."
   }
 ]
 

@@ -40,6 +40,20 @@ const MainNav = () => {
   //   // Hvis søgefeltet er tomt vises ingenting (tom array) :
   //   : [];
 
+  const Li = ({ children, href }) => (
+    <li className="
+      relative w-[6.5rem] h-8
+      [&_a]:after:content-['_]']
+      [&_a]:after:absolute
+      [&_a]:after:right-0
+      [&_a]:after:brightness-50
+    ">
+      <Link href={ href }>
+        { children }
+      </Link>
+    </li>
+  );
+
   return (
     <nav
       className="
@@ -71,33 +85,35 @@ const MainNav = () => {
       <ul className={`
         ${theme.textA2Theme}
         font-medium tracking-wide
-        grid gap-6
       `}>
         <li className="
-          w-fit p-2 border-2
+          w-fit p-2 border-2 mb-3
         ">
           UI / UX
           <br /> designer +
           <br /> developer
         </li>
-        <li><Link href="/#">
-          [ about me ]
-        </Link></li>
-        <li><Link href="/#">
-          [ cv ]
-        </Link></li>
-        <li><Link href="/#">
-          [ contact ]
-        </Link></li>
-        <li><Link href="/#">
-          [ more... ]
-        </Link></li>
-        <li>
-          Please click around, feel at home and pick a color theme you like below (there are more in the oven)
-        </li>
-        <li className="text-lg mt-2 ml-2">
-        ↓
-          {/* ↓ ↓▼▾ 🠃🠋🠇🠛🠣 */}
+        <Li href="/#">
+          [ home
+        </Li>
+        <Li href="/#">
+          [ about me
+        </Li>
+        <Li href="/#">
+          [ cv
+        </Li>
+        <Li href="/#">
+          [ contact
+        </Li>
+        <Li href="/#">
+          [ more...
+        </Li>
+        <li className="mt-3">
+          Pick a color
+          <span className="block text-lg mt-0.5 ml-2">
+          ↓
+            {/* ↓ ↓▼▾ 🠃🠋🠇🠛🠣 */}
+          </span>
         </li>
       </ul>
 

@@ -4,6 +4,7 @@
 import { useThemeContext } from "@/app/context";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const MainNav = () => {
   // const [searchTerm, setSearchTerm] = useState("");
@@ -70,17 +71,28 @@ const MainNav = () => {
       <ul className={`
         ${theme.textA2Theme}
         font-medium tracking-wide
+        grid gap-6
       `}>
+        <li className="
+          w-fit p-2 border-2
+        ">
+          UI / UX
+          <br /> designer +
+          <br /> developer
+        </li>
+        <li><Link href="/#">
+          [ about me ]
+        </Link></li>
+        <li><Link href="/#">
+          [ cv ]
+        </Link></li>
+        <li><Link href="/#">
+          [ contact ]
+        </Link></li>
+        <li><Link href="/#">
+          [ more... ]
+        </Link></li>
         <li>
-          Welcome to my portfolio. You&apos;re lucky to have gained beta access, while it&apos;s still in the making! This might have turned up next time you check:
-          <ul className="
-            list-disc ml-2 my-4 pl-3
-          ">
-            <li> More projects </li>
-            <li> CV (interactive?) </li>
-            <li> About page </li>
-            <li> Navigation to replace this.. </li>
-          </ul>
           Please click around, feel at home and pick a color theme you like below (there are more in the oven)
         </li>
         <li className="text-lg mt-2 ml-2">

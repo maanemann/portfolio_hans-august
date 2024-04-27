@@ -41,15 +41,22 @@ const MainNav = () => {
   //   : [];
 
   const Li = ({ children, href }) => (
-    <li className="
-      relative w-[6.5rem] h-8
-      [&_a]:after:content-['_]']
-      [&_a]:after:absolute
-      [&_a]:after:right-0
-      [&_a]:after:brightness-50
-    ">
-      <Link href={ href }>
-        { children }
+    <li>
+      <Link href={ href } className="
+        grid content-center w-fit mr-2
+      ">
+        <span className={`
+          px-3 py-1 text-nowrap
+          border-2
+          ${theme.borderDarkTheme}
+        `}>
+          { children }
+        </span>
+        <div className={`
+          w-full h-[0.5rem]
+          border-2 -mt-[2px]
+          ${theme.borderDarkTheme}
+        `} />
       </Link>
     </li>
   );
@@ -57,10 +64,9 @@ const MainNav = () => {
   return (
     <nav
       className="
-        hidden md:block
+        hidden md:block w-fit
         mainNavUlCustom opacity-90
-        p-10 mb-[4.5rem]
-        overflow-y-auto
+        p-2 overflow-y-auto overflow-x-hidden
     ">
       {/* <Link
         href="/#"
@@ -85,28 +91,31 @@ const MainNav = () => {
       <ul className={`
         ${theme.textA2Theme}
         font-medium tracking-wide
+        grid gap-2 mr-3
       `}>
-        <li className="
-          w-fit p-2 border-2 mb-3
-        ">
+        <li className={`
+          w-fit px-3 py-2 mb-2 text-nowrap
+          outline-dashed -outline-offset-2
+          outline-2 ${theme.outlineDarkTheme}
+        `}>
           UI / UX
           <br /> designer +
           <br /> developer
         </li>
         <Li href="/#">
-          [ home
+          home
         </Li>
         <Li href="/#">
-          [ about me
+          about me
         </Li>
         <Li href="/#">
-          [ cv
+          cv
         </Li>
         <Li href="/#">
-          [ contact
+          contact
         </Li>
         <Li href="/#">
-          [ more...
+          more...
         </Li>
         <li className="mt-3">
           Pick a color

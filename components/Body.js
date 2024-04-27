@@ -25,7 +25,7 @@ const Body = ({ nextFont, children }) => {
       ${ theme.scrollbarTheme } scrThinCustom
     `}>
       <div className={`
-        grid md:grid-cols-[16rem,auto]
+        flex
         relative w-full
         ${ theme.bgATheme } bgTextureCustom
         overflow-hidden rounded-md

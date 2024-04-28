@@ -23,19 +23,18 @@ const Body = ({ nextFont, children }) => {
       ${ nextFont } w-screen h-screen flex p-2 pt-10
       ${ theme.bgBrightBTheme } tracking-normal
       ${ theme.scrollbarTheme } scrThinCustom
+      ${ theme.selectionTheme }
     `}>
       <div className={`
-        grid md:grid-cols-[16rem,auto]
-        relative w-full
-        ${ theme.bgATheme } bgTextureCustom
-        overflow-hidden rounded-md
+        flex w-full
+        ${ theme.bgATheme }
+        overflow-y-auto rounded-md
       `}>
         <MainNav />
         <main className={`
           w-full h-full flex flex-col
-          items-stretch gap-1 p-2
-          overflow-y-auto
-          ${theme.bgBTheme}
+          items-stretch gap-1
+          overflow-y-visible
         `}>
           { children }
         </main>

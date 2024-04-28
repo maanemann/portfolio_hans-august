@@ -24,6 +24,7 @@ const themes = {
     bgBrightTheme: 'bg-ockerdust-700',
     bgBrightBTheme: 'bg-ockerdust-800',
     scrollbarTheme: 'scrOckerdustCustom',
+    selectionTheme: 'selection:bg-ockerdust-700 selection:text-ockerdust-300',
   },
   aqua: {
     textATheme: 'text-aqua-200',
@@ -41,6 +42,7 @@ const themes = {
     bgBrightTheme: 'bg-aqua-700',
     bgBrightBTheme: 'bg-aqua-800',
     scrollbarTheme: 'scrAquaCustom',
+    selectionTheme: 'selection:bg-aqua-800 selection:text-aqua-400',
   },
 };
 

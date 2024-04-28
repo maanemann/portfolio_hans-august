@@ -23,6 +23,7 @@ const Body = ({ nextFont, children }) => {
       ${ nextFont } w-screen h-screen flex p-2 pt-10
       ${ theme.bgBrightBTheme } tracking-normal
       ${ theme.scrollbarTheme } scrThinCustom
+      ${ theme.selectionTheme }
     `}>
       <div className={`
         flex

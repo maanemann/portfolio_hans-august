@@ -10,7 +10,7 @@ const ProjectItem = ({ imgSrc, imgAlt, link }) => {
 
   return ( <figure className={`
     relative w-full h-[16rem] xl:h-[24rem] 2xl:h-[32rem]
-    ${theme.bgATheme}
+    ${theme.bgBrightBTheme}
     coolCornersCustom
   `}>
     <Link href={ link } className="

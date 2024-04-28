@@ -28,7 +28,7 @@ const Body = ({ nextFont, children }) => {
       <div className={`
         flex
         relative w-full
-        ${ theme.bgATheme } bgTextureCustom
+        ${ theme.bgATheme }
         overflow-hidden rounded-md
       `}>
         <MainNav />
@@ -36,7 +36,6 @@ const Body = ({ nextFont, children }) => {
           w-full h-full flex flex-col
           items-stretch gap-1 p-2
           overflow-y-auto
-          ${theme.bgBTheme}
         `}>
           { children }
         </main>

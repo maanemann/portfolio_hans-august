@@ -14,21 +14,29 @@ const MainNav = () => {
   useEffect(() => {
       const mainNavUl = document.querySelector('.mainNavUlCustom');
       if (pathname === '/') {
+        mainNavUl.classList.remove('pt-16');
+
         mainNavUl.classList.add('brightness-90');
         mainNavUl.classList.remove('brightness-[.66]');
+
         mainNavUl.classList.remove('saturate-[66%]');
         mainNavUl.classList.remove('-hue-rotate-15');
+
         mainNavUl.classList.remove('hover:brightness-[.9]');
         mainNavUl.classList.remove('hover:saturate-[1]');
         mainNavUl.classList.remove('hover:hue-rotate-0');
       } else {
+        mainNavUl.classList.add('pt-16');
+
         mainNavUl.classList.add('brightness-[.66]');
+        mainNavUl.classList.remove('brightness-90');
+
         mainNavUl.classList.add('saturate-[66%]');
         mainNavUl.classList.add('-hue-rotate-15');
+
         mainNavUl.classList.add('hover:brightness-[.9]');
         mainNavUl.classList.add('hover:saturate-[1]');
         mainNavUl.classList.add('hover:hue-rotate-0');
-        mainNavUl.classList.remove('brightness-90');
       }
   }, [pathname]);
 
@@ -64,9 +72,9 @@ const MainNav = () => {
   return (
     <nav
       className="
-        hidden md:block w-fit
-        mainNavUlCustom opacity-90
-        p-2 overflow-y-auto overflow-x-hidden
+        mainNavUlCustom
+        hidden md:block w-max
+        p-6 overflow-y-auto overflow-x-hidden
     ">
       {/* <Link
         href="/#"
@@ -91,7 +99,7 @@ const MainNav = () => {
       <ul className={`
         ${theme.textA2Theme}
         font-medium tracking-wide
-        grid gap-2 mr-3
+        grid gap-1 mr-1
       `}>
         <li className={`
           w-fit px-3 py-2 mb-2 text-nowrap

@@ -78,3 +78,16 @@
 } */
 
 /* // #endregion scrollbar */
+
+
+.maskGradientCustom {
+  mask-image:
+    linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0)),
+    linear-gradient(
+      to right, rgba(0,0,0,0) calc(100% - 1rem),
+      rgba(0,0,0,1) calc(100% - 1rem)
+    );
+  mask-position: 0 0, 100% 0;
+  mask-repeat: no-repeat;
+}
+

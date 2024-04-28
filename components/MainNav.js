@@ -14,7 +14,7 @@ const MainNav = () => {
   useEffect(() => {
       const mainNavUl = document.querySelector('.mainNavUlCustom');
       if (pathname === '/') {
-        mainNavUl.classList.remove('pt-16');
+        // mainNavUl.classList.remove('pt-11');
 
         mainNavUl.classList.add('brightness-90');
         mainNavUl.classList.remove('brightness-[.66]');
@@ -26,7 +26,7 @@ const MainNav = () => {
         mainNavUl.classList.remove('hover:saturate-[1]');
         mainNavUl.classList.remove('hover:hue-rotate-0');
       } else {
-        mainNavUl.classList.add('pt-16');
+        // mainNavUl.classList.add('pt-11');
 
         mainNavUl.classList.add('brightness-[.66]');
         mainNavUl.classList.remove('brightness-90');
@@ -72,9 +72,9 @@ const MainNav = () => {
   return (
     <nav
       className="
-        mainNavUlCustom
         hidden md:block w-max
-        p-6 overflow-y-auto overflow-x-hidden
+        m-6 pr-6 pb-12 fixed max-h-[calc(100vh-8rem)]
+        overflow-y-auto overflow-x-hidden maskGradientCustom
     ">
       {/* <Link
         href="/#"
@@ -96,87 +96,90 @@ const MainNav = () => {
         `} />
       </Link> */}
 
-      <ul className={`
-        ${theme.textA2Theme}
-        font-medium tracking-wide
-        grid gap-1 mr-1
-      `}>
-        <li className={`
-          w-fit px-3 py-2 mb-2 text-nowrap
-          outline-dashed -outline-offset-2
-          outline-2 ${theme.outlineDarkTheme}
+      <div className="
+        mainNavUlCustom
+      ">
+        <ul className={`
+          ${theme.textA2Theme}
+          font-medium tracking-wide
+          grid gap-1 mr-1
         `}>
-          UI / UX
-          <br /> designer +
-          <br /> developer
-        </li>
-        <Li href="/#">
-          home
-        </Li>
-        <Li href="/#">
-          about me
-        </Li>
-        <Li href="/#">
-          cv
-        </Li>
-        <Li href="/#">
-          contact
-        </Li>
-        <Li href="/#">
-          more...
-        </Li>
-        <li className="mt-3">
-          Pick a color
-          <span className="block text-lg mt-0.5 ml-2">
-          ↓
-            {/* ↓ ↓▼▾ 🠃🠋🠇🠛🠣 */}
-          </span>
-        </li>
-      </ul>
+          <li className={`
+            w-fit px-3 py-2 mb-2 text-nowrap
+            outline-dashed -outline-offset-2
+            outline-2 ${theme.outlineDarkTheme}
+          `}>
+            UI / UX
+            <br /> designer +
+            <br /> developer
+          </li>
+          <Li href="/#">
+            home
+          </Li>
+          <Li href="/#">
+            about me
+          </Li>
+          <Li href="/#">
+            cv
+          </Li>
+          <Li href="/#">
+            contact
+          </Li>
+          <Li href="/#">
+            more...
+          </Li>
+          <li className="mt-3">
+            Pick a color
+            <span className="block text-lg mt-0.5 ml-2">
+            ↓
+              {/* ↓ ↓▼▾ 🠃🠋🠇🠛🠣 */}
+            </span>
+          </li>
+        </ul>
 
 
 
-      {/* // #region search-field-&-results
-      */}
+        {/* // #region search-field-&-results
+        */}
 
-      {/* når value ændres, reflekteres det i searchTerm (state ↑) : */}
-      {/* <input
-        type="text"
-        // searchTerm som value gør dette til et "controlled component" (form element in react hvis value kontrolleres af state), og sikrer at input er 'i sync' med searchTerm (men det virker også uden) :
-        value={searchTerm}
-        placeholder="Seach !? <3"
-        // dette "controlled component" er i sync med searchTerm med `onChange` :
-        onChange={
-          (e) => setSearchTerm(e.target.value)
-        }
-        className={`
-          ${theme.bgReverseTheme}
-          ${theme.textReverseTheme}
-          block -ml-6 w-[calc(100%+3rem)]
-          px-4 py-1 rounded-full mb-3
-          focus:outline-none
-        `}
-      /> */}
-
-      {/* Søgeresultater.. (index er nødvendig for at react har en id at gå efter til hver item) : */}
-      {/* {filteredFilms.map((film, index) => (
-        <Link
-          href={`/dynamictest/${film.id}`}
-          key={index}
+        {/* når value ændres, reflekteres det i searchTerm (state ↑) : */}
+        {/* <input
+          type="text"
+          // searchTerm som value gør dette til et "controlled component" (form element in react hvis value kontrolleres af state), og sikrer at input er 'i sync' med searchTerm (men det virker også uden) :
+          value={searchTerm}
+          placeholder="Seach !? <3"
+          // dette "controlled component" er i sync med searchTerm med `onChange` :
+          onChange={
+            (e) => setSearchTerm(e.target.value)
+          }
           className={`
-            ${theme.textBrightTheme}
-            block overflow-x-hidden
-            w-max leading-8
+            ${theme.bgReverseTheme}
+            ${theme.textReverseTheme}
+            block -ml-6 w-[calc(100%+3rem)]
+            px-4 py-1 rounded-full mb-3
+            focus:outline-none
           `}
-        >
-          {film.title}
-        </Link>
-      ))} */}
+        /> */}
 
-      {/* // #endregion search-field-&-results */}
+        {/* Søgeresultater.. (index er nødvendig for at react har en id at gå efter til hver item) : */}
+        {/* {filteredFilms.map((film, index) => (
+          <Link
+            href={`/dynamictest/${film.id}`}
+            key={index}
+            className={`
+              ${theme.textBrightTheme}
+              block overflow-x-hidden
+              w-max leading-8
+            `}
+          >
+            {film.title}
+          </Link>
+        ))} */}
+
+        {/* // #endregion search-field-&-results */}
 
 
-
+      </div>
     </nav>
    );
 }

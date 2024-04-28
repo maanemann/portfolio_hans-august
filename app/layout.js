@@ -1,5 +1,5 @@
 
-import { SpeedInsights } from "@vercel/speed-insights/next"
+// import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ThemeWrapper } from "./context";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";

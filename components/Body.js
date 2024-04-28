@@ -26,16 +26,15 @@ const Body = ({ nextFont, children }) => {
       ${ theme.selectionTheme }
     `}>
       <div className={`
-        flex
-        relative w-full
+        flex w-full
         ${ theme.bgATheme }
-        overflow-hidden rounded-md
+        overflow-y-auto rounded-md
       `}>
         <MainNav />
         <main className={`
           w-full h-full flex flex-col
-          items-stretch gap-1 p-2
-          overflow-y-auto
+          items-stretch gap-1
+          overflow-y-visible
         `}>
           { children }
         </main>

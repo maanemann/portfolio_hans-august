@@ -54,9 +54,10 @@ const MainNav = () => {
         grid content-center w-fit mr-2
       ">
         <span className={`
-          px-3 py-1 text-nowrap
+          px-3 py-[0.125rem] text-nowrap
           border-2
           ${theme.borderDarkTheme}
+          ${pathname === href ? 'underline' : ''}
         `}>
           { children }
         </span>
@@ -104,29 +105,26 @@ const MainNav = () => {
           font-medium tracking-wide
           grid gap-1 mr-1
         `}>
-          <li className={`
-            w-fit px-3 py-2 mb-2 text-nowrap
+          {/* <li className={`
+            w-fit px-3 py-1 mb-2 text-nowrap
             outline-dashed -outline-offset-2
             outline-2 ${theme.outlineDarkTheme}
+            text-opacity-35
           `}>
-            UI / UX
-            <br /> designer +
+            designer +
             <br /> developer
-          </li>
-          <Li href="/#">
-            home
+          </li> */}
+          <Li href="/">
+            projects
           </Li>
-          <Li href="/#">
+          <Li href="/about">
             about me
           </Li>
-          <Li href="/#">
+          <Li href="/cv">
             cv
           </Li>
-          <Li href="/#">
+          <Li href="/contact">
             contact
-          </Li>
-          <Li href="/#">
-            more...
           </Li>
           <li className="mt-3">
             Pick a color

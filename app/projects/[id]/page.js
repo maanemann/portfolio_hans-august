@@ -5,6 +5,9 @@ import data from '@/data/projectsData.json';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { useThemeContext } from '@/app/context';
+import { H1 } from '@/components/Headings';
+import Article from '@/components/Article';
+import Columns from '@/components/Columns';
 
 
 const ProjectDetails = () => {
@@ -14,17 +17,10 @@ const ProjectDetails = () => {
   const imgWidth = project.imgWidth;
   const imgHeight = project.imgHeight;
   return (
-    <article className='p-8 pt-14 md:pl-48 2xl:py-24
-    grid gap-10 w-full max-w-[64rem] mx-auto'>
-      <div className={`${theme.textATheme}`}>
+    <Article>
+      <div>
         <div className='flex'>
-          <h1
-            className="
-              text-3xl font-bold pb-11
-              sm:text-5xl md:text-4xl lg:text-6xl xl:text-8xl
-            ">
-            {project.title}
-          </h1>
+          <H1> {project.title} </H1>
           <div className='
             ml-auto h-fit w-max
             mt-[0.14rem] sm:mt-2 md:mt-1 lg:mt-[.55rem] xl:mt-7
@@ -53,15 +49,14 @@ const ProjectDetails = () => {
           </p>
         )}
         {  project.description ? (
-          <div className='lg:columns-2 gap-10'>
+          <Columns>
             {/* `orphans` virker desværre ikke i ff (`orphansCustom`) */}
             { project.description.split('\n').map((paragraph, index) => (
               <p key={index} className="
-                orphansCustom
-                mb-7 last:mb-0 text-pretty
+                orphansCustom mb-4 last:mb-0 text-pretty
               ">{paragraph}</p>
             ))}
-          </div>
+          </Columns>
         )
         : (
           <p className='mb-7 text-pretty max-w-[32rem]'>
@@ -71,7 +66,11 @@ const ProjectDetails = () => {
       }
       </div>
       <div
-        className={`relative w-full ${theme.bgATheme} xl:mb-6`}
+        className={`
+          relative w-full ${theme.bgBrightBTheme} xl:mb-6
+          outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
+          before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
+        `}
         style={{
           // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
           paddingBottom: `${imgHeight / imgWidth * 100}%`
@@ -95,7 +94,7 @@ const ProjectDetails = () => {
           }}
         />
       </div>
-    </article>
+    </Article>
   );
 }
  

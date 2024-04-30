@@ -64,7 +64,7 @@ const Body = ({ nextFont, children }) => {
               </div>
             </div>
             <span>
-              Hans August — Portfolio
+              Hans August&nbsp; —&nbsp; designer&nbsp; &&nbsp; developer
             </span>
           </Link>
           <span className={`

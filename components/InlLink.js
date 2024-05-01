@@ -4,12 +4,15 @@
 import { useThemeContext } from "@/app/context";
 import Link from 'next/link';
 
+const commonStyles = `hover:brightness-[1.17] hover:saturate-[1.3]`;
+
 const InlLink = ({ href, children, target }) => {
   const { theme } = useThemeContext();
   return(
     <Link
       href={ href } target={ target }
       className={`
+        ${commonStyles}
         border-b-2
         ${theme.textA3Theme}
       `}
@@ -25,6 +28,7 @@ const InlLinkEmph = ({ href, children }) => {
   const { theme } = useThemeContext();
   return (
     <Link href={ href } target="_blank" className={`
+      ${commonStyles}
       inline-block ${theme.bgBrightTheme}
       ${theme.textATheme} font-bold px-[.5rem] rounded-md
     `}>{ children }</Link>
@@ -37,7 +41,8 @@ const InlLinkXEmph = ({ href, children }) => {
   const { theme } = useThemeContext();
   return (
     <Link href={ href } target="_blank" className={`
-      block w-fit ${theme.bgBrightTheme}
+      ${commonStyles}
+      block w-fit ${theme.bgBrightTheme} relative
       ${theme.textATheme} font-bold text-3xl px-[.5rem] mb-4 rounded-md
     `}>{ children }</Link>
   );

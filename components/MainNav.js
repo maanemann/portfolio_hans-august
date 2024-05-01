@@ -13,19 +13,7 @@ const MainNav = () => {
 
   useEffect(() => {
       const mainNavUl = document.querySelector('.mainNavUlCustom');
-      if (pathname === '/') {
-        // mainNavUl.classList.remove('pt-11');
-
-        mainNavUl.classList.add('brightness-90');
-        mainNavUl.classList.remove('brightness-[.66]');
-
-        mainNavUl.classList.remove('saturate-[66%]');
-        mainNavUl.classList.remove('-hue-rotate-15');
-
-        mainNavUl.classList.remove('hover:brightness-[.9]');
-        mainNavUl.classList.remove('hover:saturate-[1]');
-        mainNavUl.classList.remove('hover:hue-rotate-0');
-      } else {
+      if (pathname.includes('/projects')) {
         // mainNavUl.classList.add('pt-11');
 
         mainNavUl.classList.add('brightness-[.66]');
@@ -37,6 +25,18 @@ const MainNav = () => {
         mainNavUl.classList.add('hover:brightness-[.9]');
         mainNavUl.classList.add('hover:saturate-[1]');
         mainNavUl.classList.add('hover:hue-rotate-0');
+      } else {
+        // mainNavUl.classList.remove('pt-11');
+
+        mainNavUl.classList.add('brightness-90');
+        mainNavUl.classList.remove('brightness-[.66]');
+
+        mainNavUl.classList.remove('saturate-[66%]');
+        mainNavUl.classList.remove('-hue-rotate-15');
+
+        mainNavUl.classList.remove('hover:brightness-[.9]');
+        mainNavUl.classList.remove('hover:saturate-[1]');
+        mainNavUl.classList.remove('hover:hue-rotate-0');
       }
   }, [pathname]);
 

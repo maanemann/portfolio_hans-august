@@ -12,7 +12,7 @@ const Cv = () => {
           CV
         </H1>
         <Paragraph>
-          I&apos;m making a nice and fresh CV here, but it isn't done yet. Until then it's located here:
+          I&apos;m making a nice and fresh CV here, but it isn&apos;t done yet. Until then it&apos;s located here:
         </Paragraph>
           <InlLinkXEmph href="https://drive.google.com/file/d/13qEvZptBxu31Iv_ufGIoTMcs0jD50V9K/view?usp=sharing" target="_blank">Go to CV</InlLinkXEmph>.
       </div>

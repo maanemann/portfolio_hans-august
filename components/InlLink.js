@@ -20,3 +20,15 @@ const InlLink = ({ href, children, target }) => {
 };
  
 export default InlLink;
+
+const InlLinkEmph = ({ href, children }) => {
+  const { theme } = useThemeContext();
+  return (
+    <Link href={ href } target="_blank" className={`
+      inline-block ${theme.bgBrightTheme}
+      ${theme.textATheme} font-bold px-[.5rem] rounded-md
+    `}>{ children }</Link>
+  );
+}
+ 
+export { InlLinkEmph };

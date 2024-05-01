@@ -1,5 +1,5 @@
 
-const defaultParagraph = "orphansCustom mb-4 last:mb-0 text-pretty";
+const defaultParagraph = "mb-4 orphansCustom last:mb-0 text-pretty";
 
 const Paragraph = ({ children }) => {
   return ( 
@@ -12,6 +12,18 @@ const Paragraph = ({ children }) => {
 }
 
 export default Paragraph;
+
+const PEmph = ({ children }) => {
+  return (
+    <p className={`
+      mb-4 flex gap-3
+    `}>
+      { children }
+    </p>
+   );
+}
+
+export {PEmph};
 
 const PNoBrIns = ({ children }) => {
   return (

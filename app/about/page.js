@@ -3,9 +3,9 @@
 
 import Article from "@/components/Article";
 import { H1 } from "@/components/Headings";
-import InlLink from "@/components/InlLink";
+import InlLink, { InlLinkEmph } from "@/components/InlLink";
 import Columns from "@/components/Columns";
-import Paragraph, { PNoBrIns } from "@/components/Paragraph";
+import Paragraph, { PEmph, PNoBrIns } from "@/components/Paragraph";
 
 const About = () => {
   return ( <>
@@ -15,6 +15,16 @@ const About = () => {
           Hello
         </H1>
         <Columns>
+          <PEmph>
+            <InlLinkEmph
+              href="https://drive.google.com/file/d/13qEvZptBxu31Iv_ufGIoTMcs0jD50V9K/view?usp=sharing"
+            > CV
+            </InlLinkEmph>
+            <InlLinkEmph
+              href="https://www.linkedin.com/in/hans-august/"
+            > LinkedIn
+            </InlLinkEmph>
+          </PEmph>
           <Paragraph>
             I&apos;m a front-end developer / UI + UX designer located in Copenhagen, Denmark.
           </Paragraph>

@@ -1,7 +1,7 @@
 
 import Article from "@/components/Article";
 import { H1 } from "@/components/Headings";
-import InlLink from "@/components/InlLink";
+import { InlLinkXEmph } from "@/components/InlLink";
 import Paragraph from "@/components/Paragraph";
 
 const Contact = () => {
@@ -12,7 +12,8 @@ const Contact = () => {
           Contact
         </H1>
         <Paragraph>
-          Write me an email: <InlLink href="mailto:hej@hansaugust.com"> hej@hansaugust.com </InlLink>
+          <InlLinkXEmph href="mailto:hej@hansaugust.com"> hej@hansaugust.com </InlLinkXEmph>
+          <InlLinkXEmph href="https://www.linkedin.com/in/hans-august/"> linkedin.com/in/hans-august </InlLinkXEmph>
         </Paragraph>
       </div>
     </Article>

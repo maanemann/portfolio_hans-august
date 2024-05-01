@@ -48,9 +48,9 @@ const MainNav = () => {
   //   // Hvis søgefeltet er tomt vises ingenting (tom array) :
   //   : [];
 
-  const Li = ({ children, href }) => (
+  const Li = ({ children, href, target }) => (
     <li>
-      <Link href={ href } className="
+      <Link href={ href } target={ target } className="
         grid content-center w-fit mr-2
       ">
         <span className={`
@@ -120,18 +120,20 @@ const MainNav = () => {
           <Li href="/about">
             about me
           </Li>
-          <Li href="/cv">
+          <Li href="https://drive.google.com/file/d/13qEvZptBxu31Iv_ufGIoTMcs0jD50V9K/view?usp=sharing" target="_blank">
             cv
           </Li>
           <Li href="/contact">
             contact
           </Li>
-          <li className="mt-3">
-            Pick a color
-            <span className="block text-lg mt-0.5 ml-2">
-            ↓
-              {/* ↓ ↓▼▾ 🠃🠋🠇🠛🠣 */}
-            </span>
+          <li className="text-sm mt-3">
+            <div className="w-fit text-center ml-[.87rem] -mt-2">
+              themes
+              <span className="block mt-0.5">
+              ↓
+                {/* ↓ ↓▼▾ 🠃🠋🠇🠛🠣 */}
+              </span>
+            </div>
           </li>
         </ul>
 

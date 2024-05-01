@@ -1,7 +1,7 @@
 
 import Article from "@/components/Article";
 import { H1 } from "@/components/Headings";
-import InlLink from "@/components/InlLink";
+import { InlLinkXEmph } from "@/components/InlLink";
 import Paragraph from "@/components/Paragraph";
 
 const Cv = () => {
@@ -12,8 +12,9 @@ const Cv = () => {
           CV
         </H1>
         <Paragraph>
-          This page is not done yet, but you can <InlLink href="https://drive.google.com/file/d/13qEvZptBxu31Iv_ufGIoTMcs0jD50V9K/view?usp=sharing" target="_blank">find my CV here</InlLink>.
+          I&apos;m making a nice and fresh CV here, but it isn't done yet. Until then it's located here:
         </Paragraph>
+          <InlLinkXEmph href="https://drive.google.com/file/d/13qEvZptBxu31Iv_ufGIoTMcs0jD50V9K/view?usp=sharing" target="_blank">Go to CV</InlLinkXEmph>.
       </div>
     </Article>
   );

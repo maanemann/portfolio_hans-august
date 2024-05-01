@@ -49,7 +49,8 @@ const ProjectItem = ({ title, imgSrc, imgAlt, link }) => {
         <h2 className={`
           absolute bottom-0 text-nowrap my-1 mx-3
           text-3xl font-bold lowercase tracking-wider
-          group-hover:-my-10 group-hover:mx-1
+          group-hover:-my-16 group-hover:-mx-52
+          group-hover:text-7xl ease-in-out duration-150
           ${theme.textATheme}
         `}>
           { title }

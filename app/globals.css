@@ -41,7 +41,10 @@
 }
 
 .orphansCustom {
-  orphans: 3;
+  /* bund : */
+  orphans: 2;
+  /* top : */
+  widows: 3;
 }
 
 

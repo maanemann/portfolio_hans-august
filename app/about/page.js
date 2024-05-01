@@ -30,13 +30,13 @@ const About = () => {
           </Paragraph>
           <div></div>
           <Paragraph>
-            User experience is the sum of presentation, functionality and performance. I think of interfaces as entrances into virtual rooms for the user to explore.
+            I think of User experience as the sum of presentation, functionality and performance. Interfaces are entrances to virtual rooms for the user to explore.
           </Paragraph>
           <PNoBrIns>
             When entering, you should feel comfortable and intrigued, the room should have an appealing identity and communicate where it wants to take you next. It should be easy to find what you&apos;re looking for without inconvenient barriers.
           </PNoBrIns>
           <Paragraph>
-            Have a look at my <InlLink href="/cv">CV</InlLink> to get a better idea of the tools I use and the projects I&apos;ve worked on. If you want to involve me in a project or just want to say hi, send me a mail at <InlLink href="mailto:hej@hansaugust.com"> hej@hansaugust.com</InlLink>.
+            If you want to involve me in a project or just want to say hi, send me a mail at <InlLink href="mailto:hej@hansaugust.com"> hej@hansaugust.com</InlLink>.
           </Paragraph>
         </Columns>
       </div>

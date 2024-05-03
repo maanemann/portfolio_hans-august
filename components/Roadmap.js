@@ -41,13 +41,13 @@ const Roadmap = ({ visibility, handleRoadmap }) => {
           Description of the tools used to create this portfolio (mainly next.js + Tailwind)
         </RoadLi>
         <RoadLi>
-          A nice CV that's not just a link to a pdf
+          A nice CV that&apos;s not just a link to a pdf
         </RoadLi>
         <RoadLi>
           A way to navigate through the projects without having to go back to the main page
         </RoadLi>
         <RoadLi>
-          "Masonry grid" for the projects, so their apect ratio's are preserved
+        &quot;Masonry grid&quot; for the projects, so their apect ratio&apos;s are preserved
         </RoadLi>
         <RoadLi>
           Additional and improved animations, hover effects etc.

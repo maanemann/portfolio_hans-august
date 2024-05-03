@@ -5,16 +5,19 @@ import { useThemeContext } from "@/app/context";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const EdgeBox = ({ children }) => {
+const EdgeBox = ({ children, onClick }) => {
   const { theme } = useThemeContext();
 
   return ( <>
     {/* <div className="h-max"> */}
-    <span className={`
-      block px-3 py-[0.125rem] text-nowrap
-      border-2
-      ${theme.borderDarkTheme}
-    `}>
+    <span
+      onClick={ onClick }
+      className={`
+        block px-3 py-[0.125rem] text-nowrap
+        border-2
+        ${theme.borderDarkTheme}
+      `}
+    >
       { children }
     </span>
     <div className={`

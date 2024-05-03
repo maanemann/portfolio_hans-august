@@ -2,15 +2,33 @@
 'use client'
 
 import { useThemeContext } from "@/app/context";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
+import Li, { EdgeBox } from "@/components/menuItem";
+import Roadmap from "./Roadmap";
+
+const roadmapOff = `-translate-x-full opacity-0 pointer-events-none`
+const roadmapOn = `translate-x-32 opacity-100 pointer-events-auto`
 
 const MainNav = () => {
   // const [searchTerm, setSearchTerm] = useState("");
   const { theme } = useThemeContext();
   const pathname = usePathname();
+  const [roadmapVisibility, setRoadmapVisibility] = useState(roadmapOff);
+  const [maskVisibility, setMaskVisibility] = useState(`hidden`);
 
+  const handleRoadmap = () => {
+    if (roadmapVisibility.includes('opacity-100')) {
+      setRoadmapVisibility(roadmapOff);
+      setMaskVisibility(`hidden`);
+    } else {
+      setRoadmapVisibility(roadmapOn);
+      setMaskVisibility(`block`);
+    }
+  }
+
+
+  // ? Det her er gjort helt skørt og ikke react-agtigt. Det skulle nok have være gjort med en state :
   useEffect(() => {
       const mainNavUl = document.querySelector('.mainNavUlCustom');
       if (pathname.includes('/projects')) {
@@ -48,62 +66,29 @@ const MainNav = () => {
   //   // Hvis søgefeltet er tomt vises ingenting (tom array) :
   //   : [];
 
-  const Li = ({ children, href, target }) => (
-    <li>
-      <Link href={ href } target={ target } className="
-        grid content-center w-fit mr-2
-      ">
-        <span className={`
-          px-3 py-[0.125rem] text-nowrap
-          border-2
-          ${theme.borderDarkTheme}
-          ${pathname === href ? 'underline' : ''}
-        `}>
-          { children }
-        </span>
-        <div className={`
-          w-full h-[0.5rem]
-          border-2 -mt-[2px]
-          ${theme.borderDarkTheme}
-        `} />
-      </Link>
-    </li>
-  );
+  return ( <>
+    <Roadmap handleRoadmap={handleRoadmap} visibility={roadmapVisibility} />
+    <div
+      className={`
+        ${maskVisibility} fixed top-0 left-0 w-screen h-screen
+        ${theme.bgBTheme} backdrop-blur-md opacity-65 z-20
+      `}
+      onClick={handleRoadmap}
+    />
 
-  return (
     <nav
       className="
-        hidden md:block w-max
+        hidden md:block w-max z-10
         m-6 pr-6 pb-12 fixed max-h-[calc(100vh-8rem)]
         overflow-y-auto overflow-x-hidden maskGradientCustom
     ">
-      {/* <Link
-        href="/#"
-        className="
-          block w-24 mx-auto mb-[4.5rem]
-        "
-      >
-        <div className={`
-          w-full aspect-square
-          border-x-3 border-t-3
-          ${theme.borderATheme}
-          mx-auto
-        `} />
-        <div className={`
-          w-[calc(100%+3rem)] -ml-6
-          border-t-3
-          ${theme.borderATheme}
-          mx-auto -mt-6
-        `} />
-      </Link> */}
-
       <div className="
-        mainNavUlCustom
+        mainNavUlCustom flex
       ">
         <ul className={`
           ${theme.textA2Theme}
           font-medium tracking-wide
-          grid gap-1 mr-1
+          grid gap-2 mr-1
         `}>
           {/* <li className={`
             w-fit px-3 py-1 mb-2 text-nowrap
@@ -126,8 +111,23 @@ const MainNav = () => {
           <Li href="/contact">
             contact
           </Li>
-          <li className="text-sm mt-3">
-            <div className="w-fit text-center ml-[.87rem] -mt-2">
+          <li className={`
+            w-min px-3 py-1 my-2 hyphens-manual
+            outline-dashed -outline-offset-2
+            outline-2 ${theme.outlineDarkTheme}
+          `}>
+            features
+            <br />to come:
+            <div className="my-2 cursor-pointer">
+              <EdgeBox
+                onClick={handleRoadmap}
+              >
+                roadmap
+              </EdgeBox>
+            </div>
+          </li>
+          <li className="text-sm">
+            <div className="w-fit text-center ml-[.87rem]">
               themes
               <span className="block mt-0.5">
               ↓
@@ -181,7 +181,7 @@ const MainNav = () => {
 
       </div>
     </nav>
-   );
+  </> );
 }
  
 export default MainNav;

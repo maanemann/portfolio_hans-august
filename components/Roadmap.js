@@ -3,6 +3,7 @@
 
 import { useThemeContext } from "@/app/context";
 import InlLink from "./InlLink";
+import Paragraph from "./Paragraph";
 
 const RoadLi = ({ children }) => {
   return (
@@ -26,36 +27,39 @@ const Roadmap = ({ visibility, handleRoadmap }) => {
     >
       <h2 className="
         text-2xl font-semibold mb-8
-      ">Highlights from the future</h2>
+      ">Todo</h2>
+      <Paragraph>
+        As this portfolio is a project in the making itself, I think it's relevant to publish a (very simplified) roadmap. Just for you to see what's coming up next.
+      </Paragraph>
       <ul className="grid gap-2">
         <RoadLi>
-          More projects from the past and more content for each project
+          More projects and more content for each project
         </RoadLi>
         <RoadLi>
-          A menu button for mobile devices, so you can see more than just the projects on your phone (posibly a radial menu 👽)
+          A menu button for mobile devices (posibly a radial menu 👽)
         </RoadLi>
         <RoadLi>
-          Color theme selection saved as a cookie, or some other way (and more themes to choose from)
+          Color theme selection saved as a cookie, and more themes
         </RoadLi>
-        <RoadLi>
+        {/* <RoadLi>
           Description of the tools used to create this portfolio (mainly next.js + Tailwind)
-        </RoadLi>
-        <RoadLi>
+        </RoadLi> */}
+        {/* <RoadLi>
           A nice CV that&apos;s not just a link to a pdf
-        </RoadLi>
+        </RoadLi> */}
         <RoadLi>
-          A way to navigate through the projects without having to go back to the main page
+          Navigation between projects without having to go back to the main page
         </RoadLi>
         <RoadLi>
         &quot;Masonry grid&quot; for the projects, so their apect ratio&apos;s are preserved
         </RoadLi>
         <RoadLi>
-          Additional and improved animations, hover effects etc.
+          Improved animations, hover effects etc.
         </RoadLi>
-        <RoadLi>
+        {/* <RoadLi>
           Contact form maybe
-        </RoadLi>
-        <RoadLi>
+        </RoadLi> */}
+        {/* <RoadLi>
           This is not a complete list, but if you have any suggestions,&nbsp;
           <InlLink
               href="/contact"
@@ -63,7 +67,7 @@ const Roadmap = ({ visibility, handleRoadmap }) => {
             >
               feel free to contact me!
           </InlLink>
-        </RoadLi>
+        </RoadLi> */}
       </ul>
     </article>
   );

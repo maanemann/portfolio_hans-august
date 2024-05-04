@@ -112,17 +112,16 @@ const MainNav = () => {
             contact
           </Li>
           <li className={`
-            w-min px-3 py-1 my-2 hyphens-manual
+            w-min px-3 py-1 my-2 hyphens-manual text-nowrap
             outline-dashed -outline-offset-2
             outline-2 ${theme.outlineDarkTheme}
           `}>
-            features
-            <br />to come:
+            {/* to do: */}
             <div className="my-2 cursor-pointer">
               <EdgeBox
                 onClick={handleRoadmap}
               >
-                roadmap
+                todo
               </EdgeBox>
             </div>
           </li>

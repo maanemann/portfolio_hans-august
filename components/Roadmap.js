@@ -29,7 +29,7 @@ const Roadmap = ({ visibility, handleRoadmap }) => {
         text-2xl font-semibold mb-8
       ">Todo</h2>
       <Paragraph>
-        As this portfolio is a project in the making itself, I think it's relevant to publish a (very simplified) roadmap. Just for you to see what's coming up next.
+        As this portfolio is a project in the making itself, I think it&apos;s relevant to publish a (very simplified) roadmap. Just for you to see what&apos;s coming up next.
       </Paragraph>
       <ul className="grid gap-2">
         <RoadLi>

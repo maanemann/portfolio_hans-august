@@ -6,11 +6,11 @@ import Link from 'next/link';
 
 const commonStyles = `hover:brightness-[1.17] hover:saturate-[1.3]`;
 
-const InlLink = ({ href, children, target }) => {
+const InlLink = ({ href, children, target, onClick }) => {
   const { theme } = useThemeContext();
   return(
     <Link
-      href={ href } target={ target }
+      href={ href } target={ target } onClick={ onClick }
       className={`
         ${commonStyles}
         border-b-2

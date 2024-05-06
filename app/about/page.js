@@ -26,7 +26,7 @@ const About = () => {
             </InlLinkEmph>
           </PEmph>
           <Paragraph>
-            I&apos;m a front-end developer / UI + UX designer located in Copenhagen, Denmark.
+            I&apos;m a UI + UX designer & frontend developer located in Copenhagen, Denmark.
           </Paragraph>
           <div></div>
           <Paragraph>

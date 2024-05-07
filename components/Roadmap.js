@@ -29,14 +29,14 @@ const Roadmap = ({ visibility, handleRoadmap }) => {
         text-2xl font-semibold mb-8
       ">Todo</h2>
       <Paragraph>
-        As this website is a project in the making itself, here&apos;s a list of what&apos;s probably coming up next.
+        This website is made (from scratch) using the React framework Next.js. Here&apos;s a list of what&apos;s probably coming up next:
       </Paragraph>
       <ul className="grid gap-2">
         <RoadLi>
           More past projects and more content for each project
         </RoadLi>
         <RoadLi>
-          A menu button for mobile devices (posibly a radial menu 👽)
+          A menu button for mobile devices (posibly a radial menu!)
         </RoadLi>
         <RoadLi>
           Color theme selection saved as a cookie, and more themes

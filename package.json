@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --hostname 0.0.0.0",
     "cleanD": "powershell -Command \"& {Remove-Item .next -Recurse -Force; npm run dev}\"",
     "build": "next build",
     "start": "next start",

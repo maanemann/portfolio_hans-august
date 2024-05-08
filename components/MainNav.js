@@ -76,6 +76,12 @@ const MainNav = () => {
       onClick={handleRoadmap}
     />
 
+    <div className="
+      block md:hidden fixed bottom-0 left-1/2 -translate-x-1/2 w-6 h-6 z-30 bg-ocker-300
+      cursor-pointer"
+      // onClick={handleRoadmap}
+    />
+
     <nav
       className="
         hidden md:block w-max z-10

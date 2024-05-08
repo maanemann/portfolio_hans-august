@@ -69,7 +69,7 @@ const Body = ({ nextFont, children }) => {
           </Link>
           <span className={`
             fixed top-2 right-6 opacity-60
-            ${ theme.textA3Theme }
+            ${ theme.textA3Theme } touchHideCustom
           `}>
             🞵🞶🞷🞸🞹🞺
           </span>

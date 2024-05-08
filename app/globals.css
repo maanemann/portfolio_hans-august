@@ -98,3 +98,8 @@
   mask-repeat: no-repeat;
 }
 
+@media (pointer: coarse) {
+  .touchHideCustom {
+    display: none;
+  }
+}

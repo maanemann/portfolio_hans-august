@@ -12,7 +12,7 @@ const ThemeButts = () => {
 
   return ( 
     <div className="
-        absolute bottom-6 left-6
+        fixed bottom-6 left-6
         flex gap-4
       ">
         <div

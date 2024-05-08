@@ -76,11 +76,21 @@ const MainNav = () => {
       onClick={handleRoadmap}
     />
 
-    <div className="
-      block md:hidden fixed bottom-0 left-1/2 -translate-x-1/2 w-6 h-6 z-30 bg-ocker-300
-      cursor-pointer"
+    {/* Menu button for phones : */}
+    <div
+      className={`
+        grid md:hidden fixed bottom-0 left-1/2 -translate-x-1/2
+        w-16 h-12 z-30 ${theme.bgBrightTheme} rounded-t-full
+        cursor-pointer
+      `}
       // onClick={handleRoadmap}
-    />
+    >
+      <div className="w-1/3 h-2/4 m-auto grid items-center justify-items-center">
+        <div className={`w-2/3 h-1/3 ${theme.bgBrighterTheme} rounded-full`}></div>
+        <div className={`w-5/6 h-1/3 ${theme.bgBrighterTheme} rounded-full`}></div>
+        <div className={`w-full h-1/3 ${theme.bgBrighterTheme} rounded-full`}></div>
+      </div>
+    </div>
 
     <nav
       className="

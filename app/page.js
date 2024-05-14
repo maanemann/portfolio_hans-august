@@ -24,8 +24,8 @@ export default function Home() {
             <ProjectItem
               key={project.id}
               title={ project.title }
-              imgSrc={ project.imgSrc }
-              imgAlt={ project.imgAlt }
+              imgSrc={ project.thumbnail.imgSrc }
+              imgAlt={ project.thumbnail.imgAlt }
               link={`/projects/${project.id}`}
             />
           ))}

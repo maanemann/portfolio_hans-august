@@ -4,41 +4,110 @@
     "id": "cocoon",
     "title": "Cocoon",
     "company": "Geometric Interactive",
-    "imgSrc": "/projects/cocoon/cocoonUI_init.jpg",
-    "imgAlt": "Cocoon UI",
-    "imgWidth": "2162",
-    "imgHeight": "1455",
-    "description": "I had the honour of designing the interface for Cocoon, an award-winning puzzle game, in which you delve deep into surreal worlds, nested within each other. From Geometric Interactive, a talented team, including developers behind Limbo and Inside. \n Here you see the loading screen, round like a dial, or a clock. It gives an overview of the game, your progress and other information that you learn to understand through playing the game. Everything you see is bound to the symbolics and logics of the game, all boiled down to one display."
+    "thumbnail": {
+      "imgSrc": "/projects/cocoon/cocoonUI_init.jpg",
+      "imgAlt": "Cocoon UI",
+      "imgWidth": "2162",
+      "imgHeight": "1455"
+    },
+    "description": "I had the honour of designing the interface for Cocoon, an award-winning puzzle game, in which you delve deep into surreal worlds, nested within each other. From Geometric Interactive, a talented team, including developers behind Limbo and Inside. \n Here you see the loading screen, round like a dial, or a clock. It gives an overview of the game, your progress and other information that you learn to understand through playing the game. Everything you see is bound to the symbolics and logics of the game, all boiled down to one display.",
+    "media": [
+      {
+        "type": "image",
+        "src": "/projects/cocoon/cocoonUI_init.jpg",
+        "alt": "Cocoon UI",
+        "width": "2162",
+        "height": "1455"
+      }
+    ]
+  },
+  {
+    "id": "cosha",
+    "title": "Cosha",
+    "thumbnail": {
+      "imgSrc": "/projects/cosha/cosha_init.png",
+      "imgAlt": "Cosha",
+      "imgWidth": "1894",
+      "imgHeight": "1322"
+    },
+    "description": "Learning through play and experience instead of words and numbers – an interactive colour and shape teaching toy, mainly for children. Cosha is a collaboration with Simon Gnaur, a great programmer, who shares my interest in making games/toys that are both fun and educational. \n Starting with a blank canvas, instead of regular drawing tools, the player is limited to the basic geometrical shapes in only the primal colours. When stacking shapes, their colors are mixed, so the player will intuitively learn how to mix secondary and tertiary colours. New shapes can be created out of the overlapping areas of existing ones (similar to \"path finder\" in vector software like Illustrator), so it's easy to experiment with how all kinds of shapes can be subtracted out of each other. \n As you can see in the video below, we made a prototype (Unity), which was a great tool for testing the concept and getting feedback. There's still some way to go before it's a finished product, so if you have resources for and/or interest in supporting the development, please get in touch.",
+    "media": [
+      {
+        "type": "video",
+        "iframe": "https://www.youtube.com/embed/04ziVz38EjU?si=NGJW6jCOxveqPBql",
+        "width": "560",
+        "height": "315"
+      },
+      {
+        "type": "image",
+        "src": "/projects/cosha/cosha_init.png",
+        "alt": "Cosha",
+        "width": "1894",
+        "height": "1322"
+      }
+    ]
   },
   {
     "id": "trailmakers",
     "title": "Trailmakers",
     "company": "Flashbulb Games",
-    "imgSrc": "/projects/trailmakers/pioneersUI_init.png",
-    "imgAlt": "Pioneers UI",
-    "imgWidth": "4122",
-    "imgHeight": "2988",
-    "description": "Trailmakers gives you an open world to explore with the help of any thinkable vehicle that you build yourself. In collaboration with creative director Mikkel Thorsted I had a lot of fun brainstormin, designing and implementing the UI / UX for the player to get the most intuitive approach to building a 3D vehicle on a flat screen – sorta like Lego, but without being able to touch the pieces, and with rocket engines. \n Apart from the building interface, I also worked on the inventory for the many blocks you find on your journey, which have to be sorted and stored in a way that makes sense to the player."
+    "thumbnail": {
+      "imgSrc": "/projects/trailmakers/pioneersUI_init.png",
+      "imgAlt": "Pioneers UI",
+      "imgWidth": "4122",
+      "imgHeight": "2988"
+    },
+    "description": "Trailmakers gives you an open world to explore with the help of any thinkable vehicle, if you can build it. In collaboration with creative director Mikkel Thorsted I had a lot of fun helping to brainstorm, design and implement the UI / UX. The challenge was to give the player the most intuitive possible approach to building a 3D vehicle on a flat screen – similar to building with Lego, but without the physical aspect. And with the addition of rocket engines. \n Apart from the building interface, I also worked on the inventory for the many blocks you find on your journey, which have to be sorted and stored in a way that makes all parts easily accessible.",
+    "media": [
+      {
+        "type": "image",
+        "src": "/projects/trailmakers/pioneersUI_init.png",
+        "alt": "Pioneers UI",
+        "width": "4122",
+        "height": "2988"
+      }
+    ]
   },
   {
     "id": "kalimba",
     "title": "Kalimba",
     "company": "Press Play / Flashbulb Games",
-    "imgSrc": "/projects/kalimba/kalimbaUI_init.png",
-    "imgAlt": "Kalimba UI",
-    "imgWidth": "1952",
-    "imgHeight": "1952",
-    "description": "Kalimba is a puzzle platformer, in which everything is build of triangles. When the game was ported to iOS it required a new, touch-friendly UI, which was my responsibility. As something new for the menu, I decided to approach the in-game triangle (or trixel) grid as a strict dogma and made everything in the UI out of triangles. This way the UI blends naturally into the game world, instead of just being a layer on top of it."
+    "thumbnail": {
+      "imgSrc": "/projects/kalimba/kalimbaUI_init.png",
+      "imgAlt": "Kalimba UI",
+      "imgWidth": "1952",
+      "imgHeight": "1952"
+    },
+    "description": "Kalimba is a puzzle platformer, in which everything is build of triangles. When the game was ported to iOS it required a new, touch-friendly UI, which was my responsibility. As something new for the menu, I decided to approach the in-game triangle (or trixel) grid as a strict dogma and made everything in the UI out of triangles. This way the UI blends naturally into the game world, instead of just being a layer on top of it.",
+    "media": [
+      {
+        "type": "image",
+        "src": "/projects/kalimba/kalimbaUI_init.png",
+        "alt": "Kalimba UI",
+        "width": "1952",
+        "height": "1952"
+      }
+    ]
   },
   {
     "id": "ropaa",
     "title": "Ro/På",
-    "company": "",
-    "imgSrc": "/projects/ropaa/roopaa_init.png",
-    "imgAlt": "Ro På",
-    "imgWidth": "2380",
-    "imgHeight": "1622",
-    "description": "This is the result of an unreleased project made with Mikkel Kortsen Sørensen. After interviewing a number of subjects on their use of digital health services, we found that many people were misinformed and scared by the information they found online. We wanted to create a service that would provide validated information in a calm and reassuring way. \n \"Ro/På\" (loosely translated to \"don't worry\") is a suggestion for how the The Danish Health Authority could provide us with validated information, served in proportion to how common or rare the illness is, and with thorough guidance for how to treat it."
+    "thumbnail": {
+      "imgSrc": "/projects/ropaa/roopaa_init.png",
+      "imgAlt": "Ro På",
+      "imgWidth": "2380",
+      "imgHeight": "1622"
+    },
+    "description": "This is the result of an unreleased project made with Mikkel Kortsen Sørensen. After interviewing a number of subjects on their use of digital health services, we found that many people were misinformed and scared by the information they found online. We wanted to create a service that would provide validated information in a calm and reassuring way. \n \"Ro/På\" (loosely translated to \"don't worry\") is a suggestion for how the The Danish Health Authority could provide us with validated information, served in proportion to how common or rare the illness is, and with thorough guidance for how to treat it.",
+    "media": [
+      {
+        "type": "image",
+        "src": "/projects/ropaa/roopaa_init.png",
+        "alt": "Ro På",
+        "width": "2380",
+        "height": "1622"
+      }
+    ]
   }
 ]
 

@@ -14,8 +14,8 @@ const ProjectDetails = () => {
   const { id } = useParams();
   const { theme } = useThemeContext();
   const project = data.find(project => project.id === id);
-  const imgWidth = project.imgWidth;
-  const imgHeight = project.imgHeight;
+  // const imgWidth = project.imgWidth;
+  // const imgHeight = project.imgHeight;
   return (
     <Article>
       <div>
@@ -36,7 +36,6 @@ const ProjectDetails = () => {
               text-xs sm:text-sm md:text-xs lg:text-lg xl:text-2xl
             `}>
               UI / UX
-              {/* 🞵🞶🞷🞸🞹🞺 */}
             </span>
           </div>
         </div>
@@ -65,35 +64,91 @@ const ProjectDetails = () => {
         )
       }
       </div>
-      <div
-        className={`
-          relative w-full ${theme.bgBrightBTheme} xl:mb-6
-          outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
-          before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
-        `}
-        style={{
-          // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
-          paddingBottom: `${imgHeight / imgWidth * 100}%`
-        }}
-      >
-        <p className={`
-          block mt-6 ml-10
-          text-4xl font-bold tracking-wider italic ${theme.textA2Theme}
-        `}>
-          Loading...
-        </p>
-        <Image
-          src={project.imgSrc} alt={project.imgAlt}
-          priority fill sizes="90vw"
-          className="w-full object-contain object-left-top
-            opacity-0
-          "
-          onLoad={(e) => {
-            e.target.classList.remove('opacity-0');
-            e.target.previousElementSibling.remove();
-          }}
-        />
-      </div>
+
+        {project.media.map((mediaItem, index) => {
+          if (mediaItem.type === 'image') {
+            const imgWidth = mediaItem.width;
+            const imgHeight = mediaItem.height;
+
+            return (
+              <div
+                key={index}
+                className={`
+                  relative w-full ${theme.bgBrightBTheme} xl:mb-6
+                  outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
+                  before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
+                `}
+                style={{
+                  // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
+                  paddingBottom: `${imgHeight / imgWidth * 100}%`
+                }}
+              >
+                <p className={`
+                  block mt-6 ml-10
+                  text-4xl font-bold tracking-wider italic ${theme.textA2Theme}
+                `}>
+                  Loading...
+                </p>
+                <Image
+                  src={mediaItem.src}
+                  alt={mediaItem.alt}
+                  // width={mediaItem.width}
+                  // height={mediaItem.height}
+                  priority={ index === 0 ? true : false }
+                  fill sizes="90vw"
+                  className="
+                    w-full object-cover object-left-top
+                    opacity-0
+                  "
+                  onLoad={(e) => {
+                    e.target.classList.remove('opacity-0');
+                    e.target.previousElementSibling.remove();
+                  }}
+                />
+              </div>
+            );
+          } else if (mediaItem.type === 'video') {
+            return (
+              <div
+                key={index}
+                className={`
+                  relative w-full ${theme.bgBrightBTheme} xl:mb-6
+                  outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
+                  before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
+
+                  pt-[56.25%]
+                `}
+              >
+                <iframe
+                  src={mediaItem.iframe}
+                  width={mediaItem.width}
+                  height={mediaItem.height}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  // Den her blev ikke tilføjet af copilot, men var med i youtube's embed kode og virker fornuftig :
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  // `clipboard-write;` vat tilladt af copilot
+                  allowFullScreen
+                  className='absolute top-0 left-0 w-full h-full'
+                ></iframe>
+              </div>
+            );
+          }
+        })}
+
+        {/* Fra da der kun var 1 billede og ikke et media array : */}
+          {/* <Image
+            src={project.imgSrc} alt={project.imgAlt}
+            priority fill sizes="90vw"
+            className="w-full object-contain object-left-top
+              opacity-0
+            "
+            onLoad={(e) => {
+              e.target.classList.remove('opacity-0');
+              e.target.previousElementSibling.remove();
+            }}
+          /> */}
     </Article>
   );
 }

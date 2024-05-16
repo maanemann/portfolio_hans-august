@@ -66,10 +66,9 @@ const ProjectDetails = () => {
       </div>
 
         {project.media.map((mediaItem, index) => {
+          const mediaWidth = mediaItem.width;
+          const mediaHeight = mediaItem.height;
           if (mediaItem.type === 'image') {
-            const imgWidth = mediaItem.width;
-            const imgHeight = mediaItem.height;
-
             return (
               <div
                 key={index}
@@ -80,7 +79,7 @@ const ProjectDetails = () => {
                 `}
                 style={{
                   // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
-                  paddingBottom: `${imgHeight / imgWidth * 100}%`
+                  paddingBottom: `${mediaHeight / mediaWidth * 100}%`
                 }}
               >
                 <p className={`
@@ -115,9 +114,11 @@ const ProjectDetails = () => {
                   relative w-full ${theme.bgBrightBTheme} xl:mb-6
                   outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
                   before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
-
-                  pt-[56.25%]
                 `}
+                style={{
+                  // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
+                  paddingBottom: `${mediaHeight / mediaWidth * 100}%`
+                }}
               >
                 <iframe
                   src={mediaItem.iframe}

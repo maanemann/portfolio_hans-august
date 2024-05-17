@@ -114,6 +114,32 @@
         "height": "1622"
       }
     ]
+  },
+  {
+    "id": "various",
+    "title": "Various",
+    "thumbnail": {
+      "imgSrc": "/projects/hemonaut.png",
+      "imgAlt": "Hemonaut",
+      "imgWidth": "1792",
+      "imgHeight": "1414"
+    },
+    "media": [
+      {
+        "type": "image",
+        "src": "/projects/hemonaut.png",
+        "alt": "Hemonaut",
+        "width": "1792",
+        "height": "1414"
+      },
+      {
+        "type": "image",
+        "src": "/projects/ggj_kielen.png",
+        "alt": " Global Game Jam contribution",
+        "width": "4378",
+        "height": "2904"
+      }
+    ]
   }
 ]
 

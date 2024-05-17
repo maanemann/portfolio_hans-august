@@ -121,7 +121,7 @@ const ProjectDetails = () => {
                 }}
               >
                 <iframe
-                  src={mediaItem.iframe}
+                  src={mediaItem.iframe + "?rel=0"}
                   width={mediaItem.width}
                   height={mediaItem.height}
                   title="YouTube video player"

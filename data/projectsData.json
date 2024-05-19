@@ -83,9 +83,16 @@
       {
         "type": "image",
         "src": "/projects/kalimba/kalimbaUI_init.png",
-        "alt": "Kalimba UI",
+        "alt": "Kalimba touch UI icons",
         "width": "1952",
         "height": "1952"
+      },
+      {
+        "type": "image",
+        "src": "/projects/kalimba/kalimba-tourch-ui.gif",
+        "alt": "Kalimba touch UI animated tour",
+        "width": "1278",
+        "height": "957"
       }
     ]
   },

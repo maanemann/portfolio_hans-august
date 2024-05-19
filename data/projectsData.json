@@ -65,6 +65,27 @@
         "alt": "Pioneers UI",
         "width": "4122",
         "height": "2988"
+      },
+      {
+        "type": "image",
+        "src": "/projects/trailmakers/building_ui.gif",
+        "alt": "Trailmakers UI animated tour",
+        "width": "2731",
+        "height": "1532"
+      },
+      {
+        "type": "image",
+        "src": "/projects/trailmakers/tmuisketches.png",
+        "alt": "Trailmakers UI sketches",
+        "width": "1223",
+        "height": "1348"
+      },
+      {
+        "type": "image",
+        "src": "/projects/trailmakers/tmuisketches-2.png",
+        "alt": "More Trailmakers UI sketches",
+        "width": "2334",
+        "height": "976"
       }
     ]
   },

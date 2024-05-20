@@ -44,6 +44,13 @@
         "alt": "Cosha",
         "width": "1894",
         "height": "1322"
+      },
+      {
+        "type": "image",
+        "src": "/projects/cosha/cosha_sketch.png",
+        "alt": "Cosha sketch",
+        "width": "2000",
+        "height": "1200"
       }
     ]
   },

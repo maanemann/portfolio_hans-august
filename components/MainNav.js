@@ -121,7 +121,7 @@ const MainNav = () => {
           <Li href="/about">
             about me
           </Li>
-          <Li href="https://drive.google.com/file/d/13qEvZptBxu31Iv_ufGIoTMcs0jD50V9K/view?usp=sharing" target="_blank">
+          <Li href="https://drive.google.com/file/d/15fO5HXVIdnthINs4m511dr7Y_pl62ZGS/view?usp=sharing" target="_blank">
             cv
           </Li>
           <Li href="/contact">

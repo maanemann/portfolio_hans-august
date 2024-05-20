@@ -10,7 +10,7 @@
       "imgWidth": "2162",
       "imgHeight": "1455"
     },
-    "description": "I had the honour of designing the interface for Cocoon, an award-winning puzzle game, in which you delve deep into surreal worlds, nested within each other. From Geometric Interactive, a talented team, including developers behind Limbo and Inside. \n Here you see the loading screen, round like a dial, or a clock. It gives an overview of the game, your progress and other information that you learn to understand through playing the game. Everything you see is bound to the symbolics and logics of the game, all boiled down to one display.",
+    "description": "I had the honour of designing the interface for Cocoon, an award-winning puzzle game, in which you delve deep into surreal worlds, nested within each other. From Geometric Interactive, a talented team, including developers behind Limbo and Inside. \n Below is an example of the loading screen. It's not very common to see circular navigations, but it seemed like the right choice for a game that revolves around orbs (no pun intended), and uncertainty of when things start and end – without saying too much. \n Through this interface, a visual summary of the entire game is told, boiled down to one display. In the spirit of how the game itself unfolds, not everything is explained, and you have to explore to make sense of it, after which it will become intuitive and logical.",
     "media": [
       {
         "type": "image",

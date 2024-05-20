@@ -64,7 +64,7 @@
       "imgWidth": "4122",
       "imgHeight": "2988"
     },
-    "description": "Trailmakers gives you an open world to explore with the help of any thinkable vehicle, if you can build it. In collaboration with creative director Mikkel Thorsted I had a lot of fun helping to brainstorm, design and implement the UI / UX. The challenge was to give the player the most intuitive possible approach to building a 3D vehicle on a flat screen – similar to building with Lego, but without the physical aspect. And with the addition of rocket engines. \n Apart from the building interface, I also worked on the inventory for the many blocks you find on your journey, which have to be sorted and stored in a way that makes all parts easily accessible.",
+    "description": "Trailmakers gives you an open world to explore with the help of any thinkable vehicle, if you can build it. In collaboration with creative director Mikkel Thorsted I had a lot of fun helping with brainstorming, designing and implementing the UI / UX. The challenge was to give the player the most intuitive possible approach to building a 3D vehicle on a flat screen – similar to building with Lego, but without the physical aspect. And with the addition of rocket engines. \n Apart from the building interface, I also worked on the inventory for the many blocks you find on your journey, which have to be sorted and stored in a way that makes all parts easily accessible.",
     "media": [
       {
         "type": "image",
@@ -106,7 +106,7 @@
       "imgWidth": "1952",
       "imgHeight": "1952"
     },
-    "description": "Kalimba is a puzzle platformer, in which everything is build of triangles. When the game was ported to iOS it required a new, touch-friendly UI, which was my responsibility. As something new for the menu, I decided to approach the in-game triangle (or trixel) grid as a strict dogma and made everything in the UI out of triangles. This way the UI blends naturally into the game world, instead of just being a layer on top of it.",
+    "description": "Kalimba is a physics-based puzzle platformer with the distinct graphical approach that everything is build of triangles. When the game was ported to iOS / iPadOS I helped with rethinking the UI to make it touch-friendly. As something new for the menu, I decided to approach the game world's triangular grid (or trixel grid) as a strict dogma. So I created everything in the UI out of triangles. This way the UI blends naturally into the game world, rather than being a layer on top of it.",
     "media": [
       {
         "type": "image",

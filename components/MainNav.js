@@ -1,6 +1,8 @@
 
 'use client'
 
+import { useState } from "react";
+
 import { useThemeContext } from "@/app/context";
 // import { useEffect, useState } from "react";
 // import { usePathname } from "next/navigation";
@@ -36,9 +38,14 @@ const MainNav = () => {
   //   // Hvis søgefeltet er tomt vises ingenting (tom array) :
   //   : [];
 
+  const [menuVisibility, setMenuVisibility] = useState(`hidden`);
+
   return ( <>
-    {/* Menu button for phones : */}
+    {/* menu button for phones : */}
     <div
+      onClick={() => setMenuVisibility(
+        menuVisibility === `hidden` ? `block` : `hidden`
+      )}
       className={`
         grid md:hidden fixed bottom-0 left-1/2 -translate-x-1/2
         w-16 h-12 z-30 ${theme.bgBrightTheme} rounded-t-full
@@ -53,7 +60,7 @@ const MainNav = () => {
       </div>
     </div>
 
-    <NavContent />
+    <NavContent menuVisibility={menuVisibility} />
   </> );
 }
  

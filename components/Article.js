@@ -9,7 +9,7 @@ const Article = ({ children }) => {
   return ( 
     <article className={`
       p-8 pt-14 md:pl-48 pb-20 lg:pb-24 xl:py-24
-      grid gap-10 w-full max-w-[64rem] mx-auto
+      grid gap-10 lg:gap-12 w-full max-w-[64rem] mx-auto
       ${theme.textATheme}
     `}>
       { children }

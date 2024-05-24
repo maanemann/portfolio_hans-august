@@ -68,72 +68,90 @@ const ProjectDetails = () => {
         {project.media.map((mediaItem, index) => {
           const mediaWidth = mediaItem.width;
           const mediaHeight = mediaItem.height;
+          const mediaText = mediaItem.mediaText;
+
+          const mediaTextElement = mediaText
+            ? <figcaption
+              className='
+                text-right ml-auto mt-6 max-w-[32rem]
+                2xl:absolute 2xl:-right-0 2xl:translate-x-full
+                2xl:text-left 2xl:bottom-0 2xl:pl-8 2xl:max-w-64
+              '
+            >
+              {mediaText}
+            </figcaption>
+            : null;
+
           if (mediaItem.type === 'image') {
             return (
-              <div
-                key={index}
-                className={`
-                  relative w-full ${theme.bgBrightBTheme} xl:mb-6
-                  outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
-                  before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
-                `}
-                style={{
-                  // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
-                  paddingBottom: `${mediaHeight / mediaWidth * 100}%`
-                }}
-              >
-                <p className={`
-                  block mt-6 ml-10
-                  text-4xl font-bold tracking-wider italic ${theme.textA2Theme}
-                `}>
-                  Loading...
-                </p>
-                <Image
-                  src={mediaItem.src}
-                  alt={mediaItem.alt}
-                  // width={mediaItem.width}
-                  // height={mediaItem.height}
-                  priority={ index === 0 ? true : false }
-                  fill sizes="90vw"
-                  className="
-                    w-full object-cover object-left-top
-                    opacity-0
-                  "
-                  onLoad={(e) => {
-                    e.target.classList.remove('opacity-0');
-                    e.target.previousElementSibling.remove();
+              <figure key={index} className='relative'>
+                <div
+                  className={`
+                    relative w-full ${theme.bgBrightBTheme}
+                    outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
+                    before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
+                  `}
+                  style={{
+                    // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
+                    paddingBottom: `${mediaHeight / mediaWidth * 100}%`
                   }}
-                />
-              </div>
+                >
+                  <p className={`
+                    block mt-6 ml-10
+                    text-4xl font-bold tracking-wider italic ${theme.textA2Theme}
+                  `}>
+                    Loading...
+                  </p>
+                  <Image
+                    src={mediaItem.src}
+                    alt={mediaItem.alt}
+                    // width={mediaItem.width}
+                    // height={mediaItem.height}
+                    priority={ index === 0 ? true : false }
+                    fill sizes="90vw"
+                    className="
+                      w-full object-cover object-left-top
+                      opacity-0
+                    "
+                    onLoad={(e) => {
+                      e.target.classList.remove('opacity-0');
+                      e.target.previousElementSibling.remove();
+                    }}
+                  />
+                </div>
+                {mediaTextElement}
+              </figure>
             );
           } else if (mediaItem.type === 'video') {
             return (
-              <div
-                key={index}
-                className={`
-                  relative w-full ${theme.bgBrightBTheme} xl:mb-6
-                  outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
-                  before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
-                `}
-                style={{
-                  // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
-                  paddingBottom: `${mediaHeight / mediaWidth * 100}%`
-                }}
-              >
-                <iframe
-                  src={mediaItem.iframe + "?rel=0"}
-                  width={mediaItem.width}
-                  height={mediaItem.height}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  // Den her blev ikke tilføjet af copilot, men var med i youtube's embed kode og virker fornuftig :
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  // `clipboard-write;` vat tilladt af copilot
-                  allowFullScreen
-                  className='absolute top-0 left-0 w-full h-full'
-                ></iframe>
-              </div>
+              <figure key={index}>
+                <div
+                  className={`
+                    relative w-full ${theme.bgBrightBTheme}
+                    outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
+                    before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
+                  `}
+                  style={{
+                    // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
+                    paddingBottom: `${mediaHeight / mediaWidth * 100}%`
+                  }}
+                >
+                  <iframe
+                    src={mediaItem.iframe + "?rel=0"}
+                    width={mediaItem.width}
+                    height={mediaItem.height}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    // Den her blev ikke tilføjet af copilot, men var med i youtube's embed kode og virker fornuftig :
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    // `clipboard-write;` vat tilladt af copilot
+                    allowFullScreen
+                    className='absolute top-0 left-0 w-full h-full'
+                  ></iframe>
+                </div>
+                {mediaTextElement}
+              </figure>
             );
           }
         })}

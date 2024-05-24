@@ -71,28 +71,32 @@
         "src": "/projects/trailmakers/pioneersUI_init.png",
         "alt": "Pioneers UI",
         "width": "4122",
-        "height": "2988"
+        "height": "2988",
+        "mediaText": "UI ideation – camera orientated 3D indicators inside 2D buttons for rotating blocks around X, Y and Z axes respectively. Compensation for the lack of depth perception on a normal monitor."
       },
       {
         "type": "image",
         "src": "/projects/trailmakers/building_ui.gif",
         "alt": "Trailmakers UI animated tour",
         "width": "2731",
-        "height": "1532"
+        "height": "1532",
+        "mediaText": "UI ideation – radial vs classic UI, each of them have their own qualities. Also optimized for optional keyboard navigation"
       },
       {
         "type": "image",
         "src": "/projects/trailmakers/tmuisketches.png",
         "alt": "Trailmakers UI sketches",
         "width": "1223",
-        "height": "1348"
+        "height": "1348",
+        "mediaText": "UI ideation – sketches of structure, look and feel of the inventory, as well as visual brainstorming on the 'mirroring' UX, making it faster to build symmetrically."
       },
       {
         "type": "image",
         "src": "/projects/trailmakers/tmuisketches-2.png",
         "alt": "More Trailmakers UI sketches",
         "width": "2334",
-        "height": "976"
+        "height": "976",
+        "mediaText": "UI ideation – more sketches..."
       }
     ]
   },

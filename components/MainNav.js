@@ -39,14 +39,27 @@ const MainNav = () => {
   //   : [];
 
   const [menuVisibility, setMenuVisibility] = useState(`hidden`);
+  const [maskVisibility, setMaskVisibility] = useState(`hidden`);
+
+  const handleMenu = () => {
+    setMenuVisibility(menuVisibility === `hidden` ? `block` : `hidden`);
+    setMaskVisibility(maskVisibility === `hidden` ? `block` : `hidden`);
+  }
 
   return ( <>
+    <div
+      className={`
+        ${maskVisibility} fixed top-0 left-0 w-screen h-screen
+        ${theme.bgBTheme} backdrop-blur-md opacity-65 z-20
+      `}
+      onClick={(
+        () => setMenuVisibility(`hidden`),
+        () => setMaskVisibility(`hidden`)
+      )}
+    />
     {/* menu button for phones : */}
     <div
-      onClick={() => setMenuVisibility(
-        menuVisibility === `hidden` ? `block` : `hidden`
-      )}
-      // onClick={handleRoadmap}
+      onClick={ handleMenu }
       className={`
         grid md:hidden fixed bottom-0 left-1/2 -translate-x-1/2
         w-[4.25rem] h-[3.12rem] z-30 rounded-t-full

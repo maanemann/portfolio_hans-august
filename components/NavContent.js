@@ -14,15 +14,14 @@ const NavContent = ({ menuVisibility }) => {
   const { theme } = useThemeContext();
   const pathname = usePathname();
   const [roadmapVisibility, setRoadmapVisibility] = useState(roadmapOff);
-  const [maskVisibility, setMaskVisibility] = useState(`hidden`);
 
   const handleRoadmap = () => {
     if (roadmapVisibility.includes('opacity-100')) {
       setRoadmapVisibility(roadmapOff);
-      setMaskVisibility(`hidden`);
+      // setMaskVisibility(`hidden`);
     } else {
       setRoadmapVisibility(roadmapOn);
-      setMaskVisibility(`block`);
+      // setMaskVisibility(`block`);
     }
   }
 
@@ -58,16 +57,9 @@ const NavContent = ({ menuVisibility }) => {
 
   return ( <>
     <div className={`
-      ${menuVisibility} md:block
+      ${menuVisibility} md:block z-30
     `}>
       <Roadmap handleRoadmap={handleRoadmap} visibility={roadmapVisibility} />
-      <div
-        className={`
-          ${maskVisibility} fixed top-0 left-0 w-screen h-screen
-          ${theme.bgBTheme} backdrop-blur-md opacity-65 z-20
-        `}
-        onClick={handleRoadmap}
-      />
 
       <nav
         className="

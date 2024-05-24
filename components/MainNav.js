@@ -46,17 +46,34 @@ const MainNav = () => {
       onClick={() => setMenuVisibility(
         menuVisibility === `hidden` ? `block` : `hidden`
       )}
+      // onClick={handleRoadmap}
       className={`
         grid md:hidden fixed bottom-0 left-1/2 -translate-x-1/2
-        w-16 h-12 z-30 ${theme.bgBrightTheme} rounded-t-full
+        w-[4.25rem] h-[3.12rem] z-30 rounded-t-full
+        ${theme.bgBrightBTheme}
         cursor-pointer
       `}
-      // onClick={handleRoadmap}
     >
-      <div className="w-1/3 h-2/4 m-auto grid items-center justify-items-center">
-        <div className={`w-2/3 h-1/3 ${theme.bgBrighterTheme} rounded-full`}></div>
-        <div className={`w-5/6 h-1/3 ${theme.bgBrighterTheme} rounded-full`}></div>
-        <div className={`w-full h-1/3 ${theme.bgBrighterTheme} rounded-full`}></div>
+      {/* button background : */}
+      <div
+        className={`
+          absolute grid
+          self-end justify-self-center
+          w-14 h-11  rounded-t-full
+          ${theme.bgBrightTheme}
+          cursor-pointer
+        `}
+      >
+        {/* burger icon lines : */}
+        <div className="
+          absolute w-1/3 h-2/4 m-auto
+          self-center justify-self-center
+          grid items-center justify-items-center
+        ">
+          <div className={`w-2/3 h-1/3 ${theme.bgBrighterTheme} rounded-full`}></div>
+          <div className={`w-5/6 h-1/3 ${theme.bgBrighterTheme} rounded-full`}></div>
+          <div className={`w-full h-1/3 ${theme.bgBrighterTheme} rounded-full`}></div>
+        </div>
       </div>
     </div>
 

@@ -75,7 +75,7 @@ const ProjectDetails = () => {
               className='
                 text-right ml-auto mt-6 max-w-[32rem]
                 2xl:absolute 2xl:-right-0 2xl:translate-x-full
-                2xl:text-left 2xl:bottom-0 2xl:pl-8 2xl:max-w-64
+                2xl:text-left 2xl:bottom-0 2xl:pl-8 2xl:max-w-72
               '
             >
               {mediaText}

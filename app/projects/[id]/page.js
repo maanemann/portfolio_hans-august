@@ -8,6 +8,7 @@ import { useThemeContext } from '@/app/context';
 import { H1 } from '@/components/Headings';
 import Article from '@/components/Article';
 import Columns from '@/components/Columns';
+import ContentLoading from '@/components/ContentLoading';
 
 
 const ProjectDetails = () => {
@@ -96,12 +97,7 @@ const ProjectDetails = () => {
                     paddingBottom: `${mediaHeight / mediaWidth * 100}%`
                   }}
                 >
-                  <p className={`
-                    block mt-6 ml-10
-                    text-4xl font-bold tracking-wider italic ${theme.textA2Theme}
-                  `}>
-                    Loading...
-                  </p>
+                  <ContentLoading />
                   <Image
                     src={mediaItem.src}
                     alt={mediaItem.alt}
@@ -136,6 +132,7 @@ const ProjectDetails = () => {
                     paddingBottom: `${mediaHeight / mediaWidth * 100}%`
                   }}
                 >
+                  <ContentLoading />
                   <iframe
                     src={mediaItem.iframe + "?rel=0"}
                     width={mediaItem.width}

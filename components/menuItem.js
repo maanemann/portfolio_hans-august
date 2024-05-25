@@ -1,7 +1,7 @@
 
 'use client'
 
-import { useThemeContext } from "@/app/context";
+import { useMenuContext, useThemeContext } from "@/app/context";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -34,13 +34,20 @@ export { EdgeBox };
 
 const Li = ({ children, href, target }) => {
   const pathname = usePathname();
+  const { setMenuVisibility, setMaskVisibility } = useMenuContext();
 
   return ( 
     <li>
-      <Link href={ href } target={ target } className={`
-        grid content-center w-fit mr-2
-        ${pathname === href ? 'underline' : ''}
-      `}>
+      <Link href={ href } target={ target }
+        className={`
+          grid content-center w-fit
+          ${pathname === href ? 'underline' : ''}
+        `}
+        onClick={() => {
+          setMenuVisibility(`hidden`);
+          setMaskVisibility(`hidden`);
+        }}
+      >
         <EdgeBox>
           { children }
         </EdgeBox>

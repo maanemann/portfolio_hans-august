@@ -1,6 +1,6 @@
 
 // import { SpeedInsights } from "@vercel/speed-insights/next"
-import { ThemeWrapper } from "./context";
+import { MenuWrapper, ThemeWrapper } from "./context";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Body from "@/components/Body"
@@ -24,9 +24,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Suspense fallback={<Loading />}>
         <ThemeWrapper>
+          <MenuWrapper>
             <Body nextFont={ dmSans.className }>
               { children }
             </Body>
+          </MenuWrapper>
         </ThemeWrapper>
       </Suspense>
     </html>

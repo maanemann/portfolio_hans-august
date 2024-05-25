@@ -1,7 +1,7 @@
 
 'use client'
 
-import { useThemeContext } from "@/app/context";
+import { useThemeContext, useMenuContext } from "@/app/context";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Li, { EdgeBox } from "@/components/menuItem";
@@ -10,19 +10,19 @@ import Roadmap from "./Roadmap";
 const roadmapOff = `-translate-x-full opacity-0 pointer-events-none`
 const roadmapOn = `translate-x-32 opacity-100 pointer-events-auto`
 
-const NavContent = ({ menuVisibility }) => {
+const NavContent = ({ menuTranslation }) => {
   const { theme } = useThemeContext();
+  const { menuVisibility } = useMenuContext();
   const pathname = usePathname();
   const [roadmapVisibility, setRoadmapVisibility] = useState(roadmapOff);
-  const [maskVisibility, setMaskVisibility] = useState(`hidden`);
 
   const handleRoadmap = () => {
     if (roadmapVisibility.includes('opacity-100')) {
       setRoadmapVisibility(roadmapOff);
-      setMaskVisibility(`hidden`);
+      // setMaskVisibility(`hidden`);
     } else {
       setRoadmapVisibility(roadmapOn);
-      setMaskVisibility(`block`);
+      // setMaskVisibility(`block`);
     }
   }
 
@@ -58,25 +58,25 @@ const NavContent = ({ menuVisibility }) => {
 
   return ( <>
     <div className={`
-      ${menuVisibility} md:block
+      ${menuVisibility} md:block z-30
     `}>
       <Roadmap handleRoadmap={handleRoadmap} visibility={roadmapVisibility} />
-      <div
-        className={`
-          ${maskVisibility} fixed top-0 left-0 w-screen h-screen
-          ${theme.bgBTheme} backdrop-blur-md opacity-65 z-20
-        `}
-        onClick={handleRoadmap}
-      />
 
       <nav
-        className="
-          block w-max z-10
-          m-6 pr-6 pb-12 fixed max-h-[calc(100vh-8rem)]
-          left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0
+        className={`
+          block fixed mb-[4.5rem]
+          md:mt-6 md:ml-7 md:pr-6 md:pb-12
+          max-h-[calc(100vh-2rem)] md:max-h-[calc(100vh-8rem)]
+          left-[50vw] -translate-x-1/2 md:left-0 md:translate-x-0
           bottom-0 md:bottom-auto
-          overflow-y-auto overflow-x-hidden maskGradientCustom
-      ">
+          overflow-y-auto overflow-x-hidden md:maskGradientCustom
+          ${menuTranslation}
+        `}
+        // style={{
+        //   transform: menuTranslation
+        //   // transform: "translate(-50%, -4rem)"
+        // }}
+      >
         <div className="
           mainNavUlCustom flex
         ">
@@ -108,6 +108,7 @@ const NavContent = ({ menuVisibility }) => {
               contact
             </Li>
             <li className={`
+              hidden md:block
               w-min px-3 py-1 my-2 hyphens-manual text-nowrap
               outline-dashed -outline-offset-2
               outline-2 ${theme.outlineDarkTheme}
@@ -121,7 +122,7 @@ const NavContent = ({ menuVisibility }) => {
                 </EdgeBox>
               </div>
             </li>
-            <li className="text-sm">
+            <li className="text-sm hidden md:block">
               <div className="w-fit text-center ml-[.87rem]">
                 themes
                 <span className="block mt-0.5">

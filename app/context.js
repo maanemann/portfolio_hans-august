@@ -75,3 +75,40 @@ export function useThemeContext() {
 
 // // #endregion themeContext
 
+
+// #tag menuContext
+
+// const menuStates = {
+//   closed: {
+//     xx: 'xx'
+//   },
+//   open: {
+//     xx: 'xx'
+//   }
+// }
+
+const menuContext = createContext();
+
+export function MenuWrapper({ children }) {
+  const [menuVisibility, setMenuVisibility] = useState(`hidden`);
+  const [maskVisibility, setMaskVisibility] = useState(`hidden`);
+  
+  const handleMenu = () => {
+    setMenuVisibility(menuVisibility === `hidden` ? `block` : `hidden`);
+    setMaskVisibility(maskVisibility === `hidden` ? `block` : `hidden`);
+  }
+
+  return(
+    <menuContext.Provider value={{
+      menuVisibility, setMenuVisibility, handleMenu,
+      maskVisibility, setMaskVisibility
+    }}>
+      { children }
+    </menuContext.Provider>
+  )
+}
+
+export function useMenuContext() {
+  return useContext(menuContext);
+}
+

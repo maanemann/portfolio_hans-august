@@ -18,6 +18,7 @@ const themes = {
     borderATheme: 'border-ockerdust-300',
     borderBTheme: 'border-ockerdust-200',
     borderDarkTheme: 'border-ockerdust-700',
+    borderDarkBTheme: 'border-ockerdust-600',
     outlineDarkerTheme: 'outline-ockerdust-800',
     outlineDarkTheme: 'outline-ockerdust-700',
     outlineDarkBTheme: 'outline-ockerdust-600',
@@ -41,6 +42,7 @@ const themes = {
     borderATheme: "border-aqua-300",
     borderBTheme: 'border-aqua-200',
     borderDarkTheme: 'border-aqua-700',
+    borderDarkBTheme: 'border-aqua-600',
     outlineDarkTheme: 'outline-aqua-700',
     outlineDarkerTheme: 'outline-aqua-800',
     outlineDarkBTheme: 'outline-aqua-600',
@@ -90,18 +92,38 @@ export function useThemeContext() {
 const menuContext = createContext();
 
 export function MenuWrapper({ children }) {
+  const roadmapOff = `-translate-x-full opacity-0 pointer-events-none`
+  const roadmapOn = `
+    left-1/2 -translate-x-1/2 md:left-0 md:translate-x-32
+    opacity-100 pointer-events-auto
+  `
+
   const [menuVisibility, setMenuVisibility] = useState(`hidden`);
   const [maskVisibility, setMaskVisibility] = useState(`hidden`);
+  const [roadmapVisibility, setRoadmapVisibility] = useState(roadmapOff);
   
   const handleMenu = () => {
     setMenuVisibility(menuVisibility === `hidden` ? `block` : `hidden`);
     setMaskVisibility(maskVisibility === `hidden` ? `block` : `hidden`);
+    setRoadmapVisibility(roadmapOff);
+  }
+
+  const handleRoadmap = () => {
+    if (roadmapVisibility.includes('opacity-100')) {
+      setRoadmapVisibility(roadmapOff);
+      setMaskVisibility(`hidden`);
+    } else {
+      setRoadmapVisibility(roadmapOn);
+      setMaskVisibility(`block`);
+    }
   }
 
   return(
     <menuContext.Provider value={{
       menuVisibility, setMenuVisibility, handleMenu,
-      maskVisibility, setMaskVisibility
+      maskVisibility, setMaskVisibility,
+      roadmapVisibility, setRoadmapVisibility, handleRoadmap,
+      roadmapOff, roadmapOn
     }}>
       { children }
     </menuContext.Provider>

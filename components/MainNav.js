@@ -10,8 +10,10 @@ const MainNav = () => {
   // const [searchTerm, setSearchTerm] = useState("");
   const { theme } = useThemeContext();
   const {
-    menuVisibility, setMenuVisibility, handleMenu,
-    maskVisibility, setMaskVisibility
+    setMenuVisibility, handleMenu,
+    maskVisibility, setMaskVisibility,
+    setRoadmapVisibility, roadmapOff
+    
   } = useMenuContext();
   // const [maskVisibility, setMaskVisibility] = useState(`hidden`);
 
@@ -40,7 +42,8 @@ const MainNav = () => {
       onClick={(() => {
         setMenuVisibility(`hidden`);
         setMaskVisibility(`hidden`);
-        setMenuTranslation(`-translate-y-0`)
+        setMenuTranslation(`-translate-y-0`);
+        setRoadmapVisibility(roadmapOff)
       })}
     />
     {/* menu button for phones : */}
@@ -66,7 +69,7 @@ const MainNav = () => {
         {/* burger icon lines : */}
         <div className="
           absolute w-1/3 h-2/4 m-auto
-          self-center justify-self-center
+          left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
           grid items-center justify-items-center
         ">
           <div className={`w-2/3 h-1/3 ${theme.bgBrighterTheme} rounded-full`}></div>

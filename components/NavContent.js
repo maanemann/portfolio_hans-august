@@ -29,30 +29,46 @@ const NavContent = ({ menuTranslation }) => {
   // ? Det her er gjort helt skørt og ikke react-agtigt. Det skulle nok have være gjort med en state :
   useEffect(() => {
     const mainNavUl = document.querySelector('.mainNavUlCustom');
-    if (pathname.includes('/projects')) {
-      // mainNavUl.classList.add('pt-11');
+    
+    const handleMenuDim = () => {
+      if (pathname.includes('/projects') && window.innerWidth > 768) {
+        mainNavUl.classList.add(
+          'brightness-[.66]', 'saturate-[66%]', '-hue-rotate-15',
+          'hover:brightness-[.9]', 'hover:saturate-[1]', 'hover:hue-rotate-0'
+        );
 
-      mainNavUl.classList.add('brightness-[.66]');
-      mainNavUl.classList.remove('brightness-90');
+        // mainNavUl.classList.add('brightness-[.66]');
 
-      mainNavUl.classList.add('saturate-[66%]');
-      mainNavUl.classList.add('-hue-rotate-15');
+        // mainNavUl.classList.add('saturate-[66%]');
+        // mainNavUl.classList.add('-hue-rotate-15');
 
-      mainNavUl.classList.add('hover:brightness-[.9]');
-      mainNavUl.classList.add('hover:saturate-[1]');
-      mainNavUl.classList.add('hover:hue-rotate-0');
-    } else {
-      // mainNavUl.classList.remove('pt-11');
+        // mainNavUl.classList.add('hover:brightness-[.9]');
+        // mainNavUl.classList.add('hover:saturate-[1]');
+        // mainNavUl.classList.add('hover:hue-rotate-0');
+      } else {
+        mainNavUl.classList.remove(
+          'brightness-[.66]', 'saturate-[66%]', '-hue-rotate-15',
+          'hover:brightness-[.9]', 'hover:saturate-[1]', 'hover:hue-rotate-0'
+        );
 
-      mainNavUl.classList.add('brightness-90');
-      mainNavUl.classList.remove('brightness-[.66]');
+        // mainNavUl.classList.remove('brightness-[.66]');
 
-      mainNavUl.classList.remove('saturate-[66%]');
-      mainNavUl.classList.remove('-hue-rotate-15');
+        // mainNavUl.classList.remove('saturate-[66%]');
+        // mainNavUl.classList.remove('-hue-rotate-15');
 
-      mainNavUl.classList.remove('hover:brightness-[.9]');
-      mainNavUl.classList.remove('hover:saturate-[1]');
-      mainNavUl.classList.remove('hover:hue-rotate-0');
+        // mainNavUl.classList.remove('hover:brightness-[.9]');
+        // mainNavUl.classList.remove('hover:saturate-[1]');
+        // mainNavUl.classList.remove('hover:hue-rotate-0');
+      }
+    }
+
+    handleMenuDim();
+
+    window.addEventListener('resize', handleMenuDim);
+
+    // cleanup :
+    return () => {
+      window.removeEventListener('resize', handleMenuDim);
     }
 }, [pathname]);
 
@@ -78,7 +94,7 @@ const NavContent = ({ menuTranslation }) => {
         // }}
       >
         <div className="
-          mainNavUlCustom flex
+          mainNavUlCustom brightness-90 flex
         ">
           <ul className={`
             ${theme.textA2Theme}

@@ -7,24 +7,21 @@ import { usePathname } from "next/navigation";
 import Li, { EdgeBox } from "@/components/menuItem";
 import Roadmap from "./Roadmap";
 
-const roadmapOff = `-translate-x-full opacity-0 pointer-events-none`
-const roadmapOn = `translate-x-32 opacity-100 pointer-events-auto`
+// const roadmapOff = `-translate-x-full opacity-0 pointer-events-none`
+// const roadmapOn = `translate-x-32 opacity-100 pointer-events-auto`
 
 const NavContent = ({ menuTranslation }) => {
   const { theme } = useThemeContext();
-  const { menuVisibility } = useMenuContext();
+  const {
+    menuVisibility,
+    // setMaskVisibility,
+    roadmapVisibility,
+    // setRoadmapVisibility,
+    // roadmapOff, roadmapOn,
+    handleRoadmap
+  } = useMenuContext();
   const pathname = usePathname();
-  const [roadmapVisibility, setRoadmapVisibility] = useState(roadmapOff);
-
-  const handleRoadmap = () => {
-    if (roadmapVisibility.includes('opacity-100')) {
-      setRoadmapVisibility(roadmapOff);
-      // setMaskVisibility(`hidden`);
-    } else {
-      setRoadmapVisibility(roadmapOn);
-      // setMaskVisibility(`block`);
-    }
-  }
+  // const [roadmapVisibility, setRoadmapVisibility] = useState(roadmapOff);
 
   // ? Det her er gjort helt skørt og ikke react-agtigt. Det skulle nok have være gjort med en state :
   useEffect(() => {
@@ -76,7 +73,7 @@ const NavContent = ({ menuTranslation }) => {
     <div className={`
       ${menuVisibility} md:block z-30
     `}>
-      <Roadmap handleRoadmap={handleRoadmap} visibility={roadmapVisibility} />
+      <Roadmap />
 
       <nav
         className={`
@@ -124,7 +121,6 @@ const NavContent = ({ menuTranslation }) => {
               contact
             </Li>
             <li className={`
-              hidden md:block
               w-min px-3 py-1 my-2 hyphens-manual text-nowrap
               outline-dashed -outline-offset-2
               outline-2 ${theme.outlineDarkTheme}

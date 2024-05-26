@@ -1,8 +1,8 @@
 
 'use client'
 
-import { useThemeContext } from "@/app/context";
-import InlLink from "./InlLink";
+import { useThemeContext, useMenuContext } from "@/app/context";
+// import InlLink from "./InlLink";
 import Paragraph from "./Paragraph";
 
 const RoadLi = ({ children }) => {
@@ -13,16 +13,17 @@ const RoadLi = ({ children }) => {
   );
 }
 
-const Roadmap = ({ visibility, handleRoadmap }) => {
+const Roadmap = ( ) => {
   const { theme } = useThemeContext();
+  const { roadmapVisibility } = useMenuContext();
 
   return (
     <article
       className={`
-        ${ visibility } absolute z-30 top-12 left-0
-        w-2/3 max-w-[36rem] max-h-[calc(100vh-4rem)]
+        ${ roadmapVisibility } absolute z-30 top-12 left-0
+        w-4/5 max-w-[36rem] max-h-[calc(100vh-4rem)]
         ${ theme.bgBrightBTheme } ${ theme.textATheme }
-        rounded-sm ml-8 p-10 pb-12 overflow-auto shadow-[0px_0px_10rem_rgba(0,0,0,0.5)]
+        rounded-sm md:ml-8 p-10 pb-12 overflow-auto shadow-[0px_0px_10rem_rgba(0,0,0,0.5)]
       `}
     >
       <h2 className="
@@ -33,10 +34,10 @@ const Roadmap = ({ visibility, handleRoadmap }) => {
       </Paragraph>
       <ul className="grid gap-2">
         <RoadLi>
-          More past projects and more content for each project
+          Navigation between projects without having to go back to the main page
         </RoadLi>
         <RoadLi>
-          A menu button for mobile devices (posibly a radial menu!)
+          More content for some projects / pages
         </RoadLi>
         <RoadLi>
           Color theme selection saved as a cookie, and more themes
@@ -47,9 +48,6 @@ const Roadmap = ({ visibility, handleRoadmap }) => {
         {/* <RoadLi>
           A nice CV that&apos;s not just a link to a pdf
         </RoadLi> */}
-        <RoadLi>
-          Navigation between projects without having to go back to the main page
-        </RoadLi>
         <RoadLi>
         &quot;Masonry grid&quot; for the projects (apect ratio&apos;s preserved in an evenly spaced, full-width grid)
         </RoadLi>

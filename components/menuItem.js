@@ -37,7 +37,9 @@ export { EdgeBox };
 
 const Li = ({ children, href, target }) => {
   const pathname = usePathname();
-  const { setMenuVisibility, setMaskVisibility } = useMenuContext();
+  const {
+    setMenuVisibility, setMaskVisibility, setRoadmapVisibility, roadmapOff
+  } = useMenuContext();
   const { theme } = useThemeContext();
 
   return ( 
@@ -50,6 +52,7 @@ const Li = ({ children, href, target }) => {
         onClick={() => {
           setMenuVisibility(`hidden`);
           setMaskVisibility(`hidden`);
+          setRoadmapVisibility(roadmapOff)
         }}
       >
         <EdgeBox href={ href }>

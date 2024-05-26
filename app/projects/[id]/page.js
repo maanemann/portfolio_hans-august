@@ -8,6 +8,7 @@ import { useThemeContext } from '@/app/context';
 import { H1 } from '@/components/Headings';
 import Article from '@/components/Article';
 import Columns from '@/components/Columns';
+import InlLink from '@/components/InlLink';
 
 
 const ProjectDetails = () => {
@@ -59,7 +60,7 @@ const ProjectDetails = () => {
         )
         : (
           <p className='mb-7 text-pretty max-w-[32rem]'>
-            No description yet, only this placeholder text. Have a look at some of the later projects, they should have one.
+            No description yet, only this automatic placeholder. I'm probably working on the website's functionality or design and postponing this text. Please have a look at one of my other <InlLink href='/projects'>projects</InlLink> in the meantime, or <InlLink href='/contact'>tell me if you're curious</InlLink> about this one.
           </p>
         )
       }

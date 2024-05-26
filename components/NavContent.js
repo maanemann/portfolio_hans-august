@@ -78,8 +78,9 @@ const NavContent = ({ menuTranslation }) => {
       <nav
         className={`
           block fixed mb-[4.5rem]
+          text-3xl md:text-base
           md:mt-6 md:ml-7 md:pr-6 md:pb-12
-          max-h-[calc(100vh-2rem)] md:max-h-[calc(100vh-8rem)]
+          max-h-[calc(100vh-5rem)] md:max-h-[calc(100vh-8rem)]
           left-[50vw] -translate-x-1/2 md:left-0 md:translate-x-0
           bottom-0 md:bottom-auto
           overflow-y-auto overflow-x-hidden md:maskGradientCustom
@@ -96,7 +97,7 @@ const NavContent = ({ menuTranslation }) => {
           <ul className={`
             ${theme.textA2Theme}
             font-medium tracking-wide
-            grid gap-2 md:mr-1
+            grid gap-4 md:gap-2 md:mr-1
             justify-items-center md:justify-items-start
           `}>
             {/* <li className={`
@@ -121,12 +122,13 @@ const NavContent = ({ menuTranslation }) => {
               contact
             </Li>
             <li className={`
-              w-min px-3 py-1 my-2 hyphens-manual text-nowrap
+              w-min px-3 -md:mt-[.4rem] py-3 md:my-[.075rem]
+              hyphens-manual text-nowrap
               outline-dashed -outline-offset-2
               outline-2 ${theme.outlineDarkTheme}
             `}>
               {/* to do: */}
-              <div className="my-2 cursor-pointer">
+              <div className="cursor-pointer">
                 <EdgeBox
                   onClick={handleRoadmap}
                 >
@@ -134,15 +136,15 @@ const NavContent = ({ menuTranslation }) => {
                 </EdgeBox>
               </div>
             </li>
-            <li className="text-sm hidden md:block">
+            {/* <li className="text-sm hidden md:block">
               <div className="w-fit text-center ml-[.87rem]">
                 themes
                 <span className="block mt-0.5">
                 ↓
-                  {/* ↓ ↓▼▾ 🠃🠋🠇🠛🠣 */}
+                  ↓ ↓▼▾ 🠃🠋🠇🠛🠣
                 </span>
               </div>
-            </li>
+            </li> */}
           </ul>
 
 

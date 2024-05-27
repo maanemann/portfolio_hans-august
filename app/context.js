@@ -30,7 +30,7 @@ const themes = {
     scrollbarTheme: 'scrOckerdustCustom',
     gradientTheme: 'from-ockerdust-800',
     beforeDarkerTheme: 'before:bg-ockerdust-800',
-    beforeBgBrightTheme: 'before:bg-ockerdust-700',
+    beforeBgBrighterTheme: 'before:bg-ockerdust-300',
     selectionTheme: 'selection:bg-ockerdust-700 selection:text-ockerdust-300',
   },
   aqua: {
@@ -55,6 +55,7 @@ const themes = {
     scrollbarTheme: 'scrAquaCustom',
     gradientTheme: 'from-aqua-800',
     beforeDarkerTheme: 'before:bg-aqua-800',
+    beforeBgBrighterTheme: 'before:bg-aqua-300',
     selectionTheme: 'selection:bg-aqua-800 selection:text-aqua-400',
   },
 };

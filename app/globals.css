@@ -93,7 +93,7 @@
 @media screen and (min-width: 768px){
   .arrowClipCustom::before {
     clip-path: polygon(
-      100% 0, 0 50%, 100% 100%
+      65% 0, 0 50%, 65% 100%, 75% 66%, 100% 66%, 100% 33%, 75% 33%
     );
   }
 }

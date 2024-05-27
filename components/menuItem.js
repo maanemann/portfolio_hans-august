@@ -53,8 +53,8 @@ const Li = ({ children, href, target }) => {
           md:hover:rounded-lg
 
           md:before:content-[''] md:before:block md:before:absolute
-          md:before:-right-2 md:before:bottom-3
-          md:before:w-4 md:before:h-5 ${theme.beforeBgBrightTheme}
+          md:before:-right-3 md:before:bottom-3
+          md:before:w-4 md:before:h-4 ${theme.beforeBgBrighterTheme}
           arrowClipCustom md:before:rounded-full
           md:before:hidden md:before:hover:block md:before:hover:animate-move-back-forth
         `}

@@ -30,6 +30,7 @@ const themes = {
     scrollbarTheme: 'scrOckerdustCustom',
     gradientTheme: 'from-ockerdust-800',
     beforeDarkerTheme: 'before:bg-ockerdust-800',
+    beforeBgBrightTheme: 'before:bg-ockerdust-700',
     selectionTheme: 'selection:bg-ockerdust-700 selection:text-ockerdust-300',
   },
   aqua: {

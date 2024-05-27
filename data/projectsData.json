@@ -5,19 +5,44 @@
     "title": "Cocoon",
     "company": "Geometric Interactive",
     "thumbnail": {
-      "imgSrc": "/projects/cocoon/cocoonUI_init.jpg",
+      "imgSrc": "/projects/cocoon/cocoonUI_process.jpg",
       "imgAlt": "Cocoon UI",
       "imgWidth": "2162",
       "imgHeight": "1455"
     },
-    "description": "I had the honour of designing the entire UI for Cocoon, an award-winning puzzle game from Geometric Interactive. It was great collaborating with this highly skilled team, including developers behind the famous titles Limbo and Inside. \n Below is an example of the loading screen. It's not very common to see circular navigations, but it was certainly the right choice for a game that revolves around orbs (no pun intended), and plays with uncertainty of when things start and end – without saying too much. \n Through this interface, a visual summary of the entire game is told, boiled down to one display. In the spirit of how the game itself unfolds, not everything is explained, and you have to explore to make sense of it, after which it will become intuitive and logical.",
+    "description": "I had the honour of being the UI designer for the award-winning Cocoon from Geometric Interactive. \n Through the loading interface, which you can see below, you get a visual summary of the entire game. Complex worlds simplified into a single display. In the spirit of how the game itself unfolds, not everything is explained. You have to explore to make sense of it, and it becomes intuitive and logical.",
     "media": [
       {
         "type": "image",
-        "src": "/projects/cocoon/cocoonUI_init.jpg",
-        "alt": "Cocoon UI",
+        "src": "/projects/cocoon/cocoonUI_init.webp",
+        "alt": "Cocoon loading screen",
         "width": "2162",
-        "height": "1455"
+        "height": "1455",
+        "mediaText": "The loading interface design. A circular navigation feels right for a game that to a large extent revolves around orbs and plays with circular time perception."
+      },
+      {
+        "type": "image",
+        "src": "/projects/cocoon/uiElements.webp",
+        "alt": "Some assorted UI elements for Cocoon",
+        "width": "2650",
+        "height": "3000",
+        "mediaText": "Assorted UI elements from around the menu. A mix of samples from the process and final designs. The silhouettes are stylized depictions of creature designs by the game's art director Erwin Kho."
+      },
+      {
+        "type": "image",
+        "src": "/projects/cocoon/loadingSketches.jpg",
+        "alt": "Cocoon loading indicator sketches",
+        "width": "1527",
+        "height": "1118",
+        "mediaText": "Sketches for a loading indicator."
+      },
+      {
+        "type": "image",
+        "src": "/projects/cocoon/cocoonAnimLoader.webp",
+        "alt": "Cocoon animated loading indicator",
+        "width": "2097",
+        "height": "1606",
+        "mediaText": "Animated ideation. Low-poly orbs are all you need."
       }
     ]
   },

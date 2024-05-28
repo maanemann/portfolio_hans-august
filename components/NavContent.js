@@ -79,7 +79,7 @@ const NavContent = ({ menuTranslation }) => {
         className={`
           block fixed mb-[4.5rem]
           text-3xl md:text-base
-          md:mt-6 md:ml-7 md:pr-16 md:pb-12
+          md:mt-6 md:ml-7 md:pt-1 md:pb-12
           max-h-[calc(100vh-5rem)] md:max-h-[calc(100vh-8rem)]
           left-[50vw] -translate-x-1/2 md:left-0 md:translate-x-0
           bottom-0 md:bottom-auto

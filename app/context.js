@@ -32,6 +32,9 @@ const themes = {
     beforeDarkerTheme: 'before:bg-ockerdust-800',
     beforeBgBrighterTheme: 'before:bg-ockerdust-300',
     selectionTheme: 'selection:bg-ockerdust-700 selection:text-ockerdust-300',
+    mdHoverBorderATheme: 'md:group-hover:border-ockerdust-300',
+    mdHoverBorderCTheme: 'md:group-hover:border-ockerdust-500',
+    mdHoverTextBrightTheme: 'md:hover:text-ockerdust-50'
   },
   aqua: {
     textATheme: 'text-aqua-200',
@@ -57,6 +60,9 @@ const themes = {
     beforeDarkerTheme: 'before:bg-aqua-800',
     beforeBgBrighterTheme: 'before:bg-aqua-300',
     selectionTheme: 'selection:bg-aqua-800 selection:text-aqua-400',
+    mdHoverBorderATheme: 'md:group-hover:border-aqua-300',
+    mdHoverBorderCTheme: 'md:group-hover:border-aqua-500',
+    mdHoverTextBrightTheme: 'md:hover:text-aqua-50'
   },
 };
 

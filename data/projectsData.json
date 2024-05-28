@@ -47,39 +47,6 @@
     ]
   },
   {
-    "id": "cosha",
-    "title": "Cosha",
-    "thumbnail": {
-      "imgSrc": "/projects/cosha/cosha_init.png",
-      "imgAlt": "Cosha",
-      "imgWidth": "1894",
-      "imgHeight": "1322"
-    },
-    "description": "Learning through play and experience instead of words and numbers – an interactive, educational colour and shape toy for children and playful adults. \n Instead of regular drawing tools, you are limited to the basic geometrical shapes in only the primal colours. When stacking shapes, their colors are mixed, so you will intuitively learn how to create secondary and tertiary colours. New shapes can be created out of the overlapping areas of existing ones (similar to \"path finder\" in vector software like Illustrator), so it's easy to experiment with how all kinds of shapes can be subtracted out of each other. All of this is demonstrated in the video below. \n My friend Simon Gnaur helped with programming a prototype, and eventually I will upload a video showing how I successfully used this for user testing (after blurring the faces of the participating children). \n There's still some way to go before it's a finished product, so if you have interest in supporting the development, please get in touch.",
-    "media": [
-      {
-        "type": "video",
-        "iframe": "https://www.youtube.com/embed/3PnRUusWN0c?si=916dxSJXSbEvFS32",
-        "width": "475",
-        "height": "315"
-      },
-      {
-        "type": "image",
-        "src": "/projects/cosha/cosha_init.png",
-        "alt": "Cosha",
-        "width": "1894",
-        "height": "1322"
-      },
-      {
-        "type": "image",
-        "src": "/projects/cosha/cosha_sketch.png",
-        "alt": "Cosha sketch",
-        "width": "2000",
-        "height": "1200"
-      }
-    ]
-  },
-  {
     "id": "trailmakers",
     "title": "Trailmakers",
     "company": "Flashbulb Games",

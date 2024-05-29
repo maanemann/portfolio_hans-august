@@ -23,6 +23,9 @@ module.exports = {
       },
       animation: {
         'move-back-forth': 'move 1100ms ease-in-out 1',
+      },
+      screens: {
+        'xs': '420px',
       }
     },
     // https://www.tints.dev/?brick=FAF5F0&ocker=F2DCA7&ockerdust=F1D7A6&aqua=F5FFF7

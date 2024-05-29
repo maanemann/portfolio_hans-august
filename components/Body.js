@@ -40,35 +40,45 @@ const Body = ({ nextFont, children }) => {
         </main>
       </div>
       <div className={`
-          ${ theme.textATheme }
+          ${ theme.textATheme } text-nowrap
         `}>
           <Link href="/#"
             className={`
               fixed top-3 left-6 uppercase opacity-65
               text-sm font-bold tracking-wider flex
-            `}>
+          `}>
+            {/* mit lille logo : */}
             <div
-              className="block w-3.5 mt-[0.175rem] mr-5"
+              className="
+                block w-3.5 min-w-3.5 h-3.5 min-h-3.5
+                mt-[0.075rem] mr-5
+              "
             >
               <div className={`
-                w-full aspect-square
+                w-full h-full
                 border-x-3 border-t-3 grid
                 ${theme.borderBTheme}
               `}>
                 <div className={`
-                  w-[calc(100%+.85rem)]
+                  w-[calc(100%+.85rem)] h-px
                   border-t-3 mt-0.5
                   self-center justify-self-center
                   ${theme.borderBTheme}
                 `} />
               </div>
             </div>
-            <span>
-              Hans August&nbsp; —&nbsp; designer&nbsp; &&nbsp; developer
-            </span>
+            <div className="-mt-px">
+              <span className="inline sm:hidden">
+                Hans August&nbsp; — &nbsp;design&nbsp; &&nbsp; dev
+              </span>
+              <span className="hidden sm:inline">
+                Hans August&nbsp; — &nbsp;designer&nbsp; &&nbsp; developer
+              </span>
+            </div>
           </Link>
           <span className={`
-            fixed top-2 right-6 opacity-60
+            hidden xs:inline
+            fixed top-[.55rem] right-6 opacity-60
             ${ theme.textA3Theme } touchHideCustom
           `}>
             🞵🞶🞷🞸🞹🞺

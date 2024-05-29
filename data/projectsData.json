@@ -148,27 +148,31 @@
   },
   {
     "id": "various",
-    "title": "Various",
+    "title": "Various projects",
     "thumbnail": {
       "imgSrc": "/projects/hemonaut.png",
       "imgAlt": "Hemonaut",
       "imgWidth": "1792",
       "imgHeight": "1414"
     },
+    "description": "Small things from now and then.",
     "media": [
       {
         "type": "image",
         "src": "/projects/hemonaut.png",
         "alt": "Hemonaut",
         "width": "1792",
-        "height": "1414"
+        "height": "1414",
+        "mediaText": "Hemonaut – a game concept for Philips. The level/world is generated from a sample of your blood. It expands in sync with the progress towards a finished blood sample scan. In the top left you see a minimap that doubles as a progress meter."
       },
       {
         "type": "image",
         "src": "/projects/ggj_kielen.png",
         "alt": " Global Game Jam contribution",
         "width": "4378",
-        "height": "2904"
+        "height": "2904",
+        "mediaText": "Global Game Jam 2020 (Kiel, Germany) – We made a game about cleaning up using text prompts. I was the artist. We managed to make a game loop, but unfortunately the files are gone. Thanks to my friend Mia Skovgaard for teaming up with me!",
+        "mediaLink": "https://www.linkedin.com/in/miaskovgaard/?originalSubdomain=dk"
       }
     ]
   }

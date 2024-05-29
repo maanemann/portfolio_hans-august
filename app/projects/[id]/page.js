@@ -10,6 +10,7 @@ import Article from '@/components/Article';
 import Columns from '@/components/Columns';
 import ContentLoading from '@/components/ContentLoading';
 import InlLink from '@/components/InlLink';
+import Link from 'next/link';
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -30,7 +31,7 @@ const ProjectDetails = () => {
             ${theme.borderATheme}
           '>
             <span className={`
-              block text-center
+              block text-center min-w-max
               px-4 xl:px-6
               py-1 xl:py-2
               font-bold xl:font-medium
@@ -70,6 +71,7 @@ const ProjectDetails = () => {
           const mediaWidth = mediaItem.width;
           const mediaHeight = mediaItem.height;
           const mediaText = mediaItem.mediaText;
+          const mediaLink = mediaItem.mediaLink;
 
           const mediaTextElement = mediaText
             ? <figcaption
@@ -80,6 +82,9 @@ const ProjectDetails = () => {
               '
             >
               {mediaText}
+              {/* attempt to insert media link for another night : */}
+                {/* { mediaLink ? `<Link href=${mediaLink}> ehhh </Link>` : null } */}
+                {/* {mediaLink ? mediaLink : null} */}
             </figcaption>
             : null;
 

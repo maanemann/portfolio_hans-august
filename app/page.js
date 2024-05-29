@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
       <section className='
-        grid gap-1 m-2 mb-16 md:mb-2 content-start
+        grid gap-1 m-2 mb-4 md:mb-2 content-start
         md:ml-40
         sm:grid-cols-2 md:grid-cols-1
         lg:grid-cols-2 xl:grid-cols-3

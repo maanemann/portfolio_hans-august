@@ -5,6 +5,7 @@ import { useThemeContext } from "@/app/context";
 import MainNav from "./MainNav";
 import ThemeButts from "./ThemeButts";
 import Link from "next/link";
+import TechMsg from "./TechMsg";
 
 const Body = ({ nextFont, children }) => {
   const { theme } = useThemeContext();
@@ -37,6 +38,7 @@ const Body = ({ nextFont, children }) => {
           overflow-y-visible
         `}>
           { children }
+          <TechMsg />
         </main>
       </div>
       <div className={`

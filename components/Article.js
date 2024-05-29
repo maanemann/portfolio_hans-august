@@ -8,7 +8,7 @@ const Article = ({ children }) => {
 
   return ( 
     <article className={`
-      p-8 pt-14 md:pl-48 pb-20 lg:pb-24 xl:py-24
+      p-8 pt-14 md:pl-48 xl:pt-24 pb-16 md:pb-6 lg:pb-12 xl:pb-16
       xl:-translate-x-16 2xl:-translate-x-32
       grid gap-10 lg:gap-12 w-full max-w-[64rem] mx-auto
       ${theme.textATheme}

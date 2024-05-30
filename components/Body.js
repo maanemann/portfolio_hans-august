@@ -26,20 +26,26 @@ const Body = ({ nextFont, children }) => {
       ${ theme.scrollbarTheme } scrThinCustom
       ${ theme.selectionTheme }
     `}>
+      {/* container for nav, main & footer : */}
       <div className={`
-        flex w-full
-        ${ theme.bgATheme }
+        w-full ${ theme.bgATheme } 
         overflow-y-auto rounded-md
       `}>
-        <MainNav />
-        <main className={`
-          w-full h-full flex flex-col
-          items-stretch gap-1
-          overflow-y-visible
-        `}>
-          { children }
-          <TechMsg />
-        </main>
+        {/* container for only nav & main (not footer) : */}
+        <div className="
+          flex w-full min-h-[calc(100vh-9.7rem)]
+        ">
+          <MainNav />
+          <main className={`
+            w-full h-full flex flex-col
+            items-stretch gap-1
+            overflow-y-visible
+          `}>
+            { children }
+          </main>
+        </div>
+        {/* footer : */}
+        <TechMsg />
       </div>
       <div className={`
           ${ theme.textATheme } text-nowrap

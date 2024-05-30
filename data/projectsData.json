@@ -56,7 +56,7 @@
       "imgWidth": "4122",
       "imgHeight": "2988"
     },
-    "description": "Trailmakers places you in an open world with tools for constructing complicated vehicles to aid your exploration. In collaboration with creative director Mikkel Thorsted I had lots of fun helping with ideating, designing and implementing the UI / UX. The challenge was to give the player the most intuitive possible approach to building a 3D vehicle on a flat screen – similar to building with Lego, but without the physical aspect. And with the addition of rocket engines. \n Apart from the building interface, I also worked on the inventory for the many blocks you find on your journey, which have to be sorted and stored in a way that makes all parts easily accessible.",
+    "description": "Trailmakers places you in an open world with tools for constructing complicated vehicles to aid your exploration. In collaboration with creative director Mikkel Thorsted I had lots of fun helping with ideating, designing and implementing the UI / UX. The challenge was to give the player the most intuitive possible approach to building a 3D vehicle on a flat screen – similar to building with Lego, but without the physical aspect. \n Apart from the building interface, I also worked on the inventory for the many blocks you find on your journey, which have to be sorted and stored in a way that makes all parts easily accessible.",
     "media": [
       {
         "type": "image",
@@ -109,14 +109,16 @@
         "src": "/projects/kalimba/kalimbaUI_init.png",
         "alt": "Kalimba touch UI icons",
         "width": "1952",
-        "height": "1952"
+        "height": "1952",
+        "mediaText": "The process of creating the icons for the touch version of Kalimba"
       },
       {
         "type": "image",
         "src": "/projects/kalimba/kalimba-tourch-ui.gif",
         "alt": "Kalimba touch UI animated tour",
         "width": "1278",
-        "height": "957"
+        "height": "957",
+        "mediaText": "An animated mockup from the process of building the Kalimba touch interface, where everything consists of triangles."
       }
     ]
   },

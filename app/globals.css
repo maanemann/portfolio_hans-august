@@ -116,3 +116,48 @@
     display: none !important;
   }
 }
+
+
+/* #tag pointnclick :
+*/
+
+.game-container {
+  position: relative;
+  width: 220px;
+  height: 160px;
+  image-rendering: pixelated;
+}
+
+.scene {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.navigation-arrows .arrow {
+  position: absolute;
+  width: 4px;
+  height: 8px;
+  background-color: #fff;
+}
+
+.navigation-arrows .arrow.left {
+  top: 75px;
+  left: 6px;
+}
+
+.navigation-arrows .arrow.right {
+  top: 75px;
+  right: 6px;
+}
+
+.navigation-arrows .arrow.back {
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.asset {
+  position: absolute;
+  cursor: pointer;
+}

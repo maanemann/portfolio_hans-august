@@ -147,8 +147,6 @@ const NavContent = ({ menuTranslation }) => {
             </li> */}
           </ul>
 
-
-
           {/* // #region search-field-&-results
           */}
 

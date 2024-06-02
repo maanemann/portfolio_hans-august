@@ -6,6 +6,7 @@ import "./globals.css";
 import Body from "@/components/Body"
 import { Suspense } from "react";
 import Loading from "./loading";
+import { GameProvider } from "@/contexts/GameContext";
 
 const dmSans = DM_Sans({
   weight: ['400', '500', '700'],
@@ -25,9 +26,11 @@ export default function RootLayout({ children }) {
       <Suspense fallback={<Loading />}>
         <ThemeWrapper>
           <MenuWrapper>
-            <Body nextFont={ dmSans.className }>
-              { children }
-            </Body>
+            <GameProvider>
+              <Body nextFont={ dmSans.className }>
+                { children }
+              </Body>
+            </GameProvider>
           </MenuWrapper>
         </ThemeWrapper>
       </Suspense>

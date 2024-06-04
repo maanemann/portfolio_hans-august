@@ -123,9 +123,12 @@
 
 .game-container {
   position: relative;
-  width: 220px;
-  height: 160px;
+  /* width: 220px;
+  height: 160px; */
+  width: 100%;
+  padding-bottom: 72%;
   image-rendering: pixelated;
+  background-color: black;
 }
 
 .scene {
@@ -141,13 +144,16 @@
   background-color: #fff;
 }
 
+.navigation-arrows .arrow.left, .arrow.right {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .navigation-arrows .arrow.left {
-  top: 75px;
   left: 6px;
 }
 
 .navigation-arrows .arrow.right {
-  top: 75px;
   right: 6px;
 }
 

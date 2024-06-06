@@ -125,7 +125,7 @@ const ProjectDetails = () => {
             );
           } else if (mediaItem.type === 'video') {
             return (
-              <figure key={index}>
+              <figure key={index} className='relative'>
                 <div
                   className={`
                     relative w-full ${theme.bgBrightBTheme}

@@ -149,6 +149,42 @@
     ]
   },
   {
+    "id": "cosha",
+    "title": "Cosha",
+    "thumbnail": {
+      "imgSrc": "/projects/cosha/cosha_init.png",
+      "imgAlt": "Cosha",
+      "imgWidth": "1894",
+      "imgHeight": "1322"
+    },
+    "description": "Learning through play and experience instead of words and numbers – an interactive, educational colour and shape toy for children. \n Instead of regular drawing tools, you are limited to the basic geometrical shapes in only the primal colours. When stacking shapes, their colors are mixed, so you will intuitively learn how to create secondary and tertiary colours. New shapes can be created out of the overlapping areas of existing ones (similar to \"path finder\" in vector software like Illustrator), so it's easy to experiment with how all kinds of shapes can be subtracted out of each other. All of this is demonstrated in the video below. \n My friend Simon Gnaur helped with programming a prototype, which I used for user testing in a kindergarden. There's still some way to go before it's a finished product, so if you have interest in supporting the development, please get in touch.",
+    "media": [
+      {
+        "type": "video",
+        "iframe": "https://www.youtube.com/embed/3PnRUusWN0c?si=916dxSJXSbEvFS32",
+        "width": "475",
+        "height": "315",
+        "mediaText": "Animated mockup and tour of the main features. Create geometrical shapes in primary colours, mix the colors by layering them and create any new shape by subtracting the overlapping surfaces."
+      },
+      {
+        "type": "image",
+        "src": "/projects/cosha/cosha_sketch.png",
+        "alt": "Cosha sketch",
+        "width": "2000",
+        "height": "1200",
+        "mediaText": "A step on the road to figuring out the layout and style. Introducing the worm character (Cosha), a friendly mascot, personifying the experience as a guide, as well as a trash can (\"SLET\" means \"ERASE\")."
+      },
+      {
+        "type": "image",
+        "src": "/projects/cosha/cosha_real-output.png",
+        "alt": "Cosha",
+        "width": "1894",
+        "height": "1322",
+        "mediaText": "Actual example of a composition made in the functional prototype, which includes most core features. It will be available, when I've prepared it for use in the browser – contact me if you want a copy."
+      }
+    ]
+  },
+  {
     "id": "various",
     "title": "Various projects",
     "thumbnail": {

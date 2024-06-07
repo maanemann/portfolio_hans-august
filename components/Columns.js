@@ -1,6 +1,6 @@
 const Columns = ({ children }) => {
   return ( 
-    <div className='lg:columns-2 gap-10'>
+    <div className='lg:columns-2 gap-14'>
       { children }
     </div>
    );

@@ -54,7 +54,7 @@ const ProjectDetails = () => {
             {/* `orphans` virker desværre ikke i ff (`orphansCustom`) */}
             { project.description.split('\n').map((paragraph, index) => (
               <p key={index} className="
-                orphansCustom mb-4 last:mb-0 text-pretty
+                orphansCustom mb-6 last:mb-0 text-pretty
               ">{paragraph}</p>
             ))}
           </Columns>

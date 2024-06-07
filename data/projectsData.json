@@ -10,7 +10,7 @@
       "imgWidth": "2162",
       "imgHeight": "1455"
     },
-    "description": "I had the honour of being the UI designer for the award-winning Cocoon from Geometric Interactive. \n Through the loading interface, which you can see below, you get a visual summary of the entire game. Complex worlds simplified into a single display. In the spirit of how the game itself unfolds, not everything is explained. You have to explore to make sense of it, and it becomes intuitive and logical.",
+    "description": "I designed the UI for the surreal, award-winning puzzle game Cocoon from Geometric Interactive. \n Through the loading interface, which you can see below, you get a visual summary of the entire game. Complex worlds simplified into a single display. In the spirit of how the game itself unfolds, not everything is explained. You have to explore to make sense of it, and it becomes intuitive and logical.",
     "media": [
       {
         "type": "image",
@@ -131,7 +131,7 @@
       "imgWidth": "2380",
       "imgHeight": "1622"
     },
-    "description": "A fictional service made with Mikkel Kortsen Sørensen. After interviewing a number of subjects, questioning their use of digital health services, we found that many people were misinformed and scared by the information they found online. We wanted to provide validated information in a calm and reassuring way. \n \"Ro/På\" (loosely translated to \"don't worry\") is a suggestion for how the The Danish Health Authority could provide us with validated information, served in proportion to how common or rare the illness is, and with thorough guidance for how to treat it.",
+    "description": "A proposed service made with Mikkel Kortsen Sørensen. After interviewing a group about their use of digital health services, we found that many people are misinformed and scared by online information. We wanted to provide validated information in a calm and reassuring way. \n \"Ro/På\" (loosely translated to \"don't worry\") is a suggestion for how the The Danish Health Authority could provide us with validated information, served in proportion to how common or rare the illness is, and with thorough guidance for how to treat it.",
     "media": [
       {
         "type": "video",
@@ -157,7 +157,7 @@
       "imgWidth": "1894",
       "imgHeight": "1322"
     },
-    "description": "Learning through play and experience instead of words and numbers – an interactive, educational colour and shape toy for children. \n Instead of regular drawing tools, you are limited to the basic geometrical shapes in only the primal colours. When stacking shapes, their colors are mixed, so you will intuitively learn how to create secondary and tertiary colours. New shapes can be created out of the overlapping areas of existing ones (similar to \"path finder\" in vector software like Illustrator), so it's easy to experiment with how all kinds of shapes can be subtracted out of each other. All of this is demonstrated in the video below. \n My friend Simon Gnaur helped with programming a prototype, which I used for user testing in a kindergarden. There's still some way to go before it's a finished product, so if you have interest in supporting the development, please get in touch.",
+    "description": "Learning through play and experience instead of words and numbers – an interactive, educational colour and shape toy for children.\n Instead of regular drawing tools, you are limited to the basic geometrical shapes in only the primal colours. When stacking shapes, their colors are mixed, so you will intuitively learn how to create secondary and tertiary colours. New shapes can be created out of the overlapping areas of existing ones (similar to \"path finder\" in vector software like Illustrator), so it's easy to experiment with how all kinds of shapes can be subtracted out of each other. All of this is demonstrated in the video below. \n My friend Simon Gnaur helped with programming a prototype, which I used for user testing in a kindergarden. There's still some way to go before it's a finished product, so if you have interest in supporting the development, please get in touch.",
     "media": [
       {
         "type": "video",

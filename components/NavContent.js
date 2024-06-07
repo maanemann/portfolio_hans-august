@@ -2,26 +2,15 @@
 'use client'
 
 import { useThemeContext, useMenuContext } from "@/app/context";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Li, { EdgeBox } from "@/components/menuItem";
 import Roadmap from "./Roadmap";
 
-// const roadmapOff = `-translate-x-full opacity-0 pointer-events-none`
-// const roadmapOn = `translate-x-32 opacity-100 pointer-events-auto`
-
 const NavContent = ({ menuTranslation }) => {
   const { theme } = useThemeContext();
-  const {
-    menuVisibility,
-    // setMaskVisibility,
-    roadmapVisibility,
-    // setRoadmapVisibility,
-    // roadmapOff, roadmapOn,
-    handleRoadmap
-  } = useMenuContext();
+  const { menuVisibility, handleRoadmap } = useMenuContext();
   const pathname = usePathname();
-  // const [roadmapVisibility, setRoadmapVisibility] = useState(roadmapOff);
 
   // ? Det her er gjort helt skørt og ikke react-agtigt. Det skulle nok have være gjort med en state :
   useEffect(() => {
@@ -33,29 +22,11 @@ const NavContent = ({ menuTranslation }) => {
           'brightness-[.66]', 'saturate-[66%]', '-hue-rotate-15',
           'hover:brightness-[.9]', 'hover:saturate-[1]', 'hover:hue-rotate-0'
         );
-
-        // mainNavUl.classList.add('brightness-[.66]');
-
-        // mainNavUl.classList.add('saturate-[66%]');
-        // mainNavUl.classList.add('-hue-rotate-15');
-
-        // mainNavUl.classList.add('hover:brightness-[.9]');
-        // mainNavUl.classList.add('hover:saturate-[1]');
-        // mainNavUl.classList.add('hover:hue-rotate-0');
       } else {
         mainNavUl.classList.remove(
           'brightness-[.66]', 'saturate-[66%]', '-hue-rotate-15',
           'hover:brightness-[.9]', 'hover:saturate-[1]', 'hover:hue-rotate-0'
         );
-
-        // mainNavUl.classList.remove('brightness-[.66]');
-
-        // mainNavUl.classList.remove('saturate-[66%]');
-        // mainNavUl.classList.remove('-hue-rotate-15');
-
-        // mainNavUl.classList.remove('hover:brightness-[.9]');
-        // mainNavUl.classList.remove('hover:saturate-[1]');
-        // mainNavUl.classList.remove('hover:hue-rotate-0');
       }
     }
 
@@ -86,10 +57,6 @@ const NavContent = ({ menuTranslation }) => {
           overflow-y-auto maskGradientCustom
           ${menuTranslation}
         `}
-        // style={{
-        //   transform: menuTranslation
-        //   // transform: "translate(-50%, -4rem)"
-        // }}
       >
         <div className="
           mainNavUlCustom brightness-90 flex
@@ -100,15 +67,6 @@ const NavContent = ({ menuTranslation }) => {
             grid gap-4 md:gap-2 md:mr-1
             justify-items-center md:justify-items-start
           `}>
-            {/* <li className={`
-              w-fit px-3 py-1 mb-2 text-nowrap
-              outline-dashed -outline-offset-2
-              outline-2 ${theme.outlineDarkTheme}
-              text-opacity-35
-            `}>
-              designer +
-              <br /> developer
-            </li> */}
             <Li href="/">
               projects
             </Li>
@@ -136,15 +94,6 @@ const NavContent = ({ menuTranslation }) => {
                 </EdgeBox>
               </div>
             </li>
-            {/* <li className="text-sm hidden md:block">
-              <div className="w-fit text-center ml-[.87rem]">
-                themes
-                <span className="block mt-0.5">
-                ↓
-                  ↓ ↓▼▾ 🠃🠋🠇🠛🠣
-                </span>
-              </div>
-            </li> */}
           </ul>
 
 

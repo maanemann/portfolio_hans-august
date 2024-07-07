@@ -89,6 +89,14 @@
         "width": "2334",
         "height": "976",
         "mediaText": "UI ideation – more sketches..."
+      },
+      {
+        "type": "image",
+        "src": "/projects/trailmakers/tailmakers_unity-ui.jpg",
+        "alt": "Trailmakers UI process in Unity",
+        "width": "752",
+        "height": "671",
+        "mediaText": "Process of building the interface in Unity UI (uGUI) from my Illustrator files. This was before Unity UI Toolkit was released."
       }
     ]
   },

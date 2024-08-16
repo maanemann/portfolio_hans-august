@@ -44,7 +44,8 @@ const NavContent = ({ menuTranslation }) => {
     <div className={`
       ${menuVisibility} md:block z-30
     `}>
-      <Roadmap />
+      {/* Roadmap, switch = "todo knap" ↓↓ */}
+      {/* <Roadmap /> */}
 
       <nav
         className={`
@@ -79,13 +80,14 @@ const NavContent = ({ menuTranslation }) => {
             <Li href="/contact">
               contact
             </Li>
-            <li className={`
+
+            {/* todo knap (genaktiver: indkommenter `<Roadmap />` ↑↑) : */}
+            {/* <li className={`
               w-min px-3 -md:mt-[.4rem] py-3 md:my-[.075rem]
               hyphens-manual text-nowrap
               outline-dashed -outline-offset-2
               outline-2 ${theme.outlineDarkTheme}
             `}>
-              {/* to do: */}
               <div className="cursor-pointer">
                 <EdgeBox
                   onClick={handleRoadmap}
@@ -93,7 +95,7 @@ const NavContent = ({ menuTranslation }) => {
                   todo
                 </EdgeBox>
               </div>
-            </li>
+            </li> */}
           </ul>
 
 

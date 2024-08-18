@@ -36,8 +36,9 @@ const ProjectDetails = () => {
               py-1 xl:py-2
               font-bold xl:font-medium
               text-xs sm:text-sm md:text-xs lg:text-lg xl:text-2xl
+              uppercase
             `}>
-              UI / UX
+              { project.type ? project.type : 'UI / UX' }
             </span>
           </div>
         </div>

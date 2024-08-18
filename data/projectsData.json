@@ -133,6 +133,7 @@
   {
     "id": "ropaa",
     "title": "Ro/På",
+    "type": "Project",
     "thumbnail": {
       "imgSrc": "/projects/ropaa/roopaa_init.png",
       "imgAlt": "Ro På",
@@ -159,6 +160,7 @@
   {
     "id": "cosha",
     "title": "Cosha",
+    "type": "Project",
     "thumbnail": {
       "imgSrc": "/projects/cosha/cosha_init.webp",
       "imgAlt": "Cosha",
@@ -195,6 +197,7 @@
   {
     "id": "various",
     "title": "Various projects",
+    "type": "Various",
     "thumbnail": {
       "imgSrc": "/projects/hemonaut.png",
       "imgAlt": "Hemonaut",

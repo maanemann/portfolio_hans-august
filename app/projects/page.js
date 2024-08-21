@@ -13,7 +13,6 @@ const Projects = () => {
     router.replace('/');
   }, [router]);
 
-  // optionally return null or a loading component here :
   return <Loading />;
 }
 

@@ -27,7 +27,7 @@ export default InlLink;
 const InlLinkEmph = ({ href, children }) => {
   const { theme } = useThemeContext();
   return (
-    <Link href={ href } target="_blank" className={`
+    <Link href={ href } target="_blank" rel="noopener" className={`
       ${commonStyles}
       inline-block ${theme.bgBrightTheme}
       ${theme.textATheme} font-bold px-[.5rem] rounded-md
@@ -40,7 +40,7 @@ export { InlLinkEmph };
 const InlLinkXEmph = ({ href, children }) => {
   const { theme } = useThemeContext();
   return (
-    <Link href={ href } target="_blank" className={`
+    <Link href={ href } target="_blank" rel="noopener" className={`
       ${commonStyles}
       block w-fit ${theme.bgBrightTheme} relative
       ${theme.textATheme} font-bold text-3xl px-[.5rem] mb-4 rounded-md

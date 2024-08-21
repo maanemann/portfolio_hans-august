@@ -74,7 +74,7 @@ const NavContent = ({ menuTranslation }) => {
             <Li href="/about">
               about me
             </Li>
-            <Li href="https://drive.google.com/file/d/17EGpHGp1EuAXXB3fXFxE6KTwqH550E8I/view?usp=sharing" target="_blank">
+            <Li href="https://drive.google.com/file/d/17EGpHGp1EuAXXB3fXFxE6KTwqH550E8I/view?usp=sharing" target="_blank" rel="noopener">
               cv
             </Li>
             <Li href="/contact">

@@ -40,6 +40,10 @@
   );
 }
 
+.clip-pathCustom {
+  clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
+}
+
 .orphansCustom {
   /* bund : */
   orphans: 2;

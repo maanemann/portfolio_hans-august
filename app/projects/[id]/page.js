@@ -5,7 +5,7 @@ import data from '@/data/projectsData.json';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { useThemeContext } from '@/app/context';
-import { H1 } from '@/components/Headings';
+import { H1, H2_OP } from '@/components/Headings';
 import Article from '@/components/Article';
 import Columns from '@/components/Columns';
 import ContentLoading from '@/components/ContentLoading';
@@ -68,109 +68,143 @@ const ProjectDetails = () => {
       }
       </div>
 
-        {project.media.map((mediaItem, index) => {
-          const mediaWidth = mediaItem.width;
-          const mediaHeight = mediaItem.height;
-          const mediaText = mediaItem.mediaText;
-          const mediaLink = mediaItem.mediaLink;
+      {project.media.map((mediaItem, index) => {
+        const mediaWidth = mediaItem.width;
+        const mediaHeight = mediaItem.height;
+        const mediaText = mediaItem.mediaText;
+        const mediaLink = mediaItem.mediaLink;
 
-          const mediaTextElement = mediaText
-            ? <figcaption
-              className='
-                text-right ml-auto mt-6 max-w-[32rem]
-                2xl:absolute 2xl:-right-0 2xl:translate-x-full
-                2xl:text-left 2xl:bottom-0 2xl:pl-8 2xl:max-w-72
-              '
-            >
-              {mediaText}
-              {/* attempt to insert media link for another night : */}
-                {/* { mediaLink ? `<Link href=${mediaLink}> ehhh </Link>` : null } */}
-                {/* {mediaLink ? mediaLink : null} */}
-            </figcaption>
-            : null;
+        const mediaTextElement = mediaText
+          ? <figcaption
+            className='
+              text-right ml-auto mt-6 max-w-[32rem]
+              2xl:absolute 2xl:-right-0 2xl:translate-x-full
+              2xl:text-left 2xl:bottom-0 2xl:pl-8 2xl:max-w-72
+            '
+          >
+            {mediaText}
+            {/* attempt to insert media link for another night : */}
+              {/* { mediaLink ? `<Link href=${mediaLink}> ehhh </Link>` : null } */}
+              {/* {mediaLink ? mediaLink : null} */}
+          </figcaption>
+          : null;
 
-          if (mediaItem.type === 'image') {
-            return (
-              <figure key={index} className='relative'>
-                <div
-                  className={`
-                    relative w-full ${theme.bgBrightBTheme}
-                    outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
-                    before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
-                  `}
-                  style={{
-                    // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
-                    paddingBottom: `${mediaHeight / mediaWidth * 100}%`
+        if (mediaItem.type === 'image') {
+          return (
+            <figure key={index} className='relative'>
+              <div
+                className={`
+                  relative w-full ${theme.bgBrightBTheme}
+                  outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
+                  before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
+                `}
+                style={{
+                  // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
+                  paddingBottom: `${mediaHeight / mediaWidth * 100}%`
+                }}
+              >
+                <ContentLoading />
+                <Image
+                  src={mediaItem.src}
+                  alt={mediaItem.alt}
+                  // width={mediaItem.width}
+                  // height={mediaItem.height}
+                  priority={ index === 0 ? true : false }
+                  fill sizes="90vw"
+                  className="
+                    w-full object-cover object-left-top
+                    opacity-0
+                  "
+                  onLoad={(e) => {
+                    e.target.classList.remove('opacity-0');
+                    e.target.previousElementSibling.remove();
                   }}
-                >
-                  <ContentLoading />
-                  <Image
-                    src={mediaItem.src}
-                    alt={mediaItem.alt}
-                    // width={mediaItem.width}
-                    // height={mediaItem.height}
-                    priority={ index === 0 ? true : false }
-                    fill sizes="90vw"
-                    className="
-                      w-full object-cover object-left-top
-                      opacity-0
-                    "
-                    onLoad={(e) => {
-                      e.target.classList.remove('opacity-0');
-                      e.target.previousElementSibling.remove();
-                    }}
-                  />
-                </div>
-                {mediaTextElement}
-              </figure>
-            );
-          } else if (mediaItem.type === 'video') {
-            return (
-              <figure key={index} className='relative'>
-                <div
-                  className={`
-                    relative w-full ${theme.bgBrightBTheme}
-                    outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
-                    before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
-                  `}
-                  style={{
-                    // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
-                    paddingBottom: `${mediaHeight / mediaWidth * 100}%`
-                  }}
-                >
-                  <ContentLoading />
-                  <iframe
-                    src={mediaItem.iframe + "?rel=0"}
-                    width={mediaItem.width}
-                    height={mediaItem.height}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    // Den her blev ikke tilføjet af copilot, men var med i youtube's embed kode og virker fornuftig :
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    // `clipboard-write;` vat tilladt af copilot
-                    allowFullScreen
-                    className='absolute top-0 left-0 w-full h-full'
-                  ></iframe>
-                </div>
-                {mediaTextElement}
-              </figure>
-            );
-          }
-        })}
+                />
+              </div>
+              {mediaTextElement}
+            </figure>
+          );
+        } else if (mediaItem.type === 'video') {
+          return (
+            <figure key={index} className='relative'>
+              <div
+                className={`
+                  relative w-full ${theme.bgBrightBTheme}
+                  outline outline-2 ${theme.outlineDarkerTheme} outline-offset-[3px]
+                  before:absolute before:-left-[5px] before:-right-[5px] before:-bottom-[7px] before:h-[3px] ${theme.beforeDarkerTheme}
+                `}
+                style={{
+                  // Leaves a space for the image to fill. In CSS, percentage-based padding is calculated relative to the width of the parent :
+                  paddingBottom: `${mediaHeight / mediaWidth * 100}%`
+                }}
+              >
+                <ContentLoading />
+                <iframe
+                  src={mediaItem.iframe + "?rel=0"}
+                  width={mediaItem.width}
+                  height={mediaItem.height}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  // Den her blev ikke tilføjet af copilot, men var med i youtube's embed kode og virker fornuftig :
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  // `clipboard-write;` vat tilladt af copilot
+                  allowFullScreen
+                  className='absolute top-0 left-0 w-full h-full'
+                ></iframe>
+              </div>
+              {mediaTextElement}
+            </figure>
+          );
+        }
+      })}
 
-        {/* Fra da der kun var 1 billede og ikke et media array : */}
-          {/* <Image
-            src={project.imgSrc} alt={project.imgAlt}
-            priority fill sizes="90vw"
-            className="w-full object-contain object-left-top
-              opacity-0
-            "
-            onLoad={(e) => {
-              e.target.classList.remove('opacity-0');
-              e.target.previousElementSibling.remove();
-            }}
-          /> */}
+      {/* Fra da der kun var 1 billede og ikke et media array : */}
+        {/* <Image
+          src={project.imgSrc} alt={project.imgAlt}
+          priority fill sizes="90vw"
+          className="w-full object-contain object-left-top
+            opacity-0
+          "
+          onLoad={(e) => {
+            e.target.classList.remove('opacity-0');
+            e.target.previousElementSibling.remove();
+          }}
+        /> */}
+
+        {/* Thumbnail links til andre projekter */}
+        <section className="w-full">
+          <H2_OP>
+            Other projects
+          </H2_OP>
+          <div className={`w-full ${theme.bgBrightBTheme} p-2 rounded-md`}>
+            <div className='
+              grid grid-flow-col max-w-full overflow-hidden
+            '>
+              {data.filter(project => project.id !== id).map(project => (
+                <Link key={project.id} href={`/projects/${project.id}`} className="
+                  block w-[125%] clip-pathCustom justify-self-center first:rounded-bl-md overflow-hidden
+                ">
+                  {/* kunne være spændende, men nok ikke : */}
+                    {/* first:[&_figure]:clip-pathCustom */}
+                  <figure className="
+                    relative w-full h-[4vw] min-h-20 xl:h-28
+                  ">
+                    <div className="w-full h-full absolute">
+                      <Image
+                        src={project.thumbnail.imgSrc} alt={project.thumbnail.imgAlt}
+                        fill sizes="25vw"
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </div>
+                  </figure>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+        {/* css for clip-pathCustom class : */}
+        {/* clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%); */}
     </Article>
   );
 }

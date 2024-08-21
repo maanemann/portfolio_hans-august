@@ -175,7 +175,7 @@ const ProjectDetails = () => {
         {/* Thumbnail links til andre projekter */}
         <section className="w-full">
           <H2_OP>
-            Other projects
+            other projects
           </H2_OP>
           <div className={`w-full ${theme.bgBrightBTheme} p-2 rounded-md`}>
             <div className='

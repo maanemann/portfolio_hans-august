@@ -183,10 +183,10 @@ const ProjectDetails = () => {
             '>
               {data.filter(project => project.id !== id).map(project => (
                 <Link key={project.id} href={`/projects/${project.id}`} className="
-                  block w-[125%] clip-pathCustom justify-self-center first:rounded-bl-md overflow-hidden
+                  block w-[125%] parallPathCustom justify-self-center first:rounded-bl-md overflow-hidden
                 ">
                   {/* kunne være spændende, men nok ikke : */}
-                    {/* first:[&_figure]:clip-pathCustom */}
+                    {/* first:[&_figure]:parallPathCustom */}
                   <figure className="
                     relative w-full h-[4vw] min-h-20 xl:h-28
                   ">
@@ -203,7 +203,7 @@ const ProjectDetails = () => {
             </div>
           </div>
         </section>
-        {/* css for clip-pathCustom class : */}
+        {/* css for parallPathCustom class : */}
         {/* clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%); */}
     </Article>
   );

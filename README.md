@@ -1,1 +1,1 @@
-This is my portfolio, made with Next.js, various wonderful React hooks, a simple JSON database and Tailwind.css. Hope you like it.
+This is my portfolio, made with Next.js (app router), various wonderful React hooks, a simple JSON database and Tailwind.css. If you want to use some of the code / design, please ask me first.

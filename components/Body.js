@@ -84,13 +84,14 @@ const Body = ({ nextFont, children }) => {
               </span>
             </div>
           </Link>
-          <span className={`
+          
+          {/* <span className={`
             hidden xs:inline
             fixed top-[.55rem] right-6 opacity-60
             ${ theme.textA3Theme } touchHideCustom
           `}>
             🞵🞶🞷🞸🞹🞺
-          </span>
+          </span> */}
         </div>
       <ThemeButts />
     </body>

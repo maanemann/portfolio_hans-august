@@ -19,8 +19,6 @@ const Body = ({ nextFont, children }) => {
   //   }
   // }, []);
 
-  // ! `theme` er hele objektet, jeg vil have navnet. Derfor virker `${theme ==(...)` længere nede ikke, ligesom denne log heller ikke gør :
-    // ! console.log("theme is: ", theme);
   return (
     <body className={`
       ${ nextFont } w-screen h-screen flex p-2 pt-10
@@ -30,8 +28,7 @@ const Body = ({ nextFont, children }) => {
     `}>
       {/* container for nav, main & footer : */}
       <div className={`
-        w-full ${ theme.bgATheme } 
-        ${theme == 'ockerdustBright' ? theme.bgBTheme : theme.bgATheme}
+        w-full ${ theme.bgATheme }
         overflow-y-auto rounded-md
       `}>
         {/* container for only nav & main (not footer) : */}

@@ -37,7 +37,7 @@ const GitCTA = ({ styling }) => {
           "
         />
         <figcaption className={`
-          text-white text-center font-semibold
+          text-white text-center font-medium
           text-sm tracking-wide
         `}>
           view source code

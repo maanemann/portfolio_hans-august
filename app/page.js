@@ -6,6 +6,7 @@ import ProjectItem from "@/components/ProjectItem";
 import { Suspense } from 'react';
 import Loading from './loading';
 import data from '@/data/projectsData.json';
+import GitCTA from "@/components/GitCTA";
 
 export default function Home() {
   // const { theme } = useThemeContext();
@@ -29,6 +30,15 @@ export default function Home() {
               link={`/projects/${project.id}`}
             />
           ))}
+          <div className="grid col-span-full">
+            <GitCTA styling="
+              mix-blend-overlay
+            "/>
+            <GitCTA styling="
+              mix-blend-soft-light opacity-5
+              hover:scale-110 hover:opacity-60
+            "/>
+          </div>
         </Suspense>
       </section>
     </div>

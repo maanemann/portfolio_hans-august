@@ -14,15 +14,28 @@ module.exports = {
         "3": "3px"
       },
       keyframes: {
-        move: {
-          '0%, 40%, 75%, 100%': { transform: 'translateX(0%)' },
-          '25%': { transform: 'translateX(100%)' },
-          '57%': { transform: 'translateX(66%)' },
-          '87%': { transform: 'translateX(25%)' }
-        },
+        scale: {
+          '0%': { transform: 'scale(100%)'},
+          '25%': { transform: 'scale(110%)'},
+          '100%': { transform: 'scale(100%)'}
+        }
+        // move: {
+        //   '0%': { transform: 'translateY(0%)'},
+        //   '25%': { transform: 'translateY(-5%)'},
+        //   '50%': { transform: 'translateY(-10%)'},
+        //   '75%': {transform: 'translateY(-5%)'},
+        //   '100%': { transform: 'translateY(0%)'},
+        // },
+        // move: {
+        //   '0%, 40%, 75%, 100%': { transform: 'translateX(0%)' },
+        //   '25%': { transform: 'translateX(100%)' },
+        //   '57%': { transform: 'translateX(66%)' },
+        //   '87%': { transform: 'translateX(25%)' }
+        // },
       },
       animation: {
-        'move-back-forth': 'move 1100ms ease-in-out 1',
+        'pulsate': 'scale 1.5s ease-out infinite',
+        // 'move-back-forth': 'move 1100ms ease-in-out 1',
       },
       screens: {
         'xs': '420px',

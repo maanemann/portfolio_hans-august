@@ -19,7 +19,7 @@ const GitCTA = ({ styling }) => {
       
       relative doubleCustom
       
-      hover:drop-shadow-xl
+      hover:drop-shadow-lg
     `}>
         {/* hover:opacity-80 hover:mix-blend-soft-light */}
         {/* ${theme.bgBrightBTheme} */}

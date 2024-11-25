@@ -30,13 +30,16 @@ export default function Home() {
               link={`/projects/${project.id}`}
             />
           ))}
-          <div className="grid col-span-full">
+          <div className="
+            grid w-fit mx-auto col-span-full
+          ">
             <GitCTA styling="
               mix-blend-overlay
             "/>
             <GitCTA styling="
-              mix-blend-soft-light opacity-5
-              hover:scale-110 hover:opacity-60
+              mix-blend-normal opacity-5
+              hover:opacity-100
+              hover:animate-pulsate
             "/>
           </div>
         </Suspense>

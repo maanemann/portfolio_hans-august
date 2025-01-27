@@ -31,18 +31,12 @@ const About = () => {
             </InlLinkEmph>
           </PEmph>
           <Paragraph>
-            I&apos;m a designer & developer based in Copenhagen, Denmark. I have worked professionally in various roles on a lot of projects. Higher education in communication design and additionally in frontend development.
+            I&apos;m a designer & developer and have worked professionally in various roles on some cool projects. Higher education in communication design and additionally in frontend development.
           </Paragraph>
           <Paragraph>
-            What I enjoy the most is developing experiences that feel like you can step into them, by playing with spaciousness, distinctive visual expressions, and by removing all hiccups in the user experience. This is commonly associated with video games, though I believe it&apos;s a quality that deserves focus for any medium.
+          I enjoy developing digital content that&apos;s expressive, honest and thorough. An interface is a virtual room for the user to explore. Tactility, spaciousness and visual language shapes the atmosphere.
           </Paragraph>
-          <Paragraph>
-            I think of User experience as the sum of design, functionality and performance. An interface is a virtual room for the user to explore.
-          </Paragraph>
-          <Paragraph>
-            <br className="hidden lg:inline" />
-            Like a physical room, it should be easy to find what you&apos;re looking for without inconvenient barriers. The room should be inviting, have a consistent identity, and communicate where it wants to take you next.
-          </Paragraph>
+          {/* <br className="hidden lg:inline" /> */}
           <Paragraph>
             If you want to involve me in a project or just want to say hi, send me a mail at <InlLink href="mailto:hej@hansaugust.com"> hej@hansaugust.com</InlLink>.
           </Paragraph>

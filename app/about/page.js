@@ -33,7 +33,6 @@ const About = () => {
           <Paragraph>
             I&apos;m a UI + UX designer & front-end developer in Copenhagen, Denmark. Higher education in communication design and front-end development.
           </Paragraph>
-          <div></div>
           <Paragraph>
             I think of User experience as the sum of design, functionality and performance. An interface is a virtual room for the user to explore.
           </Paragraph>

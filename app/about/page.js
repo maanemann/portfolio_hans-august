@@ -31,7 +31,10 @@ const About = () => {
             </InlLinkEmph>
           </PEmph>
           <Paragraph>
-            I&apos;m a UI + UX designer & front-end developer in Copenhagen, Denmark. Higher education in communication design and front-end development.
+            I&apos;m a designer & developer based in Copenhagen, Denmark. I have worked professionally in various roles on a lot of projects. Higher education in communication design and additionally in frontend development.
+          </Paragraph>
+          <Paragraph>
+            What I enjoy the most is developing experiences that feel like you can step into them, by playing with spaciousness, distinctive visual expressions, and by removing all hiccups in the user experience. This is commonly associated with video games, though I believe it&apos;s a quality that deserves focus for any medium.
           </Paragraph>
           <Paragraph>
             I think of User experience as the sum of design, functionality and performance. An interface is a virtual room for the user to explore.

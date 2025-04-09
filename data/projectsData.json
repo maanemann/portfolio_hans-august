@@ -208,6 +208,14 @@
     "media": [
       {
         "type": "image",
+        "src": "/projects/tectonicus/tectonicusUI.jpg",
+        "alt": "Tectonicus UI",
+        "width": "1765",
+        "height": "846",
+        "mediaText": "UI design direction – I helped Gamucatex with a more clean UI / UX design, aligning with their vision for a less narrow, more elegant style and a universal visual ruleset for asset production. The product is a historically educational strategy game."
+      },
+      {
+        "type": "image",
         "src": "/projects/hemonaut.png",
         "alt": "Hemonaut",
         "width": "1792",

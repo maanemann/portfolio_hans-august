@@ -208,6 +208,14 @@
     "media": [
       {
         "type": "image",
+        "src": "/projects/grundforloebsproeve/grundforloebsproeve_plakat.jpg",
+        "alt": "Kampagneplakat for Greenflow",
+        "width": "3072",
+        "height": "4096",
+        "mediaText": "Campaign poster for GreenMove. A good example of combined use of multiple Adobe applications. Layout/text: InDesign, graphics (incl. logo): Illustrator, image editing: Photoshop."
+      },
+      {
+        "type": "image",
         "src": "/projects/tectonicus/tectonicusUI.jpg",
         "alt": "Tectonicus UI",
         "width": "1765",

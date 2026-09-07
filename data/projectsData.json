@@ -6,7 +6,7 @@
     "company": "Geometric Interactive",
     "thumbnail": {
       "imgSrc": "/projects/cocoon/cocoonUI_process.jpg",
-      "imgAlt": "Cocoon UI",
+      "imgAlt": "Thumbnail for the Cocoon UI",
       "imgWidth": "2162",
       "imgHeight": "1455"
     },
@@ -82,7 +82,7 @@
     "company": "Flashbulb Games",
     "thumbnail": {
       "imgSrc": "/projects/trailmakers/pioneersUI_init.png",
-      "imgAlt": "Pioneers UI",
+      "imgAlt": "Thumbnail for the Trailmakers UI",
       "imgWidth": "4122",
       "imgHeight": "2988"
     },
@@ -91,7 +91,7 @@
       {
         "type": "image",
         "src": "/projects/trailmakers/pioneersUI_init.png",
-        "alt": "Pioneers UI",
+        "alt": "Trailmakers UI",
         "width": "4122",
         "height": "2988",
         "mediaText": "UI ideation – camera orientated 3D indicators inside 2D buttons for rotating blocks around X, Y and Z axes respectively. Compensation for the lack of depth perception on a normal monitor."
@@ -136,7 +136,7 @@
     "company": "Flashbulb Games",
     "thumbnail": {
       "imgSrc": "/projects/kalimba/kalimbaUI_init.png",
-      "imgAlt": "Kalimba UI",
+      "imgAlt": "Thumbnail for the Kalimba UI",
       "imgWidth": "1952",
       "imgHeight": "1952"
     },
@@ -166,7 +166,7 @@
     "type": "Project",
     "thumbnail": {
       "imgSrc": "/projects/ropaa/roopaa_init.png",
-      "imgAlt": "Ro På",
+      "imgAlt": "Thumbnail for the Ro På project",
       "imgWidth": "2380",
       "imgHeight": "1622"
     },
@@ -193,7 +193,7 @@
     "type": "Project",
     "thumbnail": {
       "imgSrc": "/projects/cosha/cosha_init.webp",
-      "imgAlt": "Cosha",
+      "imgAlt": "Thumbnail for the Cosha color- and shape game prototype",
       "imgWidth": "1894",
       "imgHeight": "1322"
     },
@@ -230,7 +230,7 @@
     "type": "Various",
     "thumbnail": {
       "imgSrc": "/projects/hemonaut.png",
-      "imgAlt": "Hemonaut",
+      "imgAlt": "Thumbnail for the 'Various projects' section, showing the Hemonaut game",
       "imgWidth": "1792",
       "imgHeight": "1414"
     },

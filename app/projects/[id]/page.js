@@ -147,7 +147,7 @@ const ProjectDetails = () => {
                   frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   // Den her blev ikke tilføjet af copilot, men var med i youtube's embed kode og virker fornuftig :
-                  referrerpolicy="strict-origin-when-cross-origin"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   // `clipboard-write;` vat tilladt af copilot
                   allowFullScreen
                   className='absolute top-0 left-0 w-full h-full'

@@ -47,6 +47,36 @@
     ]
   },
   {
+    "id": "opu",
+    "title": "OPU Campaign",
+    "type": "campaign",
+    "company": "NEXT",
+    "thumbnail": {
+      "imgSrc": "/projects/opu/OPU-plakat.png",
+      "imgAlt": "Thumbnail for the OPU campaign, showing the poster",
+      "imgWidth": "1684",
+      "imgHeight": "2384"
+    },
+    "description": "NEXT, technical school in Copenhagen, want to get the message out to their students that they have the option to spend their apprenticeship abroad. They asked for a poster design following their style guide and received several suggestions. I was happy that mine was the one they went with. To extend the campaign and attract more attention I also made them a short, loopable animation. The results of both can be seen below.",
+    "media": [
+      {
+        "type": "video",
+        "iframe": "https://www.youtube.com/embed/OV01h5uBHF0?loop=1&playlist=OV01h5uBHF0",
+        "width": "4208",
+        "height": "2368",
+        "mediaText": "Short animation (in Danish) designed for being looped on various monitors. Thus informing students about the upcoming event. After Effects, Photoshop, Illustrator. Colors, spacing etc. follow NEXT's style guide."
+      },
+      {
+        "type": "image",
+        "src": "/projects/opu/OPU-plakat.png",
+        "alt": "OPU poster",
+        "width": "1684",
+        "height": "2384",
+        "mediaText": "The poster (in Danish), presenting details about the info event. InDesign, Photoshop, Illustrator. Coherent grid. Colors, spacing etc. follow NEXT's style guide."
+      }
+    ]
+  },
+  {
     "id": "trailmakers",
     "title": "Trailmakers",
     "company": "Flashbulb Games",
